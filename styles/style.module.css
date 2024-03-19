@@ -1,0 +1,180 @@
+.layoutMagic {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* margin-top: 21px; */
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.explore {
+  position: sticky;
+  top: 0%;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  left: 0;
+  z-index: 11;
+  margin-top: 1.5em;
+  overflow-y: auto;
+  padding-left: 1em;
+  /* width: 300px;
+  margin-top: 1.5em;
+  overflow-y: auto;
+  padding-left: 1em;
+  align-self: flex-start;
+  position: sticky;
+  bottom: -882px;
+  z-index: 11; */
+}
+
+.exploreFixed {
+  top: -350px;
+}
+
+.scrollableContent {
+  /* margin-left: auto; */
+  left: 300px;
+  width: 1100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.undoVotes button {
+  border: none;
+  outline: none;
+}
+.mainContent {
+  /* background-color: var(--lightWhiteBackground); */
+  background-color: #fff;
+  padding-left: 24px;
+  transform: translate3d(0, 0, 0);
+  width: calc(100% - 400px);
+}
+
+.policy {
+  /* margin-left: 44px; */
+  display: flex;
+  justify-content: center;
+}
+
+.trend {
+  width: 400px;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: auto;
+  align-self: flex-start;
+  position: sticky;
+  bottom: -882px;
+}
+
+.fixed {
+  top: -950px;
+}
+.fixedVariant {
+  top: -600px;
+}
+
+.trendWrap {
+  width: 100%;
+}
+
+.trendTrend {
+  border-radius: 10px;
+
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 26px;
+}
+
+.trendWhoToFollow {
+  width: 100%;
+  padding-top: 15px;
+
+  padding-bottom: 17px;
+  margin-bottom: 24px;
+}
+
+.fullScreenProfile {
+  width: 100vw;
+}
+
+@media (max-width: 1024px) {
+  .explore {
+    width: 70px;
+    margin: 0;
+    padding: 0;
+  }
+  .scrollableContent {
+    width: calc(100% - 70px);
+    left: 70px;
+  }
+  .tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    top: 60%;
+    width: 100px;
+    padding: 0.5em;
+    left: -15%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff4105;
+    z-index: 1111;
+    border-radius: 15px;
+  }
+}
+@media (max-width: 850px) {
+  .mainContent {
+    width: 97%;
+    margin: auto;
+    padding: 0;
+  }
+  .trend {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .explore {
+    position: fixed;
+    top: 93%;
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .scrollableContent {
+    width: 100%;
+  }
+  .layout {
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navLink {
+    margin: 0;
+  }
+  .tooltip {
+    display: none;
+  }
+}

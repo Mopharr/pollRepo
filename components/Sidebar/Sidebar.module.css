@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:display=swap");
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  background-color: #f8f8f8;
+  margin-top: 1.5rem;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #050505;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 18px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.navLink:last-child {
+  /* margin-top: 50px; */
+}
+.navLink p {
+  margin: 0;
+}
+.navLink a {
+  display: none;
+}
+.navLink:hover {
+  color: #ff4105;
+}
+
+.activeLink {
+  font-weight: bold;
+  color: #ff4105;
+  text-decoration: none;
+}
+
+.activeClass {
+  color: #ff4105;
+}
+
+.navLink svg {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.topic {
+  color: #050505;
+  padding-bottom: 20px;
+  color: #232223;
+  padding-left: 10px;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.navText {
+  width: 66.47%;
+}
+
+.createPoll {
+  height: 40px;
+  width: 80%;
+  margin: auto;
+  border-radius: 50px;
+  background: #ff4105;
+  box-shadow: 3px 7px 10px 0px rgba(0, 0, 0, 0.12);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.createPollBtnn {
+  display: none;
+}
+.navLink .tooltip {
+  display: none;
+}
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.dropdownHeaderSpan {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dropdownHeaderSpan span {
+  color: #050505;
+  padding-left: 0.625rem;
+  font-family: Montserrat;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+.dropdownItem span {
+  color: #050505;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sidebar1 {
+  width: 95%;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 10px;
+}
+.sidebar a {
+  text-decoration: none;
+}
+.sidebar1 a {
+  text-decoration: none;
+}
+
+.dropdownContent {
+  padding-top: 10px;
+}
+
+.dropdownContents {
+  padding-top: 10px;
+}
+
+.dropdownContents {
+  display: none;
+}
+
+.dropLink {
+  display: flex;
+}
+
+.dropdownContentNav {
+  display: flex;
+  margin-left: 33px;
+  flex-direction: column;
+  top: -13px;
+  position: relative;
+  width: 80%;
+}
+.dropdownContentNav p {
+  color: #050505;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0;
+  cursor: pointer;
+}
+
+.nestedDropdownContent {
+  padding-left: 20px; /* Indentation for nested items */
+}
+
+.nestedDropdownItem {
+  padding: 5px 15px;
+  font-size: 0.9em; /* Slightly smaller than parent items */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nestedDropdownItem:hover {
+  background-color: #e6e6e6; /* Slightly darker grey on hover */
+}
+
+.categoryName {
+  font-size: 0.8em !important;
+  font-weight: 400 !important;
+}
+
+.sidebarScrollable {
+  max-height: 27rem;
+  overflow-y: auto; /* Shows scrollbar only when necessary */
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sidebarScrollable::-webkit-scrollbar {
+  width: 1px;
+}
+
+.sidebarScrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebarScrollable::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.sidebarScrollable::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sidebarScrollable:hover::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Now visible when hovered */
+}
+
+.sidebarScrollable:hover::-webkit-scrollbar-thumb {
+  background: #555; /* Optionally change on hover */
+}
+
+.additionalClass {
+  padding: 0 !important;
+  font-size: 0.75rem !important;
+  padding-left: 2rem !important;
+  padding-bottom: 0.1rem !important;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.5 ease-in-out;
+}
+
+.additionalClass:hover {
+  color: #ff4105;
+}
+
+.mobileNav {
+  text-decoration: none;
+  display: none;
+}
+
+.filterCloseIcon {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .filterCloseIcon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+  }
+  .dropdownContent {
+    display: none;
+  }
+  .dropdownContents {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropDownWrap {
+    background-color: #fff;
+    width: 300px;
+    padding: 0.5em;
+  }
+  .navLink span {
+    display: none;
+  }
+  .filterr {
+    display: none;
+  }
+  .filterIcons {
+    height: 25px;
+    width: 25px;
+  }
+  .navLink {
+    margin: 1.6em 0 0;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .dropdownHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+  .createPollBtnn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #ff4105;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .createPoll {
+    display: none;
+  }
+  .topic {
+    display: none;
+  }
+  .navLink .tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    top: 60%;
+    width: 100px;
+    padding: 0.5em;
+    left: -15%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff4105;
+    z-index: 1111;
+    border-radius: 15px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .mobileNav {
+    text-decoration: none;
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  .navLink {
+    margin: 0;
+  }
+  .navLink .tooltip {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+}

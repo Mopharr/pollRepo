@@ -1,0 +1,160 @@
+.cancle {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LogoImage {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 27px;
+}
+
+.h4o {
+  font-size: 45px;
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  margin: 0;
+  font-family: "Montserrat" sans-serif;
+}
+
+.modalBody {
+  margin-top: 2.2rem;
+  padding: 0 16.875rem;
+}
+
+.signTC {
+  width: 303px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #262626;
+  padding-bottom: 2rem;
+}
+.TC {
+  color: #ff4105;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.loginTC {
+  font-size: clamp(0.875rem, 0.75rem + 0.4vw, 1.1rem);
+  font-weight: bold;
+}
+.AldAcc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #262626;
+  cursor: pointer;
+}
+
+.modalAuthButton {
+  width: 343px;
+  height: 55px;
+  margin-bottom: 24px;
+  border: 1px solid #383838;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-left: 50px;
+}
+
+.authLogo {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.googleButton {
+  background: rgba(255, 255, 255, 0);
+  color: #000;
+}
+.googleButton img {
+  width: 25px;
+  height: 25px;
+}
+
+.appleButton {
+  background: rgba(255, 255, 255, 0);
+  color: #000;
+}
+
+.orSeparator {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.modalCreateAccountButton {
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #000; /* Green color */
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login {
+  width: 642px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #ff4105;
+  border: none;
+  margin-top: 39px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@media (max-width: 500px) {
+  .cancel {
+    width: 18px;
+    height: 18px;
+  }
+  .LogoImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0;
+  }
+  .h4o {
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .modalBody {
+    padding: 0;
+    width: 97%;
+  }
+  .modalAuthButton {
+    width: 97%;
+    margin: 0 auto 24px;
+    height: 35px;
+    padding: 0;
+    justify-content: center;
+  }
+  .cancle {
+    width: 17px;
+    height: 17px;
+  }
+}

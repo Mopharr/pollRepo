@@ -1,0 +1,28 @@
+
+.message{
+    font-family:     Montserrat;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.userName{
+    font-family:     Montserrat;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.notifacationWrapper{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    /* padding-top: 3rem; */
+    
+}
+
+.notificationHeader{
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-bottom: 0.5px solid #ccc;
+}

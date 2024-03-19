@@ -1,0 +1,179 @@
+.main,
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+  color: #14171a;
+}
+
+.main p,
+.main li {
+  font-size: 1rem;
+  line-height: 150%;
+  color: #14171a;
+}
+
+.content {
+  padding-left: 3.5rem;
+  min-height: 650px;
+  display: grid;
+  align-items: center;
+  background-image: url("../asset/image/Policy2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.content h1 {
+  color: #14171a;
+  font-size: clamp(2.5rem, 1.9861rem + 6.4444vw, 7.625rem);
+  font-weight: 800;
+  width: 100%;
+  max-width: 850px;
+  line-height: 1;
+}
+
+.bottom {
+  padding: 2rem 0;
+  background-color: #14171a;
+}
+
+.bottom p {
+  color: #fff;
+  font-size: clamp(0.875rem, 0.7056rem + 0.5422vw, 1.18rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.summary {
+  padding: clamp(3rem, 3.3333rem + 5.3333vw, 5rem) 0;
+}
+
+.summary h2 {
+  font-size: clamp(1.2rem, 0.8667rem + 1.0667vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.summary ul {
+  margin-top: 1.5rem;
+  list-style: disc;
+  padding-left: 1.7rem;
+}
+
+.summary ul li {
+  margin-top: 1.5rem;
+}
+
+.terms {
+  padding-bottom: clamp(3rem, 3.3333rem + 5.3333vw, 5rem);
+}
+
+.terms .header h2 {
+  font-size: clamp(1.8rem, 1.1333rem + 2.1333vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.terms .header p:nth-child(2) {
+  margin-bottom: 1.5rem;
+}
+
+.terms hr {
+  height: 1.6px;
+  background-color: gray;
+  margin-top: 2rem;
+  border: none;
+  padding: 0;
+}
+
+.terms .body {
+  padding: clamp(2.75rem, 0.9444rem + 5.7778vw, 6rem) 0;
+}
+
+.terms .numbers {
+  margin-top: 3rem;
+}
+
+.terms .numbers:first-child {
+  margin-top: 0;
+}
+
+.terms .numbers h4 {
+  font-size: clamp(1.8rem, 1.4667rem + 1.0667vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.025rem;
+  line-height: 2.4rem;
+  margin-bottom: 1.75rem;
+}
+
+.numberThree p {
+  margin-top: 1.5rem;
+}
+
+.right {
+  margin-top: 3rem;
+}
+
+.right h2 {
+  text-align: center;
+  font-size: clamp(1.2rem, 0.8667rem + 1.0667vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+}
+
+.right ul {
+  margin-top: 1.5rem;
+  list-style: circle;
+  padding-left: 1.7rem;
+}
+
+.right ul li {
+  margin-top: 1.5rem;
+}
+
+.yourAccount {
+  margin-top: 1.9rem;
+}
+
+.yourAccount h2 {
+  font-size: clamp(1.2rem, 0.8667rem + 1.0667vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+}
+
+.yourAccount p:nth-child(2),
+.yourAccount p:nth-child(3) {
+  margin-top: 1.5rem;
+}
+
+.limitation ul {
+  margin-top: 1.5rem;
+  list-style: inside;
+  padding-left: 1.7rem;
+}
+
+.limitation ul li {
+  margin-top: 1.5rem;
+}
+
+.inner {
+  margin-top: 1.7rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-left: 1rem;
+    min-height: 400px;
+    background-position: 0% 100%;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 820px) {
+  .containerTos {
+    width: 72%;
+  }
+}

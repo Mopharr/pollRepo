@@ -1,0 +1,434 @@
+.main,
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+.main {
+  background-color: #fff;
+}
+
+.navigation {
+  background-color: #fff;
+  padding: clamp(1.5rem, 0.9444rem + 1.7778vw, 2.5rem) 0;
+}
+
+.topBar svg {
+  cursor: pointer;
+}
+
+.topBar div {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.topBar div > button {
+  all: unset;
+  padding: 0.2rem 0.3rem;
+  font-size: clamp(0.875rem, 0.5833rem + 0.9333vw, 1.4rem);
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+.topBar div > button.active {
+  border-bottom-color: #ff4105;
+}
+
+.photoSection {
+  position: relative;
+}
+
+.coverImage {
+  position: relative;
+  height: 279px;
+  display: flex;
+}
+
+.coverImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coverImage label,
+.profilePhoto > div label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  width: max-content;
+}
+
+.photoSection label > input[type="file"] {
+  display: none;
+}
+
+.coverImage svg {
+  color: #fff;
+}
+
+.profilePhoto {
+  position: absolute;
+  left: 7rem;
+  top: 18rem;
+  transform: translateY(-50%);
+}
+
+.profilePhoto > div {
+  position: relative;
+  width: 215px;
+  height: 215px;
+}
+
+.profilePhoto > div span {
+  padding: 1.2rem;
+}
+
+.profilePhoto > div svg {
+  color: #fff;
+}
+
+.profilePhoto > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.editProfileSection {
+  margin-top: clamp(7rem, -0.8333rem + 14.6667vw, 12rem);
+}
+
+.editProfileSection .formOne {
+  display: grid;
+  gap: 1.125rem;
+}
+
+.about {
+  position: relative;
+}
+
+.about label {
+  pointer-events: none;
+  position: absolute;
+  left: 1.4375rem;
+  top: 1.125rem;
+  color: #050505;
+  font-family: Montserrat;
+  font-size: clamp(0.875rem, 0.5278rem + 1.1111vw, 1.3rem);
+  font-weight: 300;
+  transform: translateY(-50%);
+}
+.about textarea {
+  background-color: #eaecef;
+  width: 100%;
+  height: 200px;
+  outline: none;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.4444rem + 1.7778vw, 1.5rem);
+  color: #262626;
+  border: 1px solid #afafaf;
+  border-radius: 10px;
+  padding: clamp(1.5rem, 1.0833rem + 1.3333vw, 2.15rem) 1.4375rem 0.3125rem;
+}
+
+.about p {
+  font-weight: 500;
+  color: #262626;
+}
+
+.dobDisplay {
+  margin-top: 1rem;
+}
+
+.dobDisplay p:first-child {
+  font-size: clamp(1.1875rem, 1.0139rem + 0.5556vw, 1.5rem);
+  color: #050505;
+}
+
+.dobDisplay p:last-child {
+  color: #050505;
+  font-size: clamp(1.375rem, 1.0278rem + 1.1111vw, 1.7rem);
+  color: #262626;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.dobSelects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.customizeSelect {
+  width: 100%;
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  border: 1px solid #afafaf;
+  background-color: #eaecef !important;
+  font-size: clamp(0.875rem, 0.5278rem + 1.1111vw, 1.3rem);
+  font-weight: 500;
+  font-family: Montserrat;
+  color: #050505;
+  appearance: none;
+
+  /* Adding custom arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../asset/svg/downSel.svg") no-repeat right 10px center;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Adjust the position of the arrow */
+  background-size: 25px; /* Size of the arrow */
+}
+
+.customSelect:focus {
+  outline: none;
+  border-color: #80bdff; /* Focus border color */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.pdob {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0.75rem 0;
+}
+
+.changePassword {
+  margin-top: 14rem;
+}
+
+.changePassword .formTwo {
+  display: grid;
+  gap: 1.125rem;
+}
+
+.switches {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.switches > div {
+  display: flex;
+  /* align-items: center; */
+  gap: 1.6875rem;
+}
+
+.switches .textBox p:first-child {
+  color: #050505;
+  font-family: Montserrat;
+  font-size: clamp(0.9rem, 0.5278rem + 1.1111vw, 1.3rem);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.switches .textBox p:last-child {
+  color: #ff4105;
+  font-family: Montserrat;
+  font-size: clamp(0.875rem, 0.8056rem + 0.2222vw, 1rem);
+  width: 100%;
+  max-width: 200px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.addMore {
+  position: relative;
+  width: max-content;
+  margin-bottom: 0.8rem;
+}
+
+.addMore button {
+  cursor: pointer;
+  background: transparent;
+  border-radius: 10px;
+  padding: clamp(0.925rem, 0.9111rem + 0.0444vw, 0.95rem)
+    clamp(0.9375rem, 0.9028rem + 0.1111vw, 1rem);
+  border: 2px solid #afafaf;
+  outline: none;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.4444rem + 1.7778vw, 1.5rem);
+  color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.addMore ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  z-index: 5;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(11, 8, 43, 0.1);
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.addMore ul li {
+  font-size: 0.875rem;
+  line-height: 121%;
+  padding: 0.625rem 1.1875rem;
+  font-family: Montserrat;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addMore ul li > svg {
+  font-size: 0.875rem;
+  color: #12b76a;
+}
+
+.addMore ul li:hover {
+  background: rgba(11, 8, 43, 0.1);
+}
+
+.addMore ul li.active {
+  background: rgba(11, 8, 43, 0.1);
+}
+
+.addMore:focus-within ul {
+  display: block;
+}
+
+.submit {
+  margin-bottom: 2rem;
+}
+
+.submit button {
+  all: unset;
+  color: #fff;
+  padding: 1.1rem 1.4rem;
+  background-color: #ff4105;
+  border-radius: 1.25rem;
+  font-size: clamp(1.1875rem, 0.9444rem + 0.7778vw, 1.625rem);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.submit button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.countryBox {
+  border: 1px solid #afafaf;
+  border-radius: 10px;
+  background-color: #eaecef;
+}
+
+.countryInput {
+  border: none !important;
+  background: transparent;
+  box-sizing: border-box;
+  padding: clamp(0.6rem, 1.0833rem + 1.3333vw, 0.8rem) 1.4375rem !important;
+  outline: none;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.4444rem + 1.7778vw, 1.5rem);
+  color: #262626;
+}
+
+.countryInput::placeholder {
+  text-align: left;
+  color: #050505;
+  font-family: Montserrat;
+  font-size: clamp(0.875rem, 0.5278rem + 1.1111vw, 1.3rem);
+  font-weight: 300;
+}
+
+.activePlaceholder::placeholder {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.4444rem + 1.7778vw, 1.5rem);
+  color: #262626;
+}
+
+.error {
+  color: #f04438;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.3rem;
+  font-family: Montserrat;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+@media (min-width: 820px) {
+  .containerTop {
+    width: 92%;
+  }
+
+  .containerBox {
+    width: 85%;
+  }
+}
+
+@media (max-width: 500px) {
+  .submit {
+    display: grid;
+  }
+}
+
+@media (max-width: 656px) {
+  .switches {
+    flex-direction: column;
+    row-gap: 1.3rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .profilePhoto {
+    position: absolute;
+    left: 50%;
+    top: 13rem;
+    transform: translateX(-50%);
+  }
+
+  .profilePhoto > div {
+    width: 150px;
+    height: 150px;
+  }
+
+  .formSection {
+    margin-top: 8.7rem;
+  }
+}

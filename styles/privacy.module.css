@@ -1,0 +1,382 @@
+.main,
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+.content {
+  padding-left: 3.5rem;
+  min-height: 650px;
+  display: grid;
+  align-items: center;
+  background-image: url("../asset/image/Policy2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.content h1 {
+  color: #14171a;
+  font-size: clamp(2.5rem, 1.9861rem + 6.4444vw, 7.625rem);
+  font-weight: 800;
+  width: 100%;
+  max-width: 850px;
+  line-height: 1;
+}
+
+.bottom {
+  padding: 2rem 0;
+  background-color: #14171a;
+}
+
+.bottom p {
+  color: #fff;
+  font-size: clamp(0.875rem, 0.7056rem + 0.5422vw, 1.18rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.notice {
+  padding: clamp(5rem, 3.3333rem + 5.3333vw, 8rem) 0;
+}
+
+.notice .upperText {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.notice h3 {
+  font-size: clamp(1.2rem, 0.8667rem + 1.0667vw, 1.8rem);
+  color: #ff4105;
+  font-weight: 700;
+}
+
+.notice .upperText:nth-child(2) {
+  margin-top: 3rem;
+}
+
+.notice .upperText:nth-child(3),
+.notice .upperText:nth-child(4) {
+  margin-top: 1.7rem;
+}
+
+.policies {
+  margin: clamp(4rem, 3.7222rem + 0.8889vw, 4.5rem) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+  column-gap: 4rem;
+  row-gap: 5rem;
+}
+
+.policy h5 {
+  font-size: 1.2rem;
+  color: #14171a;
+  line-height: 1.2;
+  letter-spacing: 0.015rem;
+}
+
+.policy a {
+  color: #ff4105;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: underline;
+  display: block;
+  margin-top: 1.5rem !important;
+}
+
+.policy p {
+  margin-top: 2rem;
+}
+
+.dataEnquire {
+  min-height: 920px;
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: clamp(6rem, 3.3333rem + 5.3333vw, 8rem);
+}
+
+.dataEnquire div:first-child {
+  flex: 1;
+  align-self: center;
+}
+
+.dataEnquire h1 {
+  padding-left: 3rem;
+  color: #14171a;
+  font-size: clamp(1.9rem, 0.1389rem + 5.5556vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dataEnquire div:nth-child(2) {
+  flex: 1;
+}
+
+.dataEnquire img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.enquire {
+  padding-bottom: clamp(8rem, 5.7778rem + 7.1111vw, 12rem);
+}
+
+.infoBox {
+  border-left: 18px solid #ff4105;
+  padding: 1.6rem 1.2rem;
+  background-color: rgba(255, 65, 5, 0.1);
+}
+
+.infoBox h4 {
+  font-size: clamp(1.2rem, 0.8667rem + 1.0667vw, 2rem);
+  color: #14171a;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.infoBox h5 {
+  font-size: clamp(1.5rem, 1.3889rem + 0.3556vw, 1.7rem);
+  color: #ff4105;
+  font-weight: 700;
+  width: 100%;
+  max-width: 910px;
+}
+
+.infoHeading {
+  margin-top: 4rem;
+}
+.infoHeading p:first-child {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0;
+}
+
+.infoHeading p:first-child span {
+  margin-left: 0.2rem;
+}
+.infoHeading p:nth-child(2),
+.infoHeading p:last-child {
+  color: #657786;
+  font-size: 1rem;
+  margin-top: 1.8rem;
+  line-height: 150%;
+}
+
+.infoHeading p > a {
+  color: #ff4105;
+}
+
+.faqContainer {
+  margin-top: 1.5rem;
+}
+
+.publicPost {
+  min-height: 920px;
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: clamp(6rem, 3.7778rem + 7.1111vw, 10rem);
+}
+
+.publicPost div:nth-child(2) {
+  flex: 1;
+  align-self: center;
+}
+
+.publicPost h1 {
+  padding-left: 3rem;
+  color: #14171a;
+  font-size: clamp(3.5rem, 2.3889rem + 3.5556vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.publicPost div:nth-child(1) {
+  flex: 1;
+}
+
+.publicPost img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.addressBox {
+  padding-bottom: clamp(9rem, 5.7778rem + 7.1111vw, 14rem);
+}
+
+.addressFlex p {
+  color: #657786;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.addressFlex p:nth-child(2) {
+  margin-top: 1.2rem;
+}
+
+.lastEnquire {
+  padding-bottom: 3.5rem;
+}
+
+.confidential {
+  margin-top: 2.5rem;
+}
+
+.confidential p {
+  color: #657786;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.confidential p:nth-child(2) {
+  margin-top: 1.2rem;
+}
+
+/* .confidential button {
+  all: unset;
+  margin-top: 3rem;
+  cursor: pointer;
+  border: 1px solid #14171a;
+  border-radius: 18px;
+  color: #14171a;
+  font-size: 0.8rem;
+  letter-spacing: 0.03rem;
+  font-weight: 700;
+  padding: 0.6875rem 1.125rem;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.confidential button:hover {
+  background-color: #657786;
+} */
+
+.adjust {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background: url("../asset/image/RedTexture.jpg") center/cover no-repeat;
+}
+
+.adjust h1 {
+  font-size: clamp(1.8rem, 0.8rem + 3.2vw, 3.9rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.adjust button {
+  all: unset;
+  cursor: pointer;
+  margin-top: 2rem;
+  background-color: #14171a;
+  color: #fff;
+  text-align: center;
+  font-size: 0.798rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+}
+
+.adjust button:hover {
+  opacity: 0.7;
+}
+
+.footer,
+.footer *,
+.footer *::before,
+.footer *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+.footer {
+  padding: 2.5rem 0;
+  background-color: #14171a;
+}
+.linkBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.bottomFooter {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.bottomFooter a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
+  line-height: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-left: 1rem;
+    min-height: 400px;
+    background-position: 0% 100%;
+    background-attachment: fixed;
+  }
+
+  .dataEnquire {
+    min-height: 550px;
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+  }
+
+  .dataEnquire h1 {
+    padding-left: 1.5rem;
+  }
+
+  .policies {
+    row-gap: 4rem;
+  }
+
+  .publicPost {
+    min-height: 550px;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .adjust {
+    min-height: 450px;
+  }
+
+  .publicPost div:nth-child(2) {
+    align-self: initial;
+  }
+
+  .publicPost h1 {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 1357px) {
+  .policies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .infoHeading p:nth-child(2),
+  .infoHeading p:last-child {
+    width: 80%;
+  }
+
+  .confidential p {
+    width: 80%;
+  }
+
+  .adjust h1 {
+    width: 60%;
+  }
+}

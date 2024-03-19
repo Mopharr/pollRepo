@@ -1,0 +1,71 @@
+.proMainContainer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressBarContainer {
+  width: 100%;
+}
+
+.progressBar {
+  width: 100%;
+  background-color: rgba(169, 169, 169, 0.5);
+  height: 140%;
+  position: absolute;
+  z-index: 1;
+  top: -20%;
+  left: 0%;
+  background-color: rgba(169, 169, 169, 0.5);
+  padding: 14px 4px;
+  border-radius: 17px;
+  animation: progressBarAnimation 2s ease-out forwards;
+}
+@keyframes progressBarAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    /* Use a CSS variable for dynamic width */
+    width: var(--target-width);
+  }
+}
+.votedIcon {
+  position: absolute;
+  margin-left: 0.5em;
+  margin-top: 0.1em;
+  font-size: 12px;
+  color: #006ca5;
+}
+
+.optionName {
+  margin-left: 1em;
+  z-index: 11;
+}
+
+.voteCount {
+  font-weight: bold;
+  margin-right: 1em;
+  display: flex;
+  align-items: center;
+}
+.countDigit {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: bold;
+  color: #ff4105;
+  line-height: normal;
+  align-self: start;
+  margin-left: 0.4em;
+}
+@media (max-width: 500px) {
+  .progressBar {
+    padding: 10px 4px ;
+  }
+}

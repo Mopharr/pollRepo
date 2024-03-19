@@ -1,0 +1,571 @@
+.pollWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
+  width: 75%;
+  flex-wrap: nowrap;
+}
+.pollList {
+  border-bottom: 2px solid #cacaca;
+  margin: 0 auto 2em;
+  width: 90%;
+}
+.pollWrapH {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HeadImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.nameDes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.userName {
+  color: var(--lightBlack);
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.userName2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(99, 100, 102);
+  margin: 0;
+}
+
+.hotLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.userName3 {
+  margin-right: 10px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+.ddott {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desTime {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 20px;
+}
+.nameFollow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2em;
+}
+
+.nameFollow a {
+  text-decoration: none;
+}
+
+.nameFollow button {
+  all: unset;
+  color: #1976d2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pollQuesion {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .4em;
+}
+.pollQuesion img {
+  width: 15px;
+  height: 15px;
+  
+}
+.timeName {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.textContent {
+  color: #262626;
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20.696px;
+  margin: 0.5em 0 0.2em;
+  cursor: pointer;
+}
+
+.textContentDescription {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9375rem;
+  word-spacing: 0.4375rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.optionsWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0 0;
+  justify-content: center;
+}
+.DescriptionIcon {
+  width: 30px !important;
+  height: 30px !important;
+}
+.options {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.optionsCan_Vote {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.optionsOutside {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0 0.6em;
+}
+.optionsOutsidePic {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  /* padding:0.6em; */
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.optionsOutsidePic img {
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+}
+
+.optionOutsideClick {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  background: #ffc9b8;
+  display: flex;
+  align-items: center;
+  padding: 0 0.6em;
+}
+.goDot {
+  display: flex;
+  align-items: center;
+}
+
+.viewMore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 1em;
+  gap: 0.5em;
+}
+.viewMoreP {
+  color: #ff4105;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.lcs {
+  display: flex;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin-bottom: 0.7em;
+}
+
+.lcs button {
+  all: unset;
+}
+
+.lcs p,
+.lcs button {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  font-weight: 400;
+}
+
+.lcs p:hover {
+  color: #ff4105;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.titleIcon {
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.title h2 {
+  width: 90%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.lcs p:hover svg,
+.activeIcon {
+  fill: #ff4105;
+}
+
+.viewMorePOA {
+  color: #ff4105;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  cursor: pointer;
+}
+
+.viewMorePNO {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  margin: 0;
+  line-height: normal;
+}
+
+.votes {
+  color: #262626;
+  padding-left: 13px;
+  padding-right: 13px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin: 0;
+}
+
+.optionWithImage {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+  gap: 10px;
+  /* justify-content: center; */
+}
+.dataOptionImage {
+  background: rgba(0, 0, 0, 0.01);
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 111;
+}
+.dataOptionImage img {
+  width: 300px;
+  height: 300px;
+
+  border-radius: 100%;
+}
+.optionImage {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.undoVotes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
+  margin: 0.7em 0;
+}
+.undoVotes button {
+  background-color: transparent;
+  height: unset;
+  width: unset;
+  color: #ff4105;
+  padding: 0;
+  border: none;
+  margin: 0;
+  outline: none;
+}
+.undoVotes button:hover {
+  background-color: transparent;
+  color: #ff4105;
+  border: none;
+}
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.create {
+  width: 280px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #ff4105;
+  box-shadow: 3px 7px 10px 0px rgba(0, 0, 0, 0.12);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.createWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.DescriptionIcon {
+  display: flex;
+  align-items: center;
+}
+.tspWrap {
+  display: flex;
+}
+
+.moreButton {
+  color: #ff4105;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  cursor: pointer;
+}
+.progressBarContainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.progressBar {
+  padding: 15px;
+  border-radius: 10px;
+}
+.disabledViewMore {
+  color: #fdb69f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: not-allowed;
+  padding-right: 13px;
+  margin: 0;
+}
+
+.shareBox {
+  position: relative;
+}
+
+.sharePopup {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 0.6rem;
+  background-color: #f1edf5;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  z-index: 5px;
+  border-radius: 8px;
+}
+
+.shareBox:focus-within .sharePopup {
+  display: block;
+}
+
+.sharePopup button {
+  font-size: 0.9rem;
+  color: #262626;
+}
+@media (min-width: 1024px) {
+  .lcs button:hover {
+    color: #ff4105;
+  }
+
+  .lcs button:hover svg {
+    fill: #ff4105;
+  }
+}
+@media (max-width: 500px) {
+  .pollList {
+    width: 96%;
+  }
+  .userName {
+    font-size: 12px;
+  }
+  .timeName {
+    font-size: 11px;
+  }
+  .textContent {
+    font-size: 14px;
+  }
+  .textContentDescription {
+    font-size: 10px;
+   line-height: 14px;
+    font-weight: 500;
+  }
+  .textContentDescription img {
+    width: 100%;
+  }
+  .moreButton {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .options {
+    font-size: 10px;
+    width: 90%;
+    height: 25px;
+    /* padding: 0 8px; */
+  }
+  .optionsOutsidePic {
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+  }
+  .optionsOutsidePic img {
+    width: 17px;
+    height: 17px;
+  }
+  .optionsOutside {
+    height: 25px;
+  }
+  .DescriptionIcon {
+    height: 20px !important;
+  }
+  .viewMoreP {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .viewMorePOA {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .viewMorePNO {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}

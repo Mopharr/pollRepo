@@ -1,0 +1,38 @@
+.policy {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em 1em;
+  margin-bottom: 1.3rem;
+}
+
+.policyWrap {
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  width: 100%;
+}
+.whiteLine {
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+}
+.policyWrap a,
+.policyWrap p {
+  text-decoration: none;
+  color: #262626;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.policyWrap a:hover {
+  color: #ff4105;
+}
+.cpr {
+  text-align: center;
+  margin-top: 1.3rem !important;
+}

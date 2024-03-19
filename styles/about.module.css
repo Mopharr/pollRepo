@@ -1,0 +1,112 @@
+.main,
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+  color: #262626;
+}
+
+.main {
+  background-color: #fff;
+}
+.hero {
+  min-height: 520px;
+  display: grid;
+  align-items: center;
+  background-image: url("../asset/image/AboutHero3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero h2 {
+  color: #262626;
+  color: #fff;
+  font-size: clamp(2.6rem, 1.1556rem + 4.6222vw, 5.2rem);
+  font-weight: 800;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero p {
+  font-size: clamp(1.1875rem, 1.0139rem + 0.5556vw, 1.5rem);
+  font-weight: 500;
+  color: #262626;
+  margin-top: clamp(0.875rem, 0.8056rem + 0.2222vw, 1rem);
+}
+
+.aboutFlex {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: clamp(8rem, 5.7778rem + 7.1111vw, 12rem);
+}
+
+.aboutFlex:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.aboutFlex:first-child {
+  padding-top: clamp(5.5rem, 4.6667rem + 2.6667vw, 7rem);
+}
+
+.aboutFlex .imageBox {
+  flex: 1;
+}
+
+.aboutFlex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutFlex .infoBox {
+  flex: 1;
+  align-self: center;
+}
+
+.infoBox h4 {
+  font-size: clamp(1.5rem, 1.2222rem + 0.8889vw, 2rem);
+  font-weight: 700;
+  margin-bottom: clamp(0.875rem, 0.8056rem + 0.2222vw, 1rem);
+}
+
+.infoBox p {
+  font-size: clamp(1rem, 0.8611rem + 0.4444vw, 1.25rem);
+  line-height: 150%;
+}
+
+.end {
+  min-height: 550px;
+  display: grid;
+  align-items: center;
+  background-image: url("../asset/image/OrangePetals2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.end h2 {
+  font-size: clamp(1.8rem, 0.5778rem + 3.9111vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .aboutFlex {
+    flex-direction: column;
+  }
+
+  .aboutFlex:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 820px) {
+  .containerAbout {
+    width: 90%;
+  }
+}

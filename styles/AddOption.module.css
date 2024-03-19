@@ -1,0 +1,173 @@
+.close-button {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: red;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  margin: 1.5em 0 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.undoVotes button {
+  border: none;
+  outline: none;
+}
+
+.timeLikes {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  text-align: left;
+  line-height: normal;
+  margin: 0;
+}
+.adBtn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #ff4105;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.optionsWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+}
+.DescriptionIcon {
+  width: 30px !important;
+  height: 30px !important;
+}
+.options {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.optionsOutside {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0 0.6em;
+}
+
+.dataOptionImage {
+  background: rgba(0, 0, 0, 0.01);
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 111;
+}
+.dataOptionImage img {
+  width: 300px;
+  height: 300px;
+
+  border-radius: 100%;
+}
+.optionsOutsidePic {
+  border-color: #f44336;
+  color: #f44336;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 100%;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.optionsOutsidePic img {
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+}
+.votes {
+  color: #262626;
+  padding-left: 13px;
+  padding-right: 13px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin: 0;
+}
+
+.optionWithImage {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+  gap: 10px;
+}
+
+.optionImage {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.undoVotes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
+  margin: 0.7em 0;
+}
+.undoVotes button {
+  background-color: transparent;
+  height: unset;
+  width: unset;
+  color: #ff4105;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.undoVotes button:hover {
+  background-color: transparent;
+  color: #ff4105;
+  border: none;
+}

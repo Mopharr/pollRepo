@@ -1,0 +1,235 @@
+.cancle {
+  cursor: pointer;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.step p {
+  color: #000;
+  font-family: "Montserrat" sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+  width: 90%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalBody {
+  padding: 0 1.8rem;
+}
+
+.inputBox {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* .inputBox > .phone {
+  grid-column: 1/ -1;
+} */
+
+.dobSelects {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.customSelect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 15px;
+  border: 1px solid #da9e8b;
+  background-color: white;
+  font-size: 0.875rem;
+  font-family: Montserrat;
+  color: #333;
+  appearance: none;
+
+  /* Adding custom arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../../../asset/svg/downSel.svg") no-repeat right 10px center;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Adjust the position of the arrow */
+  background-size: 25px; /* Size of the arrow */
+}
+
+.customSelect:focus {
+  outline: none;
+  border-color: #80bdff; /* Focus border color */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.pdob {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0.75rem 0;
+}
+
+.stepControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.nextButton,
+.prevButton,
+.signUpButton {
+  padding: 1rem 0rem;
+  background-color: #010000;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prevButton,
+.signUpButton {
+  padding: 1rem 1.5rem;
+}
+
+.signUpButton {
+  background-color: #ff4105;
+}
+
+.signUpButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nextButton {
+  width: 100%;
+}
+
+.pGender {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0.75rem 0;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  margin-top: 0.6rem;
+  gap: 14px;
+  width: 100%;
+}
+
+.error {
+  color: #f04438;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.3rem;
+  font-family: Montserrat;
+}
+
+/* .people {
+  color: #3d3c3c;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142.9%;
+  letter-spacing: 0.48px;
+  margin: 0;
+  margin-top: 0.6rem;
+} */
+
+.tap {
+  color: #3d3c3c;
+  margin-top: 0.8rem;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142.9%; /* 34.296px */
+  letter-spacing: 0.48px;
+}
+
+.tap > a {
+  text-decoration: none;
+  color: #1976d2;
+}
+
+.countryBox {
+  border: 2px solid #da9e8b;
+  border-radius: 15px;
+}
+
+.countryInput {
+  border: none !important;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 18px 0.75rem 0.3125rem;
+  outline: none;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #262626;
+  width: 100%;
+}
+
+.countryInput::placeholder {
+  text-align: left;
+  color: #262626;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+@media (max-width: 500px) {
+  .cancle {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+  }
+  .step p {
+    font-size: 1em;
+  }
+  .modalBody {
+    margin-top: 0.7em;
+    padding: 0;
+  }
+  .pdob {
+    margin: 0;
+  }
+  .nextButton {
+    padding: 10px;
+  }
+  .prevButton,
+  .signUpButton {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .tap {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

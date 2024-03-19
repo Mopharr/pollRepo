@@ -1,0 +1,73 @@
+.wtfRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.wtfRight img {
+  width: 30px;
+  height: 30px;
+}
+.wtfRightUser {
+  margin: 0;
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wtfRightUserLight {
+  margin: 0;
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wtfHead {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.wtf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 26px;
+}
+
+.followBtn {
+  height: 30px;
+  color: #fff;
+  border-radius: 30px;
+  background: #0c0c0c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.showMore {
+  margin: 0;
+  color: #ff4105;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.wtfWrap {
+  background: #f8f8f8;
+  width: 95%;
+  border-radius: 20px;
+  padding: 10px;
+}

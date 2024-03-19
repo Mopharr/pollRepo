@@ -1,0 +1,125 @@
+.inputContainer {
+  position: relative;
+  border-radius: 15px;
+  background-color: #eaecef;
+}
+
+.inputContainer > div {
+  position: relative;
+}
+
+.inputContainer > p.error {
+  color: #f04438;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.3rem;
+  font-family: Montserrat;
+}
+
+.inputContainer > div .chevronDown {
+  pointer-events: none;
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button.toggle {
+  all: unset;
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #262626;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.inputContainer label {
+  --activeTop: 7px;
+  pointer-events: none;
+  position: absolute;
+  left: 1.4375rem;
+  top: 50%;
+  color: #050505;
+  font-family: Montserrat;
+  font-size: clamp(0.875rem, 0.5278rem + 1.1111vw, 1.3rem);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  transform: translateY(-50%);
+  transition: all 200ms ease-out;
+}
+
+.inputContainer ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  z-index: 5;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(11, 8, 43, 0.1);
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.inputContainer ul li {
+  font-size: 0.875rem;
+  line-height: 121%;
+  padding: 0.625rem 1.1875rem;
+  font-family: Montserrat;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputContainer ul li > svg {
+  font-size: 0.875rem;
+  color: #12b76a;
+}
+
+.inputContainer ul li:hover {
+  background: rgba(11, 8, 43, 0.1);
+}
+
+.inputContainer ul li.active {
+  background: rgba(11, 8, 43, 0.1);
+}
+
+.inputContainer:focus-within label {
+  top: var(--activeTop);
+  transform: translateY(0%);
+}
+
+.inputContainer:focus-within ul {
+  display: block;
+}
+
+label.active {
+  top: var(--activeTop);
+  transform: translateY(0%);
+}
+
+.inputContainer input {
+  background: transparent;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 1.0833rem + 1.3333vw, 2.15rem) 1.4375rem 0.3125rem;
+  border: 1px solid #afafaf;
+  outline: none;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.4444rem + 1.7778vw, 1.5rem);
+  color: #262626;
+}

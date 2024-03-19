@@ -1,0 +1,27 @@
+.footerLink .ul {
+  margin-top: 1.7rem;
+  list-style: none;
+}
+
+.footerLink a {
+  text-decoration: none;
+}
+
+.footerLink p {
+  font-weight: bold !important;
+}
+
+.footerLink p,
+.footerLink a {
+  color: #fff;
+  opacity: 0.6;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
+  line-height: 1.2rem;
+}
+
+.ul {
+  display: grid;
+  gap: 0.8rem;
+}

@@ -1,0 +1,289 @@
+.header {
+  background: #fff;
+  margin: 0;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: inherit;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 98%;
+  margin: auto;
+  height: 50px;
+  padding: 3em 0 1em;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  width: 40%;
+  height: 50px;
+  padding: 0 15px;
+  border-radius: 30px;
+  background: var(--serachbar);
+  margin-right: 43px;
+}
+
+.search {
+  width: 25px !important;
+  height: 25px !important;
+}
+.searchBar {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+}
+
+.searchIcon {
+  margin-right: 8px;
+}
+
+.login {
+  background: #ff4105;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 0.9375rem;
+  font-family: Montserrat;
+  border-radius: 30px;
+  text-align: center;
+  height: 2.5rem;
+  padding: 0 0.875rem;
+}
+.brandIcon {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  object-fit: cover;
+  margin-top: 1.5em;
+}
+
+.iconWrapper {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* in your style.module.css */
+.dropdownMenuWrap {
+  position: absolute;
+  top: 3.2rem;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: max-content;
+  border-radius: 15px;
+}
+
+.dropdownMenuTop {
+  display: flex;
+  padding-top: 15px;
+  padding-left: 34px;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 21px;
+  padding-bottom: 20px;
+  gap: 0.6rem;
+}
+
+.dropdownMenuTop p {
+  margin: 0;
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.dropdownMenuLink {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+}
+.authBtn {
+  all: unset;
+}
+
+.dropdownMenuLinkClass {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.dropdownMenuLinkClass p {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  padding-left: 13px;
+}
+
+.dropdownPollRank {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Width of the switch */
+  height: 34px; /* Height of the switch */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: grey; /* Switch background when it's off */
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #1976d2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.create {
+  margin-right: 15px;
+  background-color: #ff4105;
+  color: #fff;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 190px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  border: none;
+  padding: 11px;
+}
+
+.plus {
+  width: 24px !important;
+  height: 24px !important;
+  margin-top: -7px;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeIcon:hover,
+.homeIcon:focus {
+  border-bottom: 2px solid #ff4105;
+}
+
+.homeIcon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.ads {
+  background-color: #e0e0e0;
+  color: #000;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 15px;
+  width: 180px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  border: none;
+  padding: 11px;
+}
+
+.bells {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bellsIcon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+@media (max-width: 1024px) {
+  .laptopNav {
+    display: none;
+  }
+  .headerContainer {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 600px) {
+  .inputWrapper {
+    display: none;
+  }
+}
+.brandText {
+  display: none;
+}

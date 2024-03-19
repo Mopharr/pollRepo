@@ -1,0 +1,210 @@
+.trendP {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trendNig {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 11px;
+}
+
+.trendNig p {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.trendHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.trendHead p {
+  color: #262626;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 165.4%;
+}
+
+.trendWrap {
+  width: 95%;
+  background: #f8f8f8;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.trendWrap p {
+  margin: 0;
+}
+
+.trendMText {
+  color: #262626;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  /* line-height: 165.4%; */
+  width: 80%;
+}
+
+.trendVote {
+  color: #262626;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 165.4%;
+}
+
+.trendBox,
+.trendBox *,
+.trendBox *::before,
+.trendBox *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+  color: #14171a;
+}
+.trendBox {
+  display: grid;
+  gap: 0.7rem;
+  padding-top: 1.2rem;
+}
+
+.trendContainer {
+  text-decoration: none;
+}
+
+.trendContainer:last-child {
+  padding-bottom: 0.625rem !important;
+}
+.trendBottom {
+  display: flex;
+  align-items: center;
+}
+
+.trendBottom p {
+  display: flex;
+  align-items: center;
+  color: #262626;
+  text-align: justify;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+}
+.loading {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.threedot {
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer;
+}
+
+.dropdownItem {
+  cursor: pointer;
+  margin: 0;
+  font-size: 14px;
+}
+
+.dropdownItem:hover {
+  background-color: #f1edf5;
+}
+
+.dropdown {
+  position: absolute;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.cover {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  /* background-color: #e7dcf2; */
+  background-color: #fff;
+  z-index: 50;
+  width: 100%;
+}
+
+.searchBox {
+  position: sticky;
+  margin-left: 1rem;
+  margin-bottom: 0.4rem;
+  top: 1rem;
+  /* background-color: #e7dcf2; */
+  background-color: #fff;
+  z-index: 10;
+}
+
+.searchBox input {
+  background-color: transparent;
+  font-size: 0.75rem;
+  color: #262626;
+  font-weight: 300;
+  font-family: Montserrat;
+  padding: 0.4rem 0.4rem 0.4rem 1.65rem;
+  outline: none;
+  border: 1px solid #262626;
+  border-radius: 5px;
+}
+
+.searchBox svg {
+  color: #262626;
+  position: absolute;
+  left: 0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dropdown p {
+  display: flex;
+  align-items: center;
+  color: #262626;
+  text-align: justify;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 300;
+  padding: 5px 1rem;
+}
+
+.showMore {
+  margin: 0;
+  color: #ff4105;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

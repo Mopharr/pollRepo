@@ -1,0 +1,31 @@
+.explarePages {
+    padding-top: 2em;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    width: 95%;
+    margin: 0  auto 1em;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 30px;
+    background: var(--serachbar);
+  }
+ 
+  .search {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .searchBar {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .searchIcon {
+    margin-right: 8px;
+  }

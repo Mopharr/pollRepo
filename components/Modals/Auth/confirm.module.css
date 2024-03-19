@@ -1,0 +1,68 @@
+.check {
+  padding: 4rem;
+}
+
+.checkSub {
+  display: flex;
+  align-items: center;
+  gap: 3.4375rem;
+}
+
+.checkSub img {
+  background-color: #fcdcd2;
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.checkSub p {
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+
+.poll {
+  margin-top: 1.4rem;
+}
+
+.pollText {
+  width: 100%;
+  max-width: 675px;
+}
+
+.poll p {
+  color: #262626;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 149.9%; /* 35.976px */
+  letter-spacing: 1.68px;
+}
+
+.poll span {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.button {
+  display: flex;
+  border-radius: 30px;
+  background: #ff4105;
+  color: #fff !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 4.2rem;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  padding: 0.75rem 1.4rem;
+  cursor: pointer;
+}
