@@ -1,0 +1,153 @@
+{
+    "notifications": [
+      {
+        "id": "notif-1001",
+        "type": "follow",
+        "message": "{user} followed you.",
+        "timestamp": "2023-02-07T09:00:00Z",
+        "user": {
+          "id": "user-001",
+          "name": "JohnDoe",
+          "profile_picture": "john_doe_pic_url",
+          "profile_url": "https://example.com/users/johndoe"
+        }
+      },
+      {
+        "id": "notif-1002",
+        "type": "like",
+        "message": "{user} liked your post.",
+        "timestamp": "2023-02-07T10:15:00Z",
+        "user": {
+          "id": "user-002",
+          "name": "JaneSmith",
+          "profile_picture": "jane_smith_pic_url",
+          "profile_url": "https://example.com/users/janesmith"
+        },
+        "post": {
+          "id": "post-001",
+          "content": "This is the content of the post that was liked.",
+          "url": "https://example.com/posts/123"
+        }
+      },
+      {
+        "id": "notif-1003",
+        "type": "like",
+        "message": "{user} liked your reply.",
+        "timestamp": "2023-02-07T11:30:00Z",
+        "user": {
+          "id": "user-003",
+          "name": "MikeBrown",
+          "profile_picture": "mike_brown_pic_url",
+          "profile_url": "https://example.com/users/mikebrown"
+        },
+        "reply": {
+          "id": "reply-001",
+          "content": "This is the content of the reply that was liked.",
+          "url": "https://example.com/replies/456"
+        }
+      },
+      {
+        "id": "notif-1004",
+        "type": "comment",
+        "message": "{user} commented on your post.",
+        "timestamp": "2023-02-07T12:45:00Z",
+        "user": {
+          "id": "user-004",
+          "name": "SarahGreen",
+          "profile_picture": "sarah_green_pic_url",
+          "profile_url": "https://example.com/users/sarahgreen"
+        },
+        "post": {
+          "id": "post-002",
+          "content": "This is the content of the post that was commented on.",
+          "url": "https://example.com/posts/789"
+        },
+        "comment": {
+          "id": "comment-001",
+          "content": "Great post! Really enjoyed reading this.",
+          "url": "https://example.com/comments/1011"
+        }
+      },
+      {
+        "id": "notif-1005",
+        "type": "message",
+        "message": "{user} sent you a private message.",
+        "timestamp": "2023-02-08T09:00:00Z",
+        "user": {
+          "id": "user-005",
+          "name": "EmilyClark",
+          "profile_picture": "emily_clark_pic_url",
+          "profile_url": "https://example.com/users/emilyclark"
+        },
+        "message_details": {
+          "id": "message-001",
+          "content": "Hey, can we discuss the project update tomorrow?",
+          "url": "https://example.com/messages/123"
+        }
+      },
+      {
+        "id": "notif-1006",
+        "type": "event_invitation",
+        "message": "{user} invited you to an event: {event}.",
+        "timestamp": "2023-02-08T10:30:00Z",
+        "user": {
+          "id": "user-006",
+          "name": "DavidMiller",
+          "profile_picture": "david_miller_pic_url",
+          "profile_url": "https://example.com/users/davidmiller"
+        },
+        "event": {
+          "id": "event-001",
+          "name": "Weekly Team Sync",
+          "url": "https://example.com/events/456"
+        }
+      },
+      {
+        "id": "notif-1007",
+        "type": "group_join_request",
+        "message": "{user} requested to join your group: {group}.",
+        "timestamp": "2023-02-09T11:45:00Z",
+        "user": {
+          "id": "user-007",
+          "name": "AlexTaylor",
+          "profile_picture": "alex_taylor_pic_url",
+          "profile_url": "https://example.com/users/alextaylor"
+        },
+        "group": {
+          "id": "group-001",
+          "name": "React Developers",
+          "url": "https://example.com/groups/reactdevs"
+        }
+      },
+      {
+        "id": "notif-1008",
+        "type": "post_share",
+        "message": "{user} shared your post.",
+        "timestamp": "2023-02-09T12:00:00Z",
+        "user": {
+          "id": "user-008",
+          "name": "SophiaJones",
+          "profile_picture": "sophia_jones_pic_url",
+          "profile_url": "https://example.com/users/sophiajones"
+        },
+        "post": {
+          "id": "post-003",
+          "content": "Exploring the new React features in the latest update.",
+          "url": "https://example.com/posts/789"
+        }
+      },
+      {
+        "id": "notif-1009",
+        "type": "achievement",
+        "message": "Congratulations! You've earned a new badge: {achievement}.",
+        "timestamp": "2023-02-10T14:15:00Z",
+        "achievement": {
+          "id": "achievement-001",
+          "name": "React Mastery",
+          "description": "Awarded for contributing 50 helpful answers in the React forum.",
+          "url": "https://example.com/achievements/reactmastery"
+        }
+      }
+    ]
+  }
+  
