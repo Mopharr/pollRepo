@@ -6,8 +6,8 @@ import React, {
   useCallback,
   ReactNode,
 } from "react";
+import { useRouter } from "next/router";
 import { axiosPublic, axiosPrivate } from "../library/axios";
-import { useSearchParams } from "react-router-dom";
 import { PollData } from "../types/fetchPolls.type";
 import { handlePrivateRequest } from "../utils/http";
 import { UserAuth } from "./AuthContext";
@@ -83,18 +83,19 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
 
   const { isAuthenticated } = UserAuth();
 
-  const [urlSearchParams, setUrlSearchParams] = useSearchParams();
-  const searchValue = urlSearchParams.get("interests");
+  const router = useRouter();
+  const searchValue = router.query.interests as string | undefined;
+  // const searchValue = urlSearchParams.get("interests");
   const topicsQuery = searchValue ? `&interests=${searchValue}` : "";
 
   const updateSearchParams = (newParams: { interests: string }) => {
-    const existingParams = Object.fromEntries(urlSearchParams.entries());
-    const updatedParams = { ...existingParams, ...newParams };
-    setUrlSearchParams(updatedParams);
+    const currentParams = { ...router.query }; // Get current query parameters
+    const updatedParams = { ...currentParams, ...newParams }; // Merge with new parameters
+    router.push({ pathname: router.pathname, query: updatedParams }); // Update URL with new parameters
   };
   const fetchData = useCallback(async () => {
     localStorage.removeItem("votedPolls");
-    localStorage.removeItem("votedChoices")
+    localStorage.removeItem("votedChoices");
     setIsLoading(true);
     try {
       const response = isAuthenticated
@@ -145,7 +146,6 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     }
     setData(filteredData);
   }, [filters, originalData]);
-
 
   useEffect(() => {
     // This runs anytime a topic is selected

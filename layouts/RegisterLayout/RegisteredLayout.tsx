@@ -3,18 +3,18 @@ import HomeLayout from "../Home/HomeLayout";
 // import NotificationLayout from "../Notification/NotificationLayout";
 import ProfileLayout from "../ProfileLayout/ProfileLayout";
 import LegecyPollLayout from "../LegacyPollLayout/LegecyPollLayout";
-import NotFoundPage from "../../pages/PageNotFound";
-import EditProfile from "../../pages/EditProfile";
+import NotFoundPage from "@/pages/PageNotFound";
+import EditProfile from "@/pages/EditProfile";
 import DashboardLayout from "../DashboardLayout/DashboardLayout";
 import PollDetailsLayout from "../PollDetailsLayout/PollsDetailLayout";
 import PrivacyPolicyLayout from "../PrivacyLayout/PrivacyPolicyLayout";
 import TosLayout from "../PrivacyLayout/TosLayout";
-import VerifyEmail from "../../pages/VerifyEmail";
-import AllTrends from "../../pages/AllTrends";
-import About from "../../pages/About";
+import VerifyEmail from "@/pages/VerifyEmail";
+import AllTrends from "@/pages/AllTrends";
+import About from "@/pages/About";
 import FooterLayout from "../FooterLayout/FooterLayout";
-import WatchList from "../../pages/WatchList";
-import Explore from "../../pages/Explore";
+import WatchList from "@/pages/WatchList";
+import Explore from "@/pages/Explore";
 
 const RegisteredLayout = () => {
   return (

@@ -353,11 +353,11 @@ line-height: normal;
   text-align: center;
 }
 
-/* styles.module.css */
+/* styles.module.css
 :global(.ql-toolbar) {
 border: none !important;
 
-}
+} */
 
 .customQuillContainer :global(.ql-container) {
  border: none !important;

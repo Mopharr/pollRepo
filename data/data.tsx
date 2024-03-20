@@ -1,9 +1,11 @@
-import userPP1 from "../asset/image/user1.png";
-import userPP2 from "../asset/image/user2.png";
-import userPP3 from "../asset/image/user3.png";
-import optionImage1 from "../asset/image/user3.png";
-import LeoMessi from "../asset/image/leo messi.jpeg";
+import userPP1 from "@/asset/image/user1.png";
+import userPP2 from "@/asset/image/user2.png";
+import userPP3 from "@/asset/image/user3.png";
+import optionImage1 from "@/asset/image/user3.png";
+import LeoMessi from "@/asset/image/leo messi.jpeg";
 import moment from "moment";
+import Image from "next/image";
+
 
 type OptionType = {
   name: string;
@@ -53,7 +55,7 @@ const MessiDescription = () => {
         <li>All-time top scorer for FC Barcelona</li>
         <li>All-time top scorer in La Liga</li>
       </ul>
-      <img src={LeoMessi} alt="Lionel Messi" />{" "}
+      <Image src={LeoMessi} alt="Lionel Messi" />{" "}
     </div>
   );
 };

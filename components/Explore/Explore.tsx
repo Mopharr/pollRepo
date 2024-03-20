@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { ReactComponent as Explor } from "../../asset/svg/explore.svg";
+// import { ReactComponent as Explor } from "@/asset/svg/explore.svg";
 import { Button } from "antd";
-import { ReactComponent as Ads } from "../../asset/svg/promotion.svg";
+// import { ReactComponent as Ads } from "@/asset/svg/promotion.svg"
+import Explor from "@/asset/svg/explore.svg";
+import Ads from "@/asset/svg/promotion.svg";
+
 import { CiCirclePlus } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 

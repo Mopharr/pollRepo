@@ -7,6 +7,7 @@ import OurStory from "../asset/image/OurStory.jpg";
 import World from "../asset/image/world.jpg";
 import JoinUs from "../asset/image/JoinUs.jpg";
 import styles from "../styles/about.module.css";
+import Image from "next/image";
 const About = () => {
   return (
     <>
@@ -27,7 +28,7 @@ const About = () => {
           <Container className={styles.containerAbout}>
             <div className={styles.aboutFlex}>
               <div className={styles.imageBox}>
-                <img src={Mission} alt="arrow_board" />
+                <Image src={Mission} alt="arrow_board" />
               </div>
 
               <div className={styles.infoBox}>
@@ -47,7 +48,7 @@ const About = () => {
 
             <div className={styles.aboutFlex}>
               <div className={styles.imageBox}>
-                <img src={Why} alt="portrait" />
+                <Image src={Why} alt="portrait" />
               </div>
 
               <div className={styles.infoBox}>
@@ -67,7 +68,7 @@ const About = () => {
 
             <div className={styles.aboutFlex}>
               <div className={styles.imageBox}>
-                <img src={Gathering} alt="portrait" />
+                <Image src={Gathering} alt="portrait" />
               </div>
 
               <div className={styles.infoBox}>
@@ -86,7 +87,7 @@ const About = () => {
 
             <div className={styles.aboutFlex}>
               <div className={styles.imageBox}>
-                <img src={OurStory} alt="portrait" />
+                <Image src={OurStory} alt="portrait" />
               </div>
 
               <div className={styles.infoBox}>
@@ -105,7 +106,7 @@ const About = () => {
 
             <div className={styles.aboutFlex}>
               <div className={styles.imageBox}>
-                <img src={World} alt="portrait" />
+                <Image src={World} alt="portrait" />
               </div>
 
               <div className={styles.infoBox}>
@@ -124,7 +125,7 @@ const About = () => {
 
             <div className={styles.aboutFlex}>
               <div className={styles.imageBox}>
-                <img src={JoinUs} alt="portrait" />
+                <Image src={JoinUs} alt="portrait" />
               </div>
 
               <div className={styles.infoBox}>

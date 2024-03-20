@@ -1,15 +1,14 @@
-import styles from "../../styles/style.module.css";
+import styles from "@/styles/style.module.css";
 import { Outlet } from "react-router-dom";
-import { FilterProvider } from "../../context/FilterContext";
-import TrendsAndFollow from "../TrendsAndFollow/TrendsAndFollow";
-import AuthSideBar from "../../components/Sidebar/AuthSideBar";
-import { TrendingPollsProvider } from "../../context/TrendingPollsContext";
-import useScroll from "../../hooks/useScroll";
-import { UserAuth } from "../../context/AuthContext";
+import { FilterProvider } from "@/context/FilterContext";
+import TrendsAndFollow from "@/layouts/TrendsAndFollow/TrendsAndFollow";
+import AuthSideBar from "@/components/Sidebar/AuthSideBar";
+import { TrendingPollsProvider } from "@/context/TrendingPollsContext";
+import useScroll from "@/hooks/useScroll";
+import { UserAuth } from "@/context/AuthContext";
 
-const DashboardLayout = () => {
+const DashboardLayout = ({ children }: any) => {
   const { isFixed: trendIsFixed, elementRef: trendRef } = useScroll();
-
   const { isAuthenticated } = UserAuth();
 
   return (
@@ -17,21 +16,11 @@ const DashboardLayout = () => {
       <FilterProvider>
         <div className={styles.layoutMagic}>
           <div className={styles.layout}>
-            <div
-              className={styles.explore}
-
-              //   ${
-              //     exploreIsFixed ? styles.exploreFixed : ""
-              //  }
-              // }
-              // ref={exploreRef}
-            >
+            <div className={styles.explore}>
               <AuthSideBar />
             </div>
             <div className={styles.scrollableContent}>
-              <div className={styles.mainContent}>
-                <Outlet />
-              </div>
+              <div className={styles.mainContent}>{children}</div>
               <div
                 className={`${styles.trend} ${
                   trendIsFixed && isAuthenticated

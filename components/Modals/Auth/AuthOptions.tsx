@@ -8,6 +8,7 @@ import { UserAuth } from "../../../context/AuthContext";
 import { reachGoogle } from "../../../utils/reachGoogle";
 import { Link } from "react-router-dom";
 import google from "../../../asset/image/google.png";
+import Image from "next/image";
 
 type Props = {
   onClose: () => void;
@@ -29,9 +30,9 @@ const AuthOptions: FC<Props> = ({ onClose }: Props) => {
 
   return (
     <>
-      <img onClick={onClose} src={Cancle} className={styles.cancle} alt="" />
+      <Image onClick={onClose} src={Cancle} className={styles.cancle} alt="" />
       <div className={styles.container}>
-        <img src={Logo} className={styles.LogoImage} alt="" />
+        <Image src={Logo} className={styles.LogoImage} alt="" />
         <h4 className={styles.h4o}>
           Join <span style={{ color: "#ff4105" }}>Poll</span>
           <span style={{ color: "#006ca5" }}>Repo</span> Today
@@ -47,7 +48,7 @@ const AuthOptions: FC<Props> = ({ onClose }: Props) => {
             onClick={reachGoogle}
           >
             {/* <FaGoogle className={styles.authLogo} size={28} /> */}
-            <img src={google} alt="" />
+            <Image src={google} alt="" />
             Continue with Google
           </button>
 

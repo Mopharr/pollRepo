@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styles from "./Policy.module.css";
 
 const Policy = () => {
   return (
     <div className={styles.policyWrap}>
       <div className={styles.policy}>
-        <Link to="/privacy">Privacy Policy</Link>
-        <Link to="/sitemap">Site Map</Link>
-        <Link to="/privacy"> Accessibility</Link>
-        <Link to="/tos"> User Agreement </Link>
-        <Link to="/tos"> Terms of Service</Link>
-        <Link to="/about">About</Link>
+        <Link href="/privacy">Privacy Policy</Link>
+        <Link href="/sitemap">Site Map</Link>
+        <Link href="/privacy"> Accessibility</Link>
+        <Link href="/tos"> User Agreement </Link>
+        <Link href="/tos"> Terms of Service</Link>
+        <Link href="/about">About</Link>
       </div>
 
       <div className={styles.whiteLine}></div>

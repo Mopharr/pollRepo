@@ -2,13 +2,13 @@ import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "../styles/explore.module.css";
 import Trends from "../components/Trends/Trends";
-import { ReactComponent as Loading } from "../asset/svg/LoadingIcon.svg";
-import { ReactComponent as Search } from "../asset/svg/search.svg";
-import { ReactComponent as Onedot } from "../asset/svg/one_dot.svg";
-import TopicsToFollow from "../components/TopicsToFollow/TopicsToFollow";
-import { useFilterTrendingPolls } from "../context/TrendingPollsContext";
-import { formatNumber } from "../helpers";
-import PollsList from "../components/PollsList/PollsList";
+import Loading from "@/asset/svg/LoadingIcon.svg";
+import Search from "@/asset/svg/search.svg";
+import Onedot from "@/asset/svg/one_dot.svg";
+import TopicsToFollow from "@/components/TopicsToFollow/TopicsToFollow";
+import { useFilterTrendingPolls } from "@/context/TrendingPollsContext";
+import { formatNumber } from "@/helpers";
+import PollsList from "@/components/PollsList/PollsList";
 
 const Explore = () => {
   const { data, setCountryCode } = useFilterTrendingPolls();

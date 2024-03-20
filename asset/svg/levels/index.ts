@@ -1,0 +1,16 @@
+export { ReactComponent as Agbaakin } from "./Agbaakin.svg";
+export { ReactComponent as Alapini } from "./Alapini.svg";
+export { ReactComponent as Ashigaru } from "./Ashigaru.svg";
+export { ReactComponent as Ashipa } from "./Ashipa.svg";
+export { ReactComponent as Bashorun } from "./Bashorun.svg";
+export { ReactComponent as Daimyo } from "./Daimyo.svg";
+export { ReactComponent as Emperor } from "./Emperor.svg";
+export { ReactComponent as Hatamoto } from "./Hatamoto.svg";
+export { ReactComponent as Kobusho } from "./Kobusho.svg";
+export { ReactComponent as Ninja } from "./Ninja.svg";
+export { ReactComponent as Ronin } from "./Ronin.svg";
+export { ReactComponent as Samurai } from "./Samurai.svg";
+export { ReactComponent as Shogun } from "./Shogun.svg";
+export { ReactComponent as Shokunin } from "./Shokunin.svg";
+export { ReactComponent as Sohei } from "./Sohei.svg";
+export { ReactComponent as Legend } from "./Legend.svg";

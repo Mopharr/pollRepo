@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import NotificationData from "../data/notifications.json";
-import Imga from "../asset/image/leo messi.jpeg";
-import { ReactComponent as LikeIcon } from "../asset/svg/like.svg";
-import { ReactComponent as CommentIcon } from "../asset/svg/FashionIcon.svg";
-import { ReactComponent as MessageIcon } from "../asset/svg/LegacyIcon.svg";
-import { ReactComponent as FollowIcon } from "../asset/svg/follow.svg";
-// import CommentIcon from "../asset/svg/comment.png";
+import NotificationData from "@/data/notifications.json";
+import Imga from "@/asset/image/leo messi.jpeg";
+import LikeIcon from "@/asset/svg/like.svg";
+import CommentIcon from "@/asset/svg/FashionIcon.svg";
+import MessageIcon from "@/asset/svg/LegacyIcon.svg";
+import FollowIcon from "@/asset/svg/follow.svg";
+import Image from "next/image";
+// import CommentIcon from "@/asset/svg/comment.png";
 import { FaRegComment } from "react-icons/fa";
 import { TiMessages } from "react-icons/ti";
-import styles from "../styles/Notification.module.css";
-import { notifications } from "../data/notifications.react";
+import styles from "@/styles/Notification.module.css";
+import { notifications } from "@/data/notifications.react";
 
 // Define interfaces to match the new JSON structure
 interface User {
@@ -175,7 +176,7 @@ const Notification = () => {
             <div className={styles.notificationHeader}>
               <div>{renderIcon(notification)}</div>
               <div>
-                <img
+                <Image
                   // src={notification.user.profile_picture}
                   src={Imga}
                   alt={notification.user.name}

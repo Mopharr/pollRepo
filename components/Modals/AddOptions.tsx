@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "../../styles/AddOption.module.css";
+import styles from "@/styles/AddOption.module.css";
 import { Modal, Button } from "antd";
-import { ReactComponent as DescriptionIcon } from "../../asset/svg/decscrip.svg";
+import DescriptionIcon  from "@/asset/svg/decscrip.svg";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import dummy from "../../asset/image/dummy.webp";
+import dummy from "@/asset/image/dummy.webp";
 
 const AddOptions = ({
   handleOptionClick,
@@ -50,10 +50,10 @@ const AddOptions = ({
     let urlToOpen = mediaUrl; // By default, use the provided mediaUrl
 
     // Check if the choice icon URL is the default icon
-    if (mediaUrl === "/default-icon.png") {
-      // If it is the default icon, use the dummy image
-      urlToOpen = dummy;
-    }
+    // if (mediaUrl === "/default-icon.png") {
+    //   // If it is the default icon, use the dummy image
+    //   urlToOpen = dummy;
+    // }
 
     const extension = urlToOpen.split(".").pop()?.toLowerCase(); // Extract file extension
 

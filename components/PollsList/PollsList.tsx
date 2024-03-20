@@ -4,12 +4,12 @@ import styles from "../MainConent/styles.module.css";
 import { TiBookmark } from "react-icons/ti";
 import { LiaStreetViewSolid } from "react-icons/lia";
 import { FaRegShareFromSquare } from "react-icons/fa6";
-import { ReactComponent as DescriptionIcon } from "../../asset/svg/decscrip.svg";
+import DescriptionIcon from "../../asset/svg/decscrip.svg";
 import { Button, Modal } from "antd";
 import { GoDotFill } from "react-icons/go";
 import AddOptions from "../Modals/AddOptions";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 // import ShareModal from "../Modals/ShareModal";
 import { useVote } from "../../hooks/poll/useVote";
 import dummy from "../../asset/image/dummy.webp";
@@ -17,7 +17,7 @@ import { Choice, PollData } from "../../types/fetchPolls.type";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CircularProgress from "@mui/material/CircularProgress";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { abbreviateNumber } from "js-abbreviation-number";
 import useNotify from "../../hooks/useNotify";
 import { handlePrivateRequest } from "../../utils/http";
@@ -26,7 +26,7 @@ import Iframe from "react-iframe";
 import MediaUrl from "../Modals/MediaUrl";
 import Crown from "../../asset/image/crown.png";
 import YouTube, { YouTubeProps } from "react-youtube";
-
+import Image from "next/image";
 
 interface PollsListProps {
   data: PollData[];
@@ -344,12 +344,6 @@ const PollsList: React.FC<PollsListProps> = ({
   const handleOpenMedia = (mediaUrl: string) => {
     let urlToOpen = mediaUrl; // By default, use the provided mediaUrl
 
-    // Check if the choice icon URL is the default icon
-    if (mediaUrl === "/default-icon.png") {
-      // If it is the default icon, use the dummy image
-      urlToOpen = dummy;
-    }
-
     const extension = urlToOpen.split(".").pop()?.toLowerCase();
     const extractVideoId = (url: string) => {
       const match = url.match(
@@ -412,10 +406,10 @@ const PollsList: React.FC<PollsListProps> = ({
       return "No Deadline";
     }
   };
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handlePollClick = (data: any) => {
-    navigate(`/${data.slug}`);
+    router.push(`/${data.slug}`);
   };
   const loadingCircle = () => {
     return (
@@ -452,16 +446,21 @@ const PollsList: React.FC<PollsListProps> = ({
           <div className={styles.pollList} key={poll.id}>
             <div className={styles.pollWrapH}>
               <div className={styles.pollWrap}>
-                <Link to={`/profile/${poll.author_info.username}`}>
-                  <img
-                    src={poll.author_info.profile_picture}
+                <Link href={`/profile/${poll.author_info.username}`}>
+                  <Image
+                    src={
+                      poll.author_info.profile_picture ||
+                      "/path/to/default/profile_picture"
+                    }
                     className={styles.HeadImage}
+                    width={30}
+                    height={30}
                     alt=""
                   />
                 </Link>
                 <div className={styles.nameDes}>
                   <div className={styles.nameFollow}>
-                    <Link to={`/profile/${poll.author_info.username}`}>
+                    <Link href={`/profile/${poll.author_info.username}`}>
                       <span className={styles.userName}>
                         {poll.author_info.username}
                       </span>
@@ -492,7 +491,7 @@ const PollsList: React.FC<PollsListProps> = ({
                     dangerouslySetInnerHTML={{ __html: poll.question }}
                     onClick={() => handlePollClick(poll)}
                   ></div>
-                  {poll.is_legacy ? <img src={Crown} alt="" /> : null}
+                  {poll.is_legacy ? <Image src={Crown} alt="" /> : null}
                 </div>
 
                 <div className={styles.textContentWithButton}>
@@ -542,7 +541,7 @@ const PollsList: React.FC<PollsListProps> = ({
                                 handleOpenMedia(choice.choice_icon_url)
                               }
                             >
-                              <img
+                              <Image
                                 src={choice.choice_icon_thumbnail}
                                 className={styles.HeadImage}
                                 alt=""
@@ -566,9 +565,7 @@ const PollsList: React.FC<PollsListProps> = ({
                                       mediaUrl.endsWith(".mkv") ? (
                                       // Video player
                                       <video controls>
-                                        <source
-                                          src={mediaUrl ? mediaUrl : dummy}
-                                        />
+                                        <source src={mediaUrl} />
                                         Your browser does not support the video
                                         tag.
                                       </video>
@@ -576,7 +573,7 @@ const PollsList: React.FC<PollsListProps> = ({
                                       // Audio player
                                       <audio controls>
                                         <source
-                                          src={mediaUrl ? mediaUrl : dummy}
+                                          src={mediaUrl}
                                           type="audio/mp3"
                                         />
                                         Your browser does not support the audio
@@ -584,8 +581,10 @@ const PollsList: React.FC<PollsListProps> = ({
                                       </audio>
                                     ) : (
                                       <div>
-                                        <img
-                                          src={mediaUrl ? mediaUrl : dummy}
+                                        <Image
+                                          src={mediaUrl}
+                                          width={40}
+                                          height={40}
                                           alt="Media"
                                         />
                                       </div>
@@ -630,9 +629,10 @@ const PollsList: React.FC<PollsListProps> = ({
                               className={styles.optionsOutside}
                               onClick={() => handleOptionClick(poll.id, index)}
                             >
-                              <SvgIcon
-                                as={DescriptionIcon}
+                              <Image
+                                src={DescriptionIcon}
                                 className={styles.DescriptionIcon}
+                                alt=""
                               />
                             </Button>
                           </div>
@@ -715,7 +715,7 @@ const PollsList: React.FC<PollsListProps> = ({
                 ) : null}
               </div>
               <div className={styles.lcs}>
-                {/* <Link to={`/home/${poll.slug}`} className={styles.hotLink}>
+                {/* <Link href={`/home/${poll.slug}`} className={styles.hotLink}>
                   <p title="comment">
                     <FaRegComment size={18} />
                     {abbreviateNumber(poll.comments_count, 2)}

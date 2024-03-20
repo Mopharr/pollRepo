@@ -6,7 +6,7 @@ import {
 } from "../utils/validateInput";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import styles from "../styles/passwordreset.module.css";
-import { type Data } from "./ForgotPassword";
+import { type Data } from "./auth/forgotpassword";
 import { handlePublicRequest } from "../utils/http";
 import useNotify from "../hooks/useNotify";
 import { useNavigate } from "react-router-dom";

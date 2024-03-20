@@ -4,11 +4,11 @@ import {
   help,
   developer,
   business,
-} from "../../constants/footer";
+} from "@/constants/footer";
 import { Link } from "react-router-dom";
-import styles from "../../styles/privacy.module.css";
-import { Container } from "../../ui";
-import FooterLinks from "../../ui/FooterLinks/FooterLinks";
+import styles from "@/styles/privacy.module.css";
+import { Container } from "@/ui";
+import FooterLinks from "@/ui/FooterLinks/FooterLinks";
 
 const Footer = () => {
   return (

@@ -1,20 +1,23 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./Sidebar.module.css";
-import { ReactComponent as FilterIcon } from "../../asset/svg/filterIcon.svg";
-import { ReactComponent as WatchList } from "../../asset/svg/watchList.svg";
-import { ReactComponent as DownIcon } from "../../asset/svg/down.svg";
+import FilterIcon from "@/asset/svg/filterIcon.svg";
+import WatchList from "@/asset/svg/watchList.svg";
+import DownIcon from "@/asset/svg/down.svg";
 import { IoHomeSharp } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { Switch } from "antd";
 import { CiCirclePlus } from "react-icons/ci";
-// import { ReactComponent as Bell } from "../../asset/svg/bell.svg";
-import { ReactComponent as Ads } from "../../asset/svg/promotion.svg";
-import { useFilter, FilterState } from "../../context/FilterContext";
-import categoriesData from "../../data/topics.json";
+// import  Bell  from "@/asset/svg/bell.svg";
+import Ads from "@/asset/svg/promotion.svg";
+import { useFilter, FilterState } from "@/context/FilterContext";
+import categoriesData from "@/data/topics.json";
 import * as FontAwesomeIcons from "react-icons/fa";
 import { LiaTimesSolid } from "react-icons/lia";
-import { UserAuth } from "../../context/AuthContext";
+import { UserAuth } from "@/context/AuthContext";
+import Image from "next/image";
 
 interface NavLinkProps {
   isActive: boolean;
@@ -25,7 +28,7 @@ type DropdownState = {
 };
 
 const AuthSideBar = () => {
-  const location = useLocation();
+  const router = useRouter();
   const { filters, setFilters } = useFilter();
   const [hoveredNavLink, setHoveredNavLink] = useState<string | null>(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState<string | null>(
@@ -38,10 +41,10 @@ const AuthSideBar = () => {
 
   const { updateSearchParams } = useFilter();
 
-  const isWatchListPage = location.pathname === "/watchlist";
-  const isTrendsPage = location.pathname === "/trends";
-  const isNotificationPage = location.pathname === "/notification";
-  const isDetailPage = location.pathname.includes("me/");
+  const isWatchListPage = router.pathname === "/watchlist";
+  const isTrendsPage = router.pathname === "/trends";
+  const isNotificationPage = router.pathname === "/notification";
+  const isDetailPage = router.pathname.includes("me/");
 
   const handleToggleFilter = (filterName: keyof FilterState) => {
     if (!isAuthenticated) {
@@ -69,14 +72,6 @@ const AuthSideBar = () => {
 
   const handleMouseLeave = () => {
     setHoveredNavLink(null);
-  };
-
-  type SvgIconProps = React.SVGProps<SVGSVGElement> & {
-    as: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  };
-
-  const SvgIcon: React.FC<SvgIconProps> = ({ as: SvgComponent, ...props }) => {
-    return <SvgComponent {...props} width={18} height={18} color="red" />;
   };
 
   const getNavLinkClass = ({ isActive }: NavLinkProps) =>
@@ -116,10 +111,10 @@ const AuthSideBar = () => {
   return (
     <>
       <div className={styles.sidebar1}>
-        <NavLink
-          to={isAuthenticated ? "home" : ""}
+        <Link
+          href={isAuthenticated ? "home" : ""}
           className={`${getNavLinkClass} ${styles.mobileNav} ${
-            location.pathname === "/home" ? styles.activeLink : ""
+            router.pathname === "/home" ? styles.activeLink : ""
           }`}
           onMouseEnter={() => handleMouseEnter("home")}
           onMouseLeave={handleMouseLeave}
@@ -136,12 +131,12 @@ const AuthSideBar = () => {
               <span className={styles.tooltip}>Home</span>
             )}
           </p>
-        </NavLink>
+        </Link>
 
-        <NavLink
-          to={isAuthenticated ? "explore" : ""}
+        <Link
+          href={isAuthenticated ? "explore" : ""}
           className={`${getNavLinkClass} ${styles.mobileNav} ${
-            location.pathname === "/explore" ? styles.activeLink : ""
+            router.pathname === "/explore" ? styles.activeLink : ""
           }`}
           onMouseEnter={() => handleMouseEnter("explore")}
           onMouseLeave={handleMouseLeave}
@@ -158,7 +153,7 @@ const AuthSideBar = () => {
               <span className={styles.tooltip}>Explore</span>
             )}
           </p>
-        </NavLink>
+        </Link>
         <div
           className={`${styles.dropdownHeader} ${getNavLinkClass}`}
           onClick={toggleFilterDropdown}
@@ -171,7 +166,7 @@ const AuthSideBar = () => {
               isActive: hoveredNavLink === "filter",
             })}
           >
-            <SvgIcon as={FilterIcon} className={styles.filterIcons} />
+            <Image src={FilterIcon} className={styles.filterIcons} alt="" />
             <span className={styles.filterr}></span>
 
             <span style={{ fontSize: "20px", fontWeight: "700" }}>Filters</span>
@@ -179,7 +174,7 @@ const AuthSideBar = () => {
               <span className={styles.tooltip}>Filter</span>
             )}
           </p>
-          <SvgIcon as={DownIcon} className={styles.filterr} />
+          <Image src={DownIcon} className={styles.filterr} alt="" />
         </div>
         <div
           className={`${
@@ -218,10 +213,10 @@ const AuthSideBar = () => {
         </div>
 
         {isAuthenticated && (
-          <NavLink
-            to="/watchlist"
+          <Link
+            href="/watchlist"
             className={`${getNavLinkClass}  ${
-              location.pathname === "/watchlist" ? styles.activeLink : ""
+              router.pathname === "/watchlist" ? styles.activeLink : ""
             }`}
             onMouseEnter={() => handleMouseEnter("watchlist")}
             onMouseLeave={handleMouseLeave}
@@ -231,9 +226,10 @@ const AuthSideBar = () => {
                 isActive: hoveredNavLink === "watchlist",
               })}
             >
-              <SvgIcon
-                as={WatchList}
+              <Image
+                src={WatchList}
                 style={{ width: "25px", height: "25px" }}
+                alt=""
               />
               <span style={{ fontSize: "21px", fontWeight: "600" }}>
                 Watchlist
@@ -242,14 +238,14 @@ const AuthSideBar = () => {
                 <span className={styles.tooltip}>Watchlist</span>
               )}
             </p>
-          </NavLink>
+          </Link>
         )}
 
         {/* {isAuthenticated && (
-          <NavLink
-            to="notification"
+           <Link
+           href="notification"
             className={`${getNavLinkClass} ${styles.mobileNav}${
-              location.pathname === "/notification" ? styles.activeLink : ""
+              router.pathname === "/notification" ? styles.activeLink : ""
             } `}
             onMouseEnter={() => handleMouseEnter("notification")}
             onMouseLeave={handleMouseLeave}
@@ -259,7 +255,7 @@ const AuthSideBar = () => {
                 isActive: hoveredNavLink === "notification",
               })}
             >
-              <SvgIcon as={Bell} style={{ width: "25px", height: "25px" }} />
+              <Image as={Bell} style={{ width: "25px", height: "25px" }} alt=""/>
               <span style={{ fontSize: "20px", fontWeight: "700" }}>
                 Notification
               </span>
@@ -267,14 +263,14 @@ const AuthSideBar = () => {
                 <span className={styles.tooltip}>Notification</span>
               )}
             </p>
-          </NavLink>
+          </Link>
         )} */}
 
         {isAuthenticated && (
-          <NavLink
-            to="advertise"
+          <Link
+            href="advertise"
             className={`${getNavLinkClass} ${styles.mobileNav} ${
-              location.pathname === "/advertise" ? styles.activeLink : ""
+              router.pathname === "/advertise" ? styles.activeLink : ""
             } `}
             onMouseEnter={() => handleMouseEnter("advertise")}
             onMouseLeave={handleMouseLeave}
@@ -284,7 +280,11 @@ const AuthSideBar = () => {
                 isActive: hoveredNavLink === "advertise",
               })}
             >
-              <SvgIcon as={Ads} style={{ width: "25px", height: "25px" }} />
+              <Image
+                src={Ads}
+                style={{ width: "25px", height: "25px" }}
+                alt=""
+              />
               <span style={{ fontSize: "20px", fontWeight: "700" }}>
                 Advertise
               </span>
@@ -292,24 +292,26 @@ const AuthSideBar = () => {
                 <span className={styles.tooltip}>advertise</span>
               )}
             </p>
-          </NavLink>
+          </Link>
         )}
 
         <div
           className={`${getNavLinkClass} ${styles.mobileNav}`}
           onMouseEnter={() => handleMouseEnter("create")}
           onMouseLeave={handleMouseLeave}
-          onClick={handleAuthCheck}
+          // onClick={handleAuthCheck}
         >
           <p
             className={getNavLinkClass({
               isActive: hoveredNavLink === "create",
             })}
           >
-            <SvgIcon
-              as={CiCirclePlus}
+            <Image
+              src={CiCirclePlus}
               style={{ width: "25px", height: "25px" }}
+              alt=""
             />
+
             <span style={{ fontSize: "20px", fontWeight: "700" }}>
               Create Polls
             </span>
@@ -341,7 +343,7 @@ const AuthSideBar = () => {
                     </span>
 
                     <div>
-                      <SvgIcon as={DownIcon} />
+                      <Image src={DownIcon} alt="" />
                     </div>
                   </div>
 

@@ -1,12 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
 import Trends from "../../components/Trends/Trends";
 import WhoToFollow from "../../components/WhoToFollow/WhoToFollow";
 import styles from "../../styles/style.module.css";
 import Policy from "../../components/Policy/Policy";
 
 const TrendsAndFollow = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useRouter();
 
   const isNotWatchList = pathname !== "/watchlist";
   return (

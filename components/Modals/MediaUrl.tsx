@@ -4,6 +4,8 @@ import styles from "../MainConent/styles.module.css";
 import dummy from "../../asset/image/dummy.webp";
 import Iframe from "react-iframe";
 import YouTube, { YouTubeProps } from "react-youtube";
+import Image from "next/image";
+
 
 
 const MediaUrl = ({ mediaUrl, handleOpenMedia }: any) => {
@@ -64,7 +66,7 @@ const MediaUrl = ({ mediaUrl, handleOpenMedia }: any) => {
           </audio>
         ) : (
           <div>
-            <img src={mediaUrl ? mediaUrl : dummy} alt="Media" />
+            <Image src={mediaUrl ? mediaUrl : dummy} alt="Media" />
           </div>
         )}
       </div>

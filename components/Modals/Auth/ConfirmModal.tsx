@@ -3,6 +3,7 @@ import { ModalWrapper } from "../../../ui";
 import check from "../../../asset/svg/check.svg";
 import { UserAuth } from "../../../context/AuthContext";
 import styles from "./confirm.module.css";
+import Image from "next/image";
 
 type Props = {
   show: boolean;
@@ -22,7 +23,7 @@ const ConfirmModal: FC<Props> = ({ show }) => {
     <ModalWrapper onClose={handleGotItClick}>
       <div className={styles.check}>
         <div className={styles.checkSub}>
-          <img src={check} alt="check" />
+          <Image src={check} alt="check" />
           <p>Check your Email</p>
         </div>
         <div className={styles.poll}>

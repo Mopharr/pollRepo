@@ -1,8 +1,10 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Layout, Button, Space } from "antd";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../asset/polls_ranking.png";
-import { ReactComponent as Search } from "../../asset/svg/search.svg";
+import Search from "@/asset/svg/search.svg";
 import styles from "./Header.module.css";
 
 const { Header } = Layout;
@@ -16,7 +18,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({ as: SvgComponent, ...props }) => {
 
 const BrandIcon: React.FC = () => (
   <div className={styles.brandIcon}>
-    <img src={Logo} alt="polls_ranking" />
+    <Image src={Logo} alt="polls_ranking" />
     <p className={styles.brandText}>Poll Repo</p>
   </div>
 );
@@ -36,7 +38,7 @@ const UnAuthHeader: React.FC<{ onLoginClick: () => void }> = ({
   return (
     <Header className={styles.header}>
       <div className={styles.headerContainer}>
-        <Link to="/">
+        <Link href="/">
           <BrandIcon />
         </Link>
 

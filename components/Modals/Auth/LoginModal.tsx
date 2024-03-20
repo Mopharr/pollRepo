@@ -2,7 +2,7 @@ import { type FC, useState, type ChangeEvent, FormEvent } from "react";
 import { ModalWrapper } from "../../../ui";
 import { UserAuth } from "../../../context/AuthContext";
 import styles from "./login.module.css";
-import { ReactComponent as Cancel } from "../../../asset/svg/cancle.svg";
+import Cancel  from "../../../asset/svg/cancle.svg";
 import {
   validateEmail,
   validateGender as validateInput,
@@ -13,6 +13,8 @@ import { FaGoogle } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import google from "../../../asset/image/google.png";
+import Image from "next/image";
+
 
 type Props = {
   show: boolean;
@@ -198,7 +200,7 @@ const LoginModal: FC<Props> = ({ show }) => {
             className={`${styles.google} ${styles.button}`}
             onClick={reachGoogle}
           >
-            <img src={google} alt="" />
+            <Image src={google} alt="" />
             <span>Login with Google</span>
           </button>
 

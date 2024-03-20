@@ -4,10 +4,11 @@ import React, {
   useState,
   ReactNode,
   useCallback,
-  useId,
   useEffect,
+  useId,
 } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router"; 
+
 import { handlePrivateRequest, handlePublicRequest } from "../utils/http";
 import { Data } from "../helpers";
 import useNotify from "../hooks/useNotify";
@@ -77,6 +78,7 @@ type ResponseData = {
   refresh: string;
   user: UserData;
 };
+
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const UserAuth = () => {
@@ -90,24 +92,16 @@ export const UserAuth = () => {
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    Boolean(localStorage.getItem("access"))
-  );
-
-  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const router = useRouter();
   const notify = useNotify();
   const sessionId = useId();
 
   const [auth, setAuth] = useState<AuthState>({});
-  const storedUserData = localStorage.getItem("user");
-  const initialUserData: UserData = storedUserData
-    ? JSON.parse(storedUserData)
-    : {
-        pk: 0,
-        email: "",
-      };
-
-  const [userData, setUserData] = useState<UserData>(initialUserData);
+  const [userData, setUserData] = useState<UserData>({
+    pk: 0,
+    email: "",
+  });
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loginIsLoading, setLoginIsLoading] = useState<boolean>(false);
   const [signUpIsLoading, setSignUpIsLoading] = useState<boolean>(false);
@@ -154,6 +148,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   useEffect(() => {
+    const storedAccess = localStorage.getItem("access");
+    const storedUser = localStorage.getItem("user");
+    if (storedAccess && storedUser) {
+      setIsAuthenticated(true);
+      setAuth({ access: storedAccess });
+      setUserData(JSON.parse(storedUser));
+    }
+  }, []);
+
+  useEffect(() => {
     async function getUserProfile() {
       try {
         const data = (await handlePrivateRequest(
@@ -164,14 +168,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         const profileData = data.profile as UserProfile;
 
         setUserProfile(profileData);
-      } catch (error: any) {
-        console.log(error?.response?.data);
-        if (!error?.response) {
-          console.log("Check your internet connection");
-        }
-        if (error?.response) {
-          console.log("Error fetching your profile info");
-        }
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
       }
     }
     if (isAuthenticated) {
@@ -201,7 +199,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      navigate("/home", { replace: true });
+      router.push("/home");
       handleCloseCreateAccount();
       handleCloseAuthModal();
       handleShowConfirmModal();
@@ -243,7 +241,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      navigate("/home", { replace: true });
+      router.push("/home");
       handleCloseCreateAccount();
       handleCloseAuthModal();
     } catch (error: any) {
@@ -289,7 +287,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      navigate("/home", { replace: true });
+      router.push("/home",);
       handleCloseCreateAccount();
       handleCloseAuthModal();
       resetData({
@@ -319,16 +317,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+
   const logoutUser = () => {
     setIsAuthenticated(false);
     localStorage.clear();
-
-    setAuth({});
-    setUserData({
-      pk: 0,
-      email: "",
-    });
-    navigate("/");
+    router.push("/");
   };
 
   return (

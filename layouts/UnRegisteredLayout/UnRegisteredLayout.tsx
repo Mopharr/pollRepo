@@ -1,31 +1,31 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import UnRegisteredHome from "../../pages/UnRegisteredHome";
-import NotFoundPage from "../../pages/PageNotFound";
-import ForgotPassword from "../../pages/ForgotPassword";
-import PasswordReset from "../../pages/PasswordReset";
-import { FilterProvider } from "../../context/FilterContext";
-import VerifyEmail from "../../pages/VerifyEmail";
+import UnRegisteredHome from "@/pages/UnRegisteredHome";
+import NotFoundPage from "@/pages/PageNotFound";
+import ForgotPassword from "@/pages/auth/forgotpassword";
+import PasswordReset from "@/pages/PasswordReset";
+import { FilterProvider } from "@/context/FilterContext";
+import VerifyEmail from "@/pages/VerifyEmail";
 import PrivacyPolicyLayout from "../PrivacyLayout/PrivacyPolicyLayout";
 import DashboardLayout from "../DashboardLayout/DashboardLayout";
 import TosLayout from "../PrivacyLayout/TosLayout";
-import AllTrends from "../../pages/AllTrends";
+import AllTrends from "@/pages/AllTrends";
 import FooterLayout from "../FooterLayout/FooterLayout";
-import About from "../../pages/About";
-import PollDetailsLayout from "../PollDetailsLayout/PollsDetailLayout";
-import ProfileLayout from "../ProfileLayout/ProfileLayout";
-import EditProfile from "../../pages/EditProfile";
+import About from "@/pages/About";
+import PollDetailsLayout from "@/layouts/PollDetailsLayout/PollsDetailLayout";
+import ProfileLayout from "@/layouts/ProfileLayout/ProfileLayout";
+import EditProfile from "@/pages/EditProfile";
 // import NotificationLayout from "../Notification/NotificationLayout";
-import WatchList from "../../pages/WatchList";
-import RequireAuth from "../RequireAuth/RequireAuth";
+import WatchList from "@/pages/WatchList";
+import RequireAuth from "@/layouts/RequireAuth/RequireAuth";
 
 const UnRegisteredLayout = () => {
   return (
     <FilterProvider>
-      <Routes>
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/" element={<Navigate to="/home" />} />
+      
+
+        {/* <Route path="/" element={<Navigate to="/" />} />
         <Route element={<DashboardLayout />}>
-          <Route path="/home" element={<UnRegisteredHome />} />
+          <Route path="/" element={<UnRegisteredHome />} />
           <Route path="/home/:slug" element={<PollDetailsLayout />} />
           <Route path="/trends" element={<AllTrends />} />
         </Route>
@@ -33,7 +33,7 @@ const UnRegisteredLayout = () => {
         <Route element={<RequireAuth />}>
           <Route path="/profile/:username" element={<ProfileLayout />} />
           <Route path="/edit-profile" element={<EditProfile />} />
-          {/* <Route path="/notification" element={<NotificationLayout />} /> */}
+          <Route path="/notification" element={<NotificationLayout />} />
           <Route path="/watchlist" element={<WatchList />} />
         </Route>
 
@@ -50,8 +50,7 @@ const UnRegisteredLayout = () => {
           <Route path="/about" element={<About />} />
         </Route>
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+        <Route path="*" element={<NotFoundPage />} /> */}
     </FilterProvider>
   );
 };

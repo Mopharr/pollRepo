@@ -29,10 +29,9 @@ export const TrendingPollsProvider = ({
   const [data, setData] = useState<PollData[]>([]);
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [countryCode, setCountryCode] = useState<string>(
-    localStorage.getItem("countryCode") || ""
-  );
-  const [url, setUrl] = useState("")
+  const [countryCode, setCountryCode] = useState<string>("");
+
+  const [url, setUrl] = useState("");
   const [isFetchingMore, setIsFetchingMore] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
@@ -56,6 +55,16 @@ export const TrendingPollsProvider = ({
       setIsLoading(false);
     }
   }, [trendQuery, url]);
+
+  useEffect(() => {
+    // Access localStorage only in the client-side code
+    if (typeof window !== "undefined") {
+      const storedCountryCode = localStorage.getItem("countryCode");
+      if (storedCountryCode) {
+        setCountryCode(storedCountryCode);
+      }
+    }
+  }, []);
 
   const fetchMoreTrending = async () => {};
 

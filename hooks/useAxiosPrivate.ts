@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { UserAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import { useRouter } from "next/router";
 import useRefreshToken from "./useRefreshToken";
 import { axiosPrivate } from "../library/axios";
 import { AxiosError, InternalAxiosRequestConfig } from "axios";
 import useNotify from "./useNotify";
 
 const useAxiosPrivate = () => {
-  const navigate = useNavigate();
+  const router = useRouter()
+  // const navigate = useNavigate();
   const { auth, setAuth, sessionId, setIsAuthenticated } = UserAuth();
   const notify = useNotify();
 
@@ -62,7 +64,7 @@ const useAxiosPrivate = () => {
               setAuth({});
               setIsAuthenticated(false);
               localStorage.clear();
-              navigate("/");
+              router.push("/");
             }
           }
         }
@@ -75,7 +77,7 @@ const useAxiosPrivate = () => {
       axiosPrivate.interceptors.response.eject(responseInterceptor);
       axiosPrivate.interceptors.request.eject(requestInterceptor);
     };
-  }, [auth, refresh, notify, setAuth, navigate, sessionId, setIsAuthenticated]); // add "notify" to list of dependencies
+  }, [auth, refresh, notify, setAuth, router, sessionId, setIsAuthenticated]); // add "notify" to list of dependencies
 
   return axiosPrivate;
 };

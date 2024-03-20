@@ -5,6 +5,8 @@ import { shuffleArray } from "../../helpers";
 import data from "../../data/data";
 import TopicsToFollow from "../TopicsToFollow/TopicsToFollow";
 import { UserAuth } from "../../context/AuthContext";
+import Image from "next/image";
+
 
 type DataType = {
   userName: string;
@@ -43,7 +45,7 @@ const WhoToFollow = () => {
       {displayedData.map((whotofollow) => (
         <div className={styles.wtf} key={whotofollow.id}>
           <div className={styles.wtfRight}>
-            <img src={whotofollow.image} alt="" />
+            <Image src={whotofollow.image} alt="" />
             <div>
               <p className={styles.wtfRightUser}>{whotofollow.userName}</p>
               <p className={styles.wtfRightUserLight}>

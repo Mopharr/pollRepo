@@ -15,7 +15,10 @@ import {
   faqFive,
   faqSix,
 } from "../constants/faq";
-import FaqCard from "../ui/FaqCard/FaqCard";
+import FaqCard from "../ui/FaqCard/FaqCard"
+import Image from "next/image";
+
+
 
 const PrivacyPolicy = () => {
   const [clickIdOne, setClickIdOne] = useState<string | null>(null);
@@ -87,7 +90,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div>
-          <img src={Hero1} alt="man_with_camera" loading="lazy" />
+          <Image src={Hero1} alt="man_with_camera" loading="lazy" />
         </div>
       </section>
 
@@ -173,7 +176,7 @@ const PrivacyPolicy = () => {
 
       <section className={styles.publicPost}>
         <div>
-          <img src={Television1} alt="television_pic" loading="lazy" />
+          <Image src={Television1} alt="television_pic" loading="lazy" />
         </div>
 
         <div>
@@ -228,7 +231,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div>
-          <img src={ManWiring} alt="data_center" loading="lazy" />
+          <Image src={ManWiring} alt="data_center" loading="lazy" />
         </div>
       </section>
 
@@ -370,7 +373,7 @@ const PrivacyPolicy = () => {
 
       <section className={styles.publicPost}>
         <div>
-          <img src={ManTalking} alt="man_on_phone_call" loading="lazy" />
+          <Image src={ManTalking} alt="man_on_phone_call" loading="lazy" />
         </div>
 
         <div>

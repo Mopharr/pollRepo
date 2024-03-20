@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "./Trends.module.css";
-import { ReactComponent as DownIcon } from "../../asset/svg/down.svg";
-import { ReactComponent as Threedot } from "../../asset/svg/three_dot.svg";
-import { ReactComponent as Loading } from "../../asset/svg/LoadingIcon.svg";
-import { ReactComponent as Onedot } from "../../asset/svg/one_dot.svg";
+import DownIcon from "../../asset/svg/down.svg";
+import Threedot from "../../asset/svg/three_dot.svg";
+import Loading from "../../asset/svg/LoadingIcon.svg";
+import Onedot from "../../asset/svg/one_dot.svg";
 import { formatNumber } from "../../helpers";
 import { CiSearch } from "react-icons/ci";
 import { useFilterTrendingPolls } from "../../context/TrendingPollsContext";
@@ -15,17 +17,18 @@ const Trends = () => {
   const { data, setCountryCode } = useFilterTrendingPolls();
 
   const modalRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
 
   const [selectedCountry, setSelectedCountry] = useState(
-    localStorage.getItem("country") || "World Wide"
+    typeof localStorage !== "undefined"
+      ? localStorage.getItem("country") || "World Wide"
+      : "World Wide"
   );
   const [countrySearchValue, setCountrySearchValue] = useState<string>("");
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const displayData = location.pathname !== "/trends" ? data.slice(0, 5) : data;
+  const displayData = router.pathname !== "/trends" ? data.slice(0, 5) : data;
 
   const filteredCountries = countries.filter((country) =>
     country.name.toLowerCase().includes(countrySearchValue.toLowerCase())
@@ -63,12 +66,12 @@ const Trends = () => {
       <p className={styles.trendP}>Trending Polls</p>
       <div className={styles.trendNig} onClick={toggleDropdown}>
         <p>{selectedCountry}</p>
-        <SvgIcon
-          as={DownIcon}
+        <Image
+          src={DownIcon}
           style={{ width: "20px", height: "20px", cursor: "pointer" }}
+          alt=""
         />
       </div>
-
       {isDropdownOpen && (
         <div className={styles.dropdown} ref={modalRef}>
           <div className={styles.cover} />
@@ -100,7 +103,7 @@ const Trends = () => {
           const dateOnly = trend?.deadline?.split("T")[0];
           return (
             <Link
-              to={`/home/${trend.slug}`}
+              href={`/home/${trend.slug}`}
               className={styles.trendContainer}
               key={trend.id}
             >
@@ -108,11 +111,6 @@ const Trends = () => {
                 <p className={styles.trendName}>
                   {trend.interests.length > 0 ? trend.interests[0]?.name : ""}
                 </p>
-                {/* <div style={{ position: "relative" }}>
-                  <p>
-                    <SvgIcon as={Threedot} className={styles.threedot} />
-                  </p>
-                </div> */}
               </div>
 
               <p
@@ -122,11 +120,11 @@ const Trends = () => {
               <div className={styles.trendBottom}>
                 <p>{formatNumber(trend.votes_count)} voters</p>
                 <p>
-                  <SvgIcon as={Onedot} />{" "}
+                  <Image src={Onedot} alt="" />
                   {formatNumber(trend.recent_votes_count)} recent votes
                 </p>
                 <p style={{ marginLeft: "0.4rem" }}>
-                  <SvgIcon as={Loading} className={styles.loading} />
+                  <Image src={Loading} className={styles.loading} alt="" />
                   <span style={{ marginLeft: "0.4rem" }}>
                     {dateOnly ? dateOnly : "No deadline"}
                   </span>
@@ -137,7 +135,10 @@ const Trends = () => {
         })}
       </div>
 
-      <button onClick={() => navigate("/trends")} className={styles.showMore}>
+      <button
+        onClick={() => router.push("/trends")}
+        className={styles.showMore}
+      >
         Show more
       </button>
     </div>

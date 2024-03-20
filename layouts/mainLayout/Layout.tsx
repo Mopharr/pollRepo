@@ -1,13 +1,15 @@
 import { useEffect } from "react";
-import { UserAuth } from "../../context/AuthContext";
-import { useSearchParams, useLocation } from "react-router-dom";
-import RegisteredLayout from "../RegisterLayout/RegisteredLayout";
-import UnRegisteredLayout from "../UnRegisteredLayout/UnRegisteredLayout";
-import RegistrationModal from "../../components/Modals/Auth/RegistrationModal";
-import ConfirmModal from "../../components/Modals/Auth/ConfirmModal";
-import LoginModal from "../../components/Modals/Auth/LoginModal";
-import Loading from "../../components/Modals/Auth/Loading";
-import AxiosPrivateProvider from "../../context/AxiosPrivateProvider";
+import { UserAuth } from "@/context/AuthContext";
+import { useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
+import RegisteredLayout from "@/layouts/RegisterLayout/RegisteredLayout";
+import UnRegisteredLayout from "@/layouts/UnRegisteredLayout/UnRegisteredLayout";
+import RegistrationModal from "@/components/Modals/Auth/RegistrationModal";
+import ConfirmModal from "@/components/Modals/Auth/ConfirmModal";
+import LoginModal from "@/components/Modals/Auth/LoginModal";
+import Loading from "@/components/Modals/Auth/Loading";
+import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
+import UnRegisteredHome from "@/pages/UnRegisteredHome";
 
 const Layout = () => {
   const {
@@ -20,11 +22,15 @@ const Layout = () => {
     handleGoogleAuth,
   } = UserAuth();
 
-  const [urlSearchParams, setUrlSearchParams] = useSearchParams();
+  const router = useRouter();
 
-  const userCode = urlSearchParams.get("code");
+  const { query } = router; // Access query parameters directly from the router
 
-  const { pathname } = useLocation();
+  // const userCode = query.code;
+
+  const { pathname } = router;
+
+  const userCode = Array.isArray(query.code) ? query.code[0] : query.code;
 
   const isAtResetPassword =
     pathname === "/forgot-password" ||
@@ -34,9 +40,10 @@ const Layout = () => {
   useEffect(() => {
     if (userCode) {
       handleGoogleAuth({ code: userCode });
-      setUrlSearchParams("");
+      // Clear the query parameters from the URL after handling them
+      router.replace(router.pathname, undefined, { shallow: true });
     }
-  }, [userCode, setUrlSearchParams, handleGoogleAuth]);
+  }, [userCode, handleGoogleAuth, router]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
@@ -65,22 +72,22 @@ const Layout = () => {
 
   return (
     <div>
-      {!isAuthenticated ||
+      {/* {!isAuthenticated ||
       localStorage.getItem("access") === undefined ||
-      localStorage.getItem("access") === null ? (
-        <>
-          <UnRegisteredLayout />
-        </>
-      ) : (
+      localStorage.getItem("access") === null ? ( */}
+      <>
+        <UnRegisteredHome />
+      </>
+      {/* ) : (
         <AxiosPrivateProvider>
           <RegisteredLayout />
         </AxiosPrivateProvider>
-      )}
-
+      )} */}
+      {/* 
       <RegistrationModal show={showAuthModal} />
       <ConfirmModal show={showConfirmationModal} />
       <LoginModal show={showLoginModal} />
-      <Loading show={googleAuthIsLoading} />
+      <Loading show={googleAuthIsLoading} /> */}
     </div>
   );
 };

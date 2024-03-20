@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import data from "../../data/data";
-import { ReactComponent as oneDot } from "../../asset/svg/one_dot.svg";
-import { ReactComponent as ThreeDot } from "../../asset/svg/three_dot.svg";
+import data from "@/data/data";
+import oneDot from "@/asset/svg/one_dot.svg";
+import ThreeDot from "@/asset/svg/three_dot.svg";
 import { Button } from "antd";
 import { CiHeart } from "react-icons/ci";
 import { FaRegComment } from "react-icons/fa6";
@@ -10,6 +10,7 @@ import { TbUser } from "react-icons/tb";
 import { PiShare } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
 import { MdOutlineCancel } from "react-icons/md";
+import Image from "next/image";
 
 const MainContent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +38,7 @@ const MainContent = () => {
         <div key={poll.id}>
           <div className={styles.pollWrapH}>
             <div className={styles.pollWrap}>
-              <img src={poll.image} alt="" />
+              <Image src={poll.image} alt="" />
               <span className={styles.userName}>
                 {poll.userName}
                 <span className={`${styles.userName2} ${styles.truncateText}`}>
