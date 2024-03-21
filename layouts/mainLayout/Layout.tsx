@@ -83,9 +83,9 @@ const Layout = () => {
           <RegisteredLayout />
         </AxiosPrivateProvider>
       )} */}
-      {/* 
+    
       <RegistrationModal show={showAuthModal} />
-      <ConfirmModal show={showConfirmationModal} />
+      {/*   <ConfirmModal show={showConfirmationModal} />
       <LoginModal show={showLoginModal} />
       <Loading show={googleAuthIsLoading} /> */}
     </div>

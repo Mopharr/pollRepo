@@ -590,40 +590,53 @@ const PollsList: React.FC<PollsListProps> = ({
                             </Button>
                             {activeMedia?.pollId === poll.id &&
                               activeMedia?.optionIndex === index && (
-                                <div
-                                  className={styles.dataOptionImage}
-                                  onClick={() => handleCloseModal()}
+                                <Modal
+                                  open={
+                                    activeMedia?.pollId === poll.id &&
+                                    activeMedia?.optionIndex === index
+                                  }
+                                  onOk={handleCloseModal}
+                                  onCancel={handleCloseModal}
                                 >
-                                  {mediaUrl.startsWith(
-                                    "https://www.youtube.com"
-                                  ) && videoUrlId ? (
-                                    <YouTube videoId={videoUrlId} opts={opts} />
-                                  ) : mediaUrl.endsWith(".mp4") ||
-                                    mediaUrl.endsWith(".mkv") ? (
-                                    // Video player
-                                    <video controls>
-                                      <source src={mediaUrl} />
-                                      Your browser does not support the video
-                                      tag.
-                                    </video>
-                                  ) : mediaUrl.endsWith(".mp3") ? (
-                                    // Audio player
-                                    <audio controls>
-                                      <source src={mediaUrl} type="audio/mp3" />
-                                      Your browser does not support the audio
-                                      tag.
-                                    </audio>
-                                  ) : (
-                                  
+                                  <div
+                                    className={styles.dataOptionImage}
+                                    onClick={() => handleCloseModal()}
+                                  >
+                                    {mediaUrl.startsWith(
+                                      "https://www.youtube.com"
+                                    ) && videoUrlId ? (
+                                      <YouTube
+                                        videoId={videoUrlId}
+                                        opts={opts}
+                                      />
+                                    ) : mediaUrl.endsWith(".mp4") ||
+                                      mediaUrl.endsWith(".mkv") ? (
+                                      // Video player
+                                      <video controls>
+                                        <source src={mediaUrl} />
+                                        Your browser does not support the video
+                                        tag.
+                                      </video>
+                                    ) : mediaUrl.endsWith(".mp3") ? (
+                                      // Audio player
+                                      <audio controls>
+                                        <source
+                                          src={mediaUrl}
+                                          type="audio/mp3"
+                                        />
+                                        Your browser does not support the audio
+                                        tag.
+                                      </audio>
+                                    ) : (
                                       <Image
                                         src={mediaUrl || ""}
                                         width={40}
                                         height={40}
                                         alt="Media"
                                       />
-                               
-                                  )}
-                                </div>
+                                    )}
+                                  </div>
+                                </Modal>
                               )}
                             {poll.display_result || votedPolls.has(poll.id) ? (
                               <Button className={`${styles.options} `}>
