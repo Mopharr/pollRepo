@@ -22,11 +22,13 @@ const RegistrationModal: React.FC<RegisterModalProps> = ({ show }) => {
   if (!show) return null;
   return (
     <ModalWrapper onClose={closeAuth}>
-      {showCreateAccount ? (
+      {/* {showCreateAccount ? ( */}
+        
         <CreateAccountModal onClose={handleCloseCreateAccount} />
-      ) : (
-        <AuthOptions onClose={handleCloseAuthModal} />
-      )}
+      {/* // ) : (
+      //   <h2>jjjj</h2>
+      //   // <AuthOptions onClose={handleCloseAuthModal} />
+      // )} */}
     </ModalWrapper>
   );
 };

@@ -60,7 +60,7 @@ const AuthHeader: React.FC<{ onLoginClick: () => void }> = ({
 
   const BrandIcon: React.FC = () => (
     <Link href="/home">
-      <Image className={styles.brandIcon} src={Logo} alt="polls_ranking" />
+      {/* <Image className={styles.brandIcon} src={Logo} alt="polls_ranking" /> */}
     </Link>
   );
 
@@ -82,84 +82,83 @@ const AuthHeader: React.FC<{ onLoginClick: () => void }> = ({
 
   return (
     <>
-    {
-      isClient && (
+      {isClient && (
         <Header className={styles.header}>
-        <div className={styles.headerContainer}>
-          <BrandIcon />
-  
-          <Link href="/" className={`${styles.home} ${styles.laptopNav}`}>
-            <Image src={Home} className={styles.homeIcon} alt="" />
-          </Link>
-  
-          <button
-            className={`${styles.create} ${styles.laptopNav}`}
-            onClick={showModal}
-          >
-            <Image src={Plus} className={styles.plus} alt="" />
-            Create Poll
-          </button>
-  
-          {!isProfile && (
-            <div className={styles.inputWrapper}>
-              <Image src={Search} className={styles.search} alt="" />
-  
-              <input className={styles.searchBar} placeholder="Search..." />
-            </div>
-          )}
-  
-          <button
-            className={`${styles.ads} ${styles.laptopNav}`}
-            onClick={handleAdvertise}
-          >
-            <Image src={Ads} alt="" />
-            Advertise
-          </button>
-  
-          <Space className={styles.loginSpace}>
-            {!isAuthenticated && (
-              <Button onClick={onLoginClick} className={styles.login}>
-                Login
-              </Button>
-            )}
-  
-            <div
-              className={styles.iconWrapper}
-              onClick={() => setShowDropdown((prev) => !prev)}
+          <div className={styles.headerContainer}>
+            <BrandIcon />
+
+            <Link href="/" className={`${styles.home} ${styles.laptopNav}`}>
+              <Image src={Home} className={styles.homeIcon} alt="" />
+            </Link>
+
+            <button
+              className={`${styles.create} ${styles.laptopNav}`}
+              onClick={showModal}
             >
-              {isAuthenticated && (
-                <Image
-                  src={
-                    userProfile?.profile_photo_url
-                      ? userProfile.profile_photo_url
-                      : PlaceholderProfile
-                  }
-                  alt={`${userProfile?.username}'s profile`}
-                  style={{
-                    width: "45px",
-                    height: "45px",
-                    objectFit: "cover",
-                    borderRadius: "75px",
-                  }}
-                />
-              )}
-  
+              <Image src={Plus} className={styles.plus} alt="" />
+              Create Poll
+            </button>
+
+            {!isProfile && (
+              <div className={styles.inputWrapper}>
+                <Image src={Search} className={styles.search} alt="" />
+
+                <input className={styles.searchBar} placeholder="Search..." />
+              </div>
+            )}
+
+            <button
+              className={`${styles.ads} ${styles.laptopNav}`}
+              onClick={handleAdvertise}
+            >
               <Image src={Ads} alt="" />
-  
-              {showDropdown && <DropdownMenu />}
-            </div>
-          </Space>
-        </div>
-  
-        {/* <PollCreationModal
+              Advertise
+            </button>
+
+            <Space className={styles.loginSpace}>
+              {!isAuthenticated && (
+                <Button onClick={onLoginClick} className={styles.login}>
+                  Login
+                </Button>
+              )}
+
+              <div
+                className={styles.iconWrapper}
+                onClick={() => setShowDropdown((prev) => !prev)}
+              >
+                {isAuthenticated && (
+                  <Image
+                    src={
+                      userProfile?.profile_photo_url === "/profile_default.png"
+                        ? PlaceholderProfile
+                        : userProfile?.profile_photo_url ?? ""
+                    }
+                    width={45}
+                    height={45}
+                    alt={`${userProfile?.username}'s profile`}
+                    style={{
+                      width: "45px",
+                      height: "45px",
+                      objectFit: "cover",
+                      borderRadius: "75px",
+                    }}
+                  />
+                )}
+
+                <Image src={Ads} alt="" />
+
+                {showDropdown && <DropdownMenu />}
+              </div>
+            </Space>
+          </div>
+
+          {/* <PollCreationModal
           isModalVisible={isModalVisible}
           handleOk={handleOk}
           handleCancel={handleCancel}
         /> */}
-      </Header>
-      )
-    }
-   
+        </Header>
+      )}
     </>
   );
 };

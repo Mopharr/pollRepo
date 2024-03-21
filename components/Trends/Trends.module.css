@@ -83,7 +83,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   color: #14171a;
 }
 .trendBox {
@@ -109,7 +109,7 @@
   align-items: center;
   color: #262626;
   text-align: justify;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -170,7 +170,7 @@
   font-size: 0.75rem;
   color: #262626;
   font-weight: 300;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   padding: 0.4rem 0.4rem 0.4rem 1.65rem;
   outline: none;
   border: 1px solid #262626;
@@ -190,7 +190,7 @@
   align-items: center;
   color: #262626;
   text-align: justify;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 300;
@@ -200,7 +200,7 @@
 .showMore {
   margin: 0;
   color: #ff4105;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   background: transparent;

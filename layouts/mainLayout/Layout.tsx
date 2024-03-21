@@ -72,22 +72,22 @@ const Layout = () => {
 
   return (
     <div>
-      {/* {!isAuthenticated ||
+      {!isAuthenticated ||
       localStorage.getItem("access") === undefined ||
-      localStorage.getItem("access") === null ? ( */}
+      localStorage.getItem("access") === null ? (
       <>
         <UnRegisteredHome />
       </>
-      {/* ) : (
+       ) : (
         <AxiosPrivateProvider>
           <RegisteredLayout />
         </AxiosPrivateProvider>
-      )} */}
+      )} 
     
       <RegistrationModal show={showAuthModal} />
-      {/*   <ConfirmModal show={showConfirmationModal} />
+        <ConfirmModal show={showConfirmationModal} />
       <LoginModal show={showLoginModal} />
-      <Loading show={googleAuthIsLoading} /> */}
+      <Loading show={googleAuthIsLoading} />
     </div>
   );
 };

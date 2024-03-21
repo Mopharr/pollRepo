@@ -38,7 +38,7 @@ const AllTrends = () => {
                 </p>
                 {/* <div style={{ position: "relative" }}>
                   <p>
-                    <SvgIcon as={Threedot} className={styles.threedot} />
+                    <Image src={Threedot} className={styles.threedot} />
                   </p>
                 </div> */}
               </div>
@@ -50,11 +50,11 @@ const AllTrends = () => {
               <div className={styles.trendBottom}>
                 <p>{formatNumber(trend.votes_count)} voters</p>
                 <p>
-                  <SvgIcon as={Onedot} />{" "}
+                  <Image src={Onedot} />{" "}
                   {formatNumber(trend.recent_votes_count)} recent votes
                 </p>
                 <p style={{ marginLeft: "0.4rem" }}>
-                  <SvgIcon as={Loading} className={styles.loading} />
+                  <Image src={Loading} className={styles.loading} />
                   <span style={{ marginLeft: "0.4rem" }}>
                     {dateOnly ? dateOnly : "No deadline"}
                   </span>

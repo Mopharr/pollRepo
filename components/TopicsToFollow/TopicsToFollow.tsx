@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styles from "./topicsToFollow.module.css";
-import { ReactComponent as Plus } from "../../asset/svg/plus.svg";
+import Plus from "../../asset/svg/plus.svg";
 import { UserAuth } from "../../context/AuthContext";
 import { useFilter } from "../../context/FilterContext";
 import { handlePrivateRequest } from "../../utils/http";
 import useNotify from "../../hooks/useNotify";
+import Image from "next/image";
 
 const TopicsToFollow = () => {
   const [showAll, setShowAll] = useState(false); // State to track showing all data
@@ -65,8 +66,8 @@ const TopicsToFollow = () => {
                 className={styles.topicstofollowadd}
                 onClick={() => handleAddInterest(topicstofollow.id)}
               >
-                <SvgIcon as={Plus} style={{ paddingRight: "5px" }} /> Add to
-                interest
+                <Image src={Plus} style={{ paddingRight: "5px" }} alt="" /> Add
+                to interest
               </button>
             </div>
           </div>

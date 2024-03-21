@@ -4,7 +4,7 @@ import {
   type ComponentPropsWithoutRef,
   type FC,
 } from "react";
-import { ReactComponent as ChevronDown } from "../../asset/svg/ChevronDown.svg";
+import ChevronDown  from "../../asset/svg/ChevronDown.svg";
 import { FaCheck } from "react-icons/fa";
 import styles from "./input.module.css";
 import { type Interest } from "../../constants/Interest";
@@ -66,7 +66,7 @@ const Input: FC<InputProps> = ({
               readOnly
             />
 
-            <ChevronDown className={styles.chevronDown} />
+            {/* <ChevronDown className={styles.chevronDown} /> */}
           </div>
 
           {serverError &&
@@ -109,7 +109,7 @@ const Input: FC<InputProps> = ({
               {...rest}
             />
 
-            <ChevronDown className={styles.chevronDown} />
+            {/* <ChevronDown className={styles.chevronDown} /> */}
           </div>
           {clientError && <p className={styles.error}>{clientError}</p>}
           {serverError &&
@@ -150,7 +150,7 @@ const Input: FC<InputProps> = ({
               {...rest}
             />
 
-            <ChevronDown className={styles.chevronDown} />
+            {/* <ChevronDown className={styles.chevronDown} /> */}
           </div>
 
           {clientError && <p className={styles.error}>{clientError}</p>}

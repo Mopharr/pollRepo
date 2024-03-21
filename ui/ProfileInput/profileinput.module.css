@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   margin-top: 0.3rem;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
 }
 
 .inputContainer > div .chevronDown {
@@ -44,7 +44,7 @@ button.toggle {
   left: 1.4375rem;
   top: 50%;
   color: #050505;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(0.875rem, 0.5278rem + 1.1111vw, 1.3rem);
   font-style: normal;
   font-weight: 300;
@@ -75,7 +75,7 @@ button.toggle {
   font-size: 0.875rem;
   line-height: 121%;
   padding: 0.625rem 1.1875rem;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -118,7 +118,7 @@ label.active {
   padding: clamp(1.5rem, 1.0833rem + 1.3333vw, 2.15rem) 1.4375rem 0.3125rem;
   border: 1px solid #afafaf;
   outline: none;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: clamp(1rem, 0.4444rem + 1.7778vw, 1.5rem);
   color: #262626;

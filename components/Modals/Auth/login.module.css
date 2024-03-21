@@ -50,7 +50,7 @@ p.error {
   margin: 0.5rem 0 0;
   padding: 0;
   font-weight: 500;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
 }
 
 .cancel {
@@ -68,7 +68,7 @@ p.error {
   border-radius: 30px;
   border: 2px solid #da9e8b;
   padding: 1.1rem 1.2rem;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   background-color: #fff;
   color: #262626;
 }
@@ -76,7 +76,7 @@ p.error {
 .logInput::placeholder {
   text-align: center;
   font-size: 1.2rem;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   color: #262626;
 }
 
@@ -86,7 +86,7 @@ button.button {
   font-size: 1.2rem;
   padding: 1rem 0;
   color: #fff;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   border-radius: 30px;
   cursor: pointer;
@@ -126,7 +126,7 @@ button.forgotPassword {
   align-self: center;
   font-size: 1.2rem;
   color: #ff4105;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   cursor: pointer;
 }
@@ -138,7 +138,7 @@ button.forgotPassword {
 
 .orBox span {
   color: #262626;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -164,7 +164,7 @@ button.forgotPassword {
   .logInput::placeholder {
     text-align: left;
     font-size: 16px;
-    font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
     color: #262626;
   }
   .orBox span {
@@ -174,7 +174,7 @@ button.forgotPassword {
     text-align: center;
     font-size: 16px;
     padding: 0.5rem;
-    font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     border-radius: 30px;
     cursor: pointer;
@@ -184,7 +184,7 @@ button.forgotPassword {
     align-self: center;
     font-size: 16px;
     color: #ff4105;
-    font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     cursor: pointer;
   }

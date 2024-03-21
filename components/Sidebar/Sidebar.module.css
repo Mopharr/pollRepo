@@ -58,7 +58,7 @@
   padding-bottom: 20px;
   color: #232223;
   padding-left: 10px;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -106,7 +106,7 @@
 .dropdownHeaderSpan span {
   color: #050505;
   padding-left: 0.625rem;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.85rem !important;
   font-weight: 600 !important;
 }
@@ -167,7 +167,7 @@
 }
 .dropdownContentNav p {
   color: #050505;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;

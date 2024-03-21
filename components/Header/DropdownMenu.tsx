@@ -1,15 +1,8 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { Layout, Space, Button } from "antd";
-import Logo from "@/asset/image/Prl02r.png";
-import Search from "@/asset/svg/search.svg";
-import Home from "@/asset/svg/Homr.svg";
-import Down from "@/asset/svg/down.svg";
-import Plus from "@/asset/svg/roundPlus.svg";
-import Ads from "@/asset/svg/promotion.svg";
+import Link from "next/link";
 import styles from "./Header.module.css";
 import { UserAuth } from "@/context/AuthContext";
-import Link from "next/link";
 import { NavLink, useLocation } from "react-router-dom";
 import ProfileIcon from "@/asset/svg/profile.svg";
 import QuestionIcon from "@/asset/svg/question.svg";
@@ -20,7 +13,7 @@ import PlaceholderProfile from "@/asset/image/PlaceholderProfile.jpg";
 import { CustomSwitch } from "@/ui";
 import useClickOutside from "@/hooks/useClickOutside";
 
-const  DropdownMenu = () => {
+const DropdownMenu = () => {
   const {
     userProfile,
     logoutUser,
@@ -40,15 +33,6 @@ const  DropdownMenu = () => {
   };
   const modalRef = useRef<HTMLDivElement>(null);
 
-  type SvgIconProps = React.SVGProps<SVGSVGElement> & {
-    as: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  };
-
-  const SvgIcon: React.FC<SvgIconProps> = ({ as: SvgComponent, ...props }) => {
-    return <SvgComponent {...props} width={20} height={20} />;
-  };
-
-
   return (
     <div className={styles.dropdownMenuWrap} ref={modalRef}>
       <div className={styles.dropdownMenuTop}>
@@ -59,27 +43,27 @@ const  DropdownMenu = () => {
         />
       </div>
       <div className={styles.dropdownMenuLink}>
-        <NavLink to="/profile/me" className={styles.dropdownMenuLinkClass}>
-          <SvgIcon as={ProfileIcon} />
+        <Link href="/profile/me" className={styles.dropdownMenuLinkClass}>
+          <Image src={ProfileIcon} alt={""} />
           <p>Profile</p>
-        </NavLink>
-        <NavLink to="/privacy" className={styles.dropdownMenuLinkClass}>
-          <SvgIcon as={TermsIcon} />
+        </Link>
+        <Link href="/privacy" className={styles.dropdownMenuLinkClass}>
+          <Image src={TermsIcon} alt={""} />
           <p>Privacy Policy</p>
-        </NavLink>
-        <NavLink to="/about" className={styles.dropdownMenuLinkClass}>
-          <SvgIcon as={QuestionIcon} />
+        </Link>
+        <Link href="/about" className={styles.dropdownMenuLinkClass}>
+          <Image src={QuestionIcon} alt={""} />
           <p>About</p>
-        </NavLink>
-        <NavLink to="/tos" className={styles.dropdownMenuLinkClass}>
-          <SvgIcon as={TermsIcon} />
+        </Link>
+        <Link href="/tos" className={styles.dropdownMenuLinkClass}>
+          <Image src={TermsIcon} alt={""} />
           <p>Terms of Service</p>
-        </NavLink>
+        </Link>
         <button
           className={`${styles.dropdownMenuLinkClass} ${styles.authBtn}`}
           onClick={isAuthenticated ? logoutUser : handleShowLoginModal}
         >
-          <SvgIcon as={LogoutIcon} />
+          <Image src={LogoutIcon} alt={""} />
           <p> {isAuthenticated ? "Log out" : "Log in"}</p>
         </button>
         <p className={styles.dropdownPollRank}>
@@ -91,4 +75,4 @@ const  DropdownMenu = () => {
   );
 };
 
-export default DropdownMenu
+export default DropdownMenu;

@@ -44,7 +44,7 @@ const UnAuthHeader: React.FC<{ onLoginClick: () => void }> = ({
 
         {!isAtResetPassword && (
           <div className={styles.inputWrapper}>
-            <SvgIcon as={Search} />
+            <Image src={Search} alt="" />
             <input className={styles.searchBar} placeholder="Search..." />
           </div>
         )}

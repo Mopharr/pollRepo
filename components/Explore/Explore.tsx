@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import Image from "next/image";
 // import { ReactComponent as Explor } from "@/asset/svg/explore.svg";
 import { Button } from "antd";
 // import { ReactComponent as Ads } from "@/asset/svg/promotion.svg"
@@ -47,7 +48,11 @@ const Explore = () => {
             isActive: hoveredNavLink === "Explore",
           })}
         >
-          <SvgIcon as={Explor} style={{ width: "25px", height: "25px" }} />
+          <Image
+            src={Explor}
+            style={{ width: "25px", height: "25px" }}
+            alt=""
+          />
           <span style={{ fontSize: "20px", fontWeight: "700" }}>Explore</span>
           {hoveredNavLink === "Explore" && (
             <span className={styles.tooltip}>Explore</span>
@@ -74,7 +79,7 @@ const Explore = () => {
             isActive: hoveredNavLink === "advertise",
           })}
         >
-          <SvgIcon as={Ads} style={{ width: "25px", height: "25px" }} />
+          <Image src={Ads} style={{ width: "25px", height: "25px" }} alt="" />
           <span style={{ fontSize: "20px", fontWeight: "700" }}>Advertise</span>
           {hoveredNavLink === "advertise" && (
             <span className={styles.tooltip}>advertise</span>

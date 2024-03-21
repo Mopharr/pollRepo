@@ -9,12 +9,11 @@ type ModalProps = {
 };
 
 const ModalWrapper: FC<ModalProps> = ({ children, onClose, className }) => {
-  return createPortal(
+  return (
     <>
       <div className={styles.backdrop} onClick={onClose} />
       <div className={`${styles.containerWrap} ${className}`}>{children}</div>
-    </>,
-    document.getElementById("modal-root")!
+    </>
   );
 };
 

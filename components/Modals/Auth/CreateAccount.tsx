@@ -4,7 +4,7 @@ import Cancle from "../../../asset/svg/cancle.svg";
 import Input from "../../../ui/Input/Input";
 import { UserAuth } from "../../../context/AuthContext";
 import { interestOptions } from "../../../constants/Interest";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   validateEmail,
   validatePassword,
@@ -23,6 +23,7 @@ import "react-country-state-city/dist/react-country-state-city.css";
 import { type FormData } from "../../../types/auth";
 import { extractValidFormData } from "../../../helpers";
 import { options } from "../../../constants/profileOptions";
+import Image from "next/image";
 
 interface CreateAccountModalProps {
   onClose: () => void;
@@ -87,7 +88,7 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
 
   const handleInputChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
-
+    console.log(formData.display_name);
     // else if (name === "phone_number") {
     //   setErrors((prevErrors) => ({
     //     ...prevErrors,
@@ -161,32 +162,46 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
     }
   }, [dob]);
 
-  const handleSelectInterest = (label: string, id: number) => {
-    if (formData.interests.includes(id) && interestValues.includes(label)) {
-      setFormData((prev) => {
-        const newData = {
-          ...prev,
-          interests: prev.interests.filter((item) => item !== id),
-        };
+  // const handleSelectInterest = (label: string, id: number) => {
+  //   if (formData.interests.includes(id) && interestValues.includes(label)) {
+  //     setFormData((prev) => {
+  //       const newData = {
+  //         ...prev,
+  //         interests: prev.interests.filter((item) => item !== id),
+  //       };
 
-        return newData;
-      });
+  //       return newData;
+  //     });
 
-      setInterestValues((prev) => prev.filter((item) => item !== label));
+  //     setInterestValues((prev) => prev.filter((item) => item !== label));
 
-      return;
-    }
+  //     return;
+  //   }
 
-    setFormData((prev) => {
-      const newData = {
-        ...prev,
-        interests: [...prev.interests, id],
-      };
+  //   setFormData((prev) => {
+  //     const newData = {
+  //       ...prev,
+  //       interests: [...prev.interests, id],
+  //     };
 
-      return newData;
-    });
+  //     return newData;
+  //   });
 
-    setInterestValues((prev) => [...prev, label]);
+  //   setInterestValues((prev) => [...prev, label]);
+  // };
+
+  const handleSelectInterest = (selectedOptions: string[]) => {
+    const selectedIds = selectedOptions.map(
+      (option) =>
+        interestOptions.find((interest) => interest.label === option)?.id || 0
+    );
+
+    setFormData((prev) => ({
+      ...prev,
+      interests: selectedIds,
+    }));
+
+    setInterestValues(selectedOptions);
   };
 
   const handleSelectOption = (name: string, value: string) => {
@@ -284,7 +299,7 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
   return (
     <>
       <div className={styles.step}>
-        <img
+        <Image
           onClick={onClose}
           src={Cancle}
           className={styles.cancle}
@@ -368,22 +383,6 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
                   />
 
                   {/* <Input
-                    type="selectThree"
-                    id="gender"
-                    name="gender"
-                    label="Gender"
-                    compulsory
-                    value={formData.gender}
-                    activeOption={formData.gender}
-                    optionsTwo={options.gender}
-                    onSelectOption={(option) =>
-                      handleSelectOption("gender", option)
-                    }
-                    clientError={errors?.gender}
-                    serverError={signUpError?.gender}
-                  /> */}
-
-                  <Input
                     type="selectTwo"
                     id="gender"
                     name="gender"
@@ -404,21 +403,23 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
                     }
                     clientError={errors?.gender}
                     serverError={signUpError?.gender}
-                  />
-
-                  {/* <Input
-                    type="text"
-                    id="phone_number"
-                    name="phone_number"
-                    label="Phone number"
-                    value={formData.phone_number}
+                 /> */}
+                  <select
+                    className={styles.customSelect}
                     onChange={(e) =>
-                      handleInputChange("phone_number", e.target.value)
+                      handleInputChange("gender", e.target.value)
                     }
-                    className="phone"
-                    clientError={errors?.phone_number}
-                    serverError={signUpError?.phone_number}
-                  /> */}
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Gender
+                    </option>
+                    {options.gender.map((gender, inx) => (
+                      <option key={inx} value={gender}>
+                        {gender}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <p className={styles.pdob}>Date of Birth</p>
@@ -495,7 +496,7 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
             {step === 2 && (
               <>
                 <div className={styles.inputBox}>
-                  <Input
+                  {/* <Input
                     type="selectOne"
                     id="interests"
                     name="interests"
@@ -508,8 +509,26 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
                       handleSelectInterest(label, id)
                     }
                     serverError={signUpError?.interests}
-                  />
-
+                  /> */}
+                  <select
+                    className={styles.customSelect}
+                    onChange={(e) =>
+                      handleSelectInterest(
+                        Array.from(
+                          e.target.selectedOptions,
+                          (option) => option.value
+                        )
+                      )
+                    }
+                    defaultValue=""
+                    // multiple
+                  >
+                    {interestOptions.map((option) => (
+                      <option key={option.id} value={option.label}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
                   <Input
                     type="selectTwo"
                     id="occupation"
@@ -595,8 +614,8 @@ const CreateAccountModal: React.FC<CreateAccountModalProps> = ({ onClose }) => {
                 <div className={styles.agreement}>
                   <p className={styles.tap}>
                     By Tapping Signup, I’ve read and agree to
-                    <Link to="/tos"> our term and condition Use</Link> that bide
-                    the management of{" "}
+                    <Link href="/tos"> our term and condition Use</Link> that
+                    bide the management of{" "}
                     <a href="#_" rel="">
                       PollsRank.
                     </a>

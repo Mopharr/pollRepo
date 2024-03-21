@@ -66,7 +66,7 @@ const MediaUrl = ({ mediaUrl, handleOpenMedia }: any) => {
           </audio>
         ) : (
           <div>
-            <Image src={mediaUrl ? mediaUrl : dummy} alt="Media" />
+           {/* <Image src={mediaUrl ? mediaUrl : dummy} alt="Media" /> */}
           </div>
         )}
       </div>

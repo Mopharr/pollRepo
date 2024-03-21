@@ -38,17 +38,17 @@ const MainContent = () => {
         <div key={poll.id}>
           <div className={styles.pollWrapH}>
             <div className={styles.pollWrap}>
-              <Image src={poll.image} alt="" />
+              <Image src={poll.image} alt="" width={30} height={30} />
               <span className={styles.userName}>
                 {poll.userName}
                 <span className={`${styles.userName2} ${styles.truncateText}`}>
                   @{poll.userName}
                 </span>
               </span>
-              <SvgIcon as={oneDot} />
+              <Image src={oneDot} alt={""} />
               <span className={styles.userName2}>{poll.hours}hr</span>
             </div>
-            <SvgIcon as={ThreeDot} className={styles.userName3} />
+            <Image src={ThreeDot} className={styles.userName3} alt={""} />
           </div>
           <div className={styles.pollWrapCon}>
             <div>

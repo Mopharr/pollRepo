@@ -20,16 +20,8 @@ const UnRegisteredHome = () => {
   }, [redirected, handleShowAuthModal, router]);
   return (
     <>
-      {/* <Helmet>
-        <title>Join Polls Repo</title>
-        <meta
-          name="description"
-          content="Explore PollRepo, the revolutionary platform where opinions meet data. Engage in structured voting, contribute to debates, and track trends in public sentiment on various topics."
-        />
-      </Helmet> */}
+   
       <DashboardLayout>
-        testing
-
         <Home />
       </DashboardLayout>
     </>

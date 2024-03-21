@@ -21,7 +21,7 @@ p.emptyInterest {
 .showMore {
   margin: 0;
   color: #ff4105;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -34,7 +34,7 @@ p.emptyInterest {
   align-items: center;
   cursor: pointer;
   color: #262626;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
   border: none;
@@ -44,7 +44,7 @@ p.emptyInterest {
 
 .topicstofollowHead {
   color: #262626;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;

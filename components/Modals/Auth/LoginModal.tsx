@@ -2,19 +2,18 @@ import { type FC, useState, type ChangeEvent, FormEvent } from "react";
 import { ModalWrapper } from "../../../ui";
 import { UserAuth } from "../../../context/AuthContext";
 import styles from "./login.module.css";
-import Cancel  from "../../../asset/svg/cancle.svg";
+import Cancel from "../../../asset/svg/cancle.svg";
 import {
   validateEmail,
   validateGender as validateInput,
 } from "../../../utils/validateInput";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { reachGoogle } from "../../../utils/reachGoogle";
-import { FaGoogle } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import google from "../../../asset/image/google.png";
 import Image from "next/image";
-
+import { FaApple } from "react-icons/fa";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import google from "../../../asset/image/google.png";
 
 type Props = {
   show: boolean;
@@ -32,7 +31,7 @@ export type PayloadData = {
 };
 
 const LoginModal: FC<Props> = ({ show }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [formData, setFormData] = useState<LoginFormData>({
     userId: "",
     password: "",
@@ -104,7 +103,11 @@ const LoginModal: FC<Props> = ({ show }) => {
   return (
     <ModalWrapper onClose={handleCloseLoginModal}>
       <div className={styles.loginForm}>
-        <Cancel onClick={handleCloseLoginModal} className={styles.cancel} />
+      <Image
+          src={Cancel}
+          onClick={handleCloseLoginModal} className={styles.cancel} 
+          alt="Close"
+        />
         <form onSubmit={handleSubmit}>
           <div>
             <input
@@ -178,7 +181,7 @@ const LoginModal: FC<Props> = ({ show }) => {
             className={styles.forgotPassword}
             onClick={() => {
               handleCloseLoginModal();
-              navigate("/forgot-password");
+              router.push("/forgot-password");
             }}
           >
             Forgotten Password
@@ -213,14 +216,12 @@ const LoginModal: FC<Props> = ({ show }) => {
           </button>
 
           <p className={styles.signTC}>
-            By signing up, I’ve read and agreed to the{" "}
-            <Link to="/tos" className={styles.TC}>
-              {" "}
-              Terms of Service{" "}
-            </Link>{" "}
+            By signing up, I’ve read and agreed to the
+            <Link href="/tos" className={styles.TC}>
+              Terms of Service
+            </Link>
             and
-            <Link to="/privacy" className={styles.TC}>
-              {" "}
+            <Link href="/privacy" className={styles.TC}>
               Privacy Policy.
             </Link>
           </p>

@@ -25,7 +25,7 @@ const Explore = () => {
   return (
     <div className={styles.explarePages}>
       <div className={styles.inputWrapper}>
-        <SvgIcon as={Search} className={styles.search} />
+        <Image src={Search} className={styles.search} />
         <input className={styles.searchBar} placeholder="Search..." />
       </div>
       <h2 className={styles.trendP}>Trending Poll</h2>
