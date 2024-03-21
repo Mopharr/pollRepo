@@ -22,7 +22,22 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-
+.antModal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999999000;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.antWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 999999000;
+  overflow: auto;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+}
 .userName {
   color: var(--lightBlack);
   font-family: "Montserrat", sans-serif;
@@ -269,7 +284,7 @@
   /* justify-content: center; */
 }
 .dataOptionImage {
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, .45);
   position: fixed;
   left: 0%;
   top: 0%;
@@ -278,7 +293,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 111;
+  z-index: 9999999999999999999999;
 }
 .dataOptionImage img {
   width: 300px;

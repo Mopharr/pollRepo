@@ -6,6 +6,11 @@
   width: 75%;
   flex-wrap: nowrap;
 }
+
+.option {
+  /* position: relative; */
+  
+}
 .pollList {
   border-bottom: 2px solid #cacaca;
   margin: 0 auto 2em;
@@ -22,6 +27,23 @@
   height: 30px;
   border-radius: 100%;
 }
+.antModal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999999000;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.antWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 999999000;
+  overflow: auto;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
 .nameDes {
   display: flex;
   flex-direction: column;
@@ -90,12 +112,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: .4em;
+  gap: 0.4em;
 }
 .pollQuesion img {
   width: 15px;
   height: 15px;
-  
 }
 .timeName {
   color: #262626;
@@ -132,7 +153,10 @@
   display: flex;
   flex-direction: column;
   margin: 0.5em 0 0;
+  padding-top: 5em;
+  height: 155px;
   justify-content: center;
+  overflow-y: scroll;
 }
 .DescriptionIcon {
   width: 30px !important;
@@ -344,7 +368,7 @@
   /* justify-content: center; */
 }
 .dataOptionImage {
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, 0.45);
   position: fixed;
   left: 0%;
   top: 0%;
@@ -353,10 +377,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 111;
+  z-index: 9999999999999999999999;
 }
 .dataOptionImage img {
   width: 300px;
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
   height: 300px;
 
   border-radius: 100%;
@@ -525,7 +553,7 @@
   }
   .textContentDescription {
     font-size: 10px;
-   line-height: 14px;
+    line-height: 14px;
     font-weight: 500;
   }
   .textContentDescription img {

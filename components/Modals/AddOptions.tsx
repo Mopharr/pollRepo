@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styles from "@/styles/AddOption.module.css";
 import { Modal, Button } from "antd";
-import DescriptionIcon  from "@/asset/svg/decscrip.svg";
+import DescriptionIcon from "@/asset/svg/decscrip.svg";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import dummy from "@/asset/image/dummy.webp";
+import Image from "next/image";
 
 const AddOptions = ({
   handleOptionClick,
@@ -103,7 +104,7 @@ const AddOptions = ({
                           // Video player
                           <video controls>
                             <source
-                              src={mediaUrl ? mediaUrl : dummy}
+                              src={mediaUrl || ""}
                               type="video/mp4"
                             />
                             Your browser does not support the video tag.
@@ -112,7 +113,7 @@ const AddOptions = ({
                           // Audio player
                           <audio controls>
                             <source
-                              src={mediaUrl ? mediaUrl : dummy}
+                              src={mediaUrl || ""}
                               type="audio/mp3"
                             />
                             Your browser does not support the audio tag.
@@ -120,7 +121,7 @@ const AddOptions = ({
                         ) : (
                           <div>
                             <img
-                              src={mediaUrl ? mediaUrl : dummy}
+                              src={mediaUrl || ""}
                               alt="Media"
                             />
                           </div>
@@ -155,7 +156,7 @@ const AddOptions = ({
                           voteCount={poll.vote_count}
                           selectedVote={option.selected_choice}
                           votedChoice={votedChoice}
-                                  pollId={poll.id}
+                          pollId={poll.id}
                         />
                       </Button>
                     ) : (
@@ -173,9 +174,10 @@ const AddOptions = ({
                       className={styles.optionsOutside}
                       onClick={() => handleOptionClick(poll.id, index)}
                     >
-                      <SvgIcon
-                        as={DescriptionIcon}
+                      <Image
+                        src={DescriptionIcon}
                         className={styles.DescriptionIcon}
+                        alt=""
                       />
                     </Button>
                   </div>

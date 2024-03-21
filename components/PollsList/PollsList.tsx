@@ -179,14 +179,6 @@ const PollsList: React.FC<PollsListProps> = ({
     setIsAddOptionsModalVisible(false);
   };
 
-  type SvgIconProps = React.SVGProps<SVGSVGElement> & {
-    as: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  };
-
-  const SvgIcon: React.FC<SvgIconProps> = ({ as: SvgComponent, ...props }) => {
-    return <SvgComponent {...props} width={40} height={40} />;
-  };
-
   const toggleShowFullText = (id: number) => {
     setShowFullText((prevShowFullText) => ({
       ...prevShowFullText,
@@ -329,6 +321,14 @@ const PollsList: React.FC<PollsListProps> = ({
         : { pollId, optionIndex }
     );
   };
+
+  const [mediaOpen, setMediaOpen] = useState<Record<number, boolean>>({});
+  const [mediaVisible, setMediaVisible] = useState(false);
+  const [activeMedia, setActiveMedia] = useState<{
+    pollId: number;
+    optionIndex: number;
+  } | null>(null);
+
   const [imageOpen, setImageOpen] = useState(false);
   const opts: YouTubeProps["opts"] = {
     height: "290",
@@ -341,8 +341,26 @@ const PollsList: React.FC<PollsListProps> = ({
   const [videoUrlId, setVideoUrlId] = useState<string | null>(null);
 
   const [mediaUrl, setMediaUrl] = useState("");
-  const handleOpenMedia = (mediaUrl: string) => {
+  const handleOpenMedia = (
+    mediaUrl: string,
+    choiceId: number,
+    pollId: number,
+    optionIndex: number
+  ) => {
     let urlToOpen = mediaUrl; // By default, use the provided mediaUrl
+
+    const selectedChoice = data.find((poll) =>
+      poll.choices.some((choice) => choice.id === choiceId)
+    );
+
+    if (selectedChoice) {
+      const choice = selectedChoice.choices.find(
+        (choice) => choice.id === choiceId
+      );
+      if (choice) {
+        urlToOpen = choice.choice_icon_url;
+      }
+    }
 
     const extension = urlToOpen.split(".").pop()?.toLowerCase();
     const extractVideoId = (url: string) => {
@@ -371,7 +389,21 @@ const PollsList: React.FC<PollsListProps> = ({
 
     // Render image or YouTube video
     setMediaUrl(urlToOpen);
-    setImageOpen(!imageOpen);
+    setActiveMedia({ pollId, optionIndex });
+    setImageOpen(true);
+    // const selectedChoice: any = [
+    //   data.find(
+    //     (poll: any) => poll.choices.map((id: any) => id.id) === choiceId
+    //   ),
+    // ].filter(Boolean);
+    // if (selectedChoice.length > 0) {
+    //   const selectedchoi: any = selectedChoice;
+    //   console.log("selected", selectedchoi)
+    // }
+    // setImageOpen(!imageOpen);
+  };
+  const handleCloseModal = () => {
+    setActiveMedia(null);
   };
 
   // share and option modal
@@ -425,8 +457,6 @@ const PollsList: React.FC<PollsListProps> = ({
     );
   };
 
-  // console.log("checking forhasmore", hasMore)
-
   return (
     <div className={styles.mainContent}>
       <div className={styles.createWrap}></div>
@@ -447,10 +477,11 @@ const PollsList: React.FC<PollsListProps> = ({
             <div className={styles.pollWrapH}>
               <div className={styles.pollWrap}>
                 <Link href={`/profile/${poll.author_info.username}`}>
+                  {}
                   <Image
                     src={
                       poll.author_info.profile_picture ||
-                      "/path/to/default/profile_picture"
+                      "http://res.cloudinary.com/dfduoxw3q/image/upload/v1709907853/upkqv7dw43pdtabyd3ga.webp"
                     }
                     className={styles.HeadImage}
                     width={30}
@@ -530,7 +561,7 @@ const PollsList: React.FC<PollsListProps> = ({
                     ? getSortedChoices(poll.choices)
                     : poll.choices
                   )
-                    .slice(0, 4)
+                    // .slice(0, 4)
                     .map((choice, index) => {
                       return (
                         <div key={choice.id} className={styles.option}>
@@ -538,61 +569,62 @@ const PollsList: React.FC<PollsListProps> = ({
                             <Button
                               className={styles.optionsOutsidePic}
                               onClick={() =>
-                                handleOpenMedia(choice.choice_icon_url)
+                                handleOpenMedia(
+                                  choice.choice_icon_url,
+                                  choice.id,
+                                  poll.id,
+                                  index
+                                )
                               }
                             >
                               <Image
-                                src={choice.choice_icon_thumbnail}
+                                src={
+                                  choice?.choice_icon_thumbnail ||
+                                  "http://res.cloudinary.com/dfduoxw3q/image/upload/v1709907853/upkqv7dw43pdtabyd3ga.webp"
+                                }
                                 className={styles.HeadImage}
+                                width={30}
+                                height={30}
                                 alt=""
                               />
                             </Button>
-                            {imageOpen && (
-                              <>
-                                <div className={styles.modal}>
-                                  <div
-                                    className={styles.dataOptionImage}
-                                    onClick={() => handleOpenMedia("")}
-                                  >
-                                    {mediaUrl.startsWith(
-                                      "https://www.youtube.com"
-                                    ) && videoUrlId ? (
-                                      <YouTube
-                                        videoId={videoUrlId}
-                                        opts={opts}
+                            {activeMedia?.pollId === poll.id &&
+                              activeMedia?.optionIndex === index && (
+                                <div
+                                  className={styles.dataOptionImage}
+                                  onClick={() => handleCloseModal()}
+                                >
+                                  {mediaUrl.startsWith(
+                                    "https://www.youtube.com"
+                                  ) && videoUrlId ? (
+                                    <YouTube videoId={videoUrlId} opts={opts} />
+                                  ) : mediaUrl.endsWith(".mp4") ||
+                                    mediaUrl.endsWith(".mkv") ? (
+                                    // Video player
+                                    <video controls>
+                                      <source src={mediaUrl} />
+                                      Your browser does not support the video
+                                      tag.
+                                    </video>
+                                  ) : mediaUrl.endsWith(".mp3") ? (
+                                    // Audio player
+                                    <audio controls>
+                                      <source src={mediaUrl} type="audio/mp3" />
+                                      Your browser does not support the audio
+                                      tag.
+                                    </audio>
+                                  ) : (
+                                  
+                                      <Image
+                                        src={mediaUrl || ""}
+                                        width={40}
+                                        height={40}
+                                        alt="Media"
                                       />
-                                    ) : mediaUrl.endsWith(".mp4") ||
-                                      mediaUrl.endsWith(".mkv") ? (
-                                      // Video player
-                                      <video controls>
-                                        <source src={mediaUrl} />
-                                        Your browser does not support the video
-                                        tag.
-                                      </video>
-                                    ) : mediaUrl.endsWith(".mp3") ? (
-                                      // Audio player
-                                      <audio controls>
-                                        <source
-                                          src={mediaUrl}
-                                          type="audio/mp3"
-                                        />
-                                        Your browser does not support the audio
-                                        tag.
-                                      </audio>
-                                    ) : (
-                                      <div>
-                                        <Image
-                                          src={mediaUrl}
-                                          width={40}
-                                          height={40}
-                                          alt="Media"
-                                        />
-                                      </div>
-                                    )}
-                                  </div>
+                               
+                                  )}
                                 </div>
-                              </>
-                            )}
+                              )}
                             {poll.display_result || votedPolls.has(poll.id) ? (
                               <Button className={`${styles.options} `}>
                                 <ProgressBar
@@ -632,6 +664,8 @@ const PollsList: React.FC<PollsListProps> = ({
                               <Image
                                 src={DescriptionIcon}
                                 className={styles.DescriptionIcon}
+                                width={30}
+                                height={30}
                                 alt=""
                               />
                             </Button>
