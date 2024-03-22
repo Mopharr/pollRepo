@@ -103,7 +103,7 @@ const Trends = () => {
           const dateOnly = trend?.deadline?.split("T")[0];
           return (
             <Link
-              href={`/home/${trend.slug}`}
+              href={`/${trend.slug}`}
               className={styles.trendContainer}
               key={trend.id}
             >
