@@ -7,7 +7,7 @@ import React, {
   useEffect,
   useId,
 } from "react";
-import { useRouter } from "next/router"; 
+import { useRouter } from "next/router";
 
 import { handlePrivateRequest, handlePublicRequest } from "../utils/http";
 import { Data } from "../helpers";
@@ -52,9 +52,7 @@ interface AuthContextProps {
   signUpError: { [key: string]: [] };
   loginError: { [key: string]: [] };
   sessionId: string;
-
   logoutUser: () => void;
-
   handleShowAuthModal: () => void;
   handleCloseAuthModal: () => void;
   handleShowCreateAccount: () => void;
@@ -287,7 +285,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      router.push("/home",);
+      router.push("/home");
       handleCloseCreateAccount();
       handleCloseAuthModal();
       resetData({
@@ -317,12 +315,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
-
   const logoutUser = () => {
     setIsAuthenticated(false);
     localStorage.clear();
     router.push("/");
   };
+
 
   return (
     <AuthContext.Provider

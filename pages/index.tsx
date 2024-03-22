@@ -32,6 +32,7 @@ export default function Home() {
 
   const { query } = router; // Access query parameters directly from the router
 
+
   // const userCode = query.code;
 
   const { pathname } = router;
@@ -77,7 +78,7 @@ export default function Home() {
   ]);
 
   return (
-    <AuthProvider>
+    <>
       <ScrollToTop />
       <HeaderComponent />
 
@@ -102,6 +103,6 @@ export default function Home() {
       <ConfirmModal show={showConfirmationModal} />
       <LoginModal show={showLoginModal} />
       <Loading show={googleAuthIsLoading} />
-    </AuthProvider>
+    </>
   );
 }

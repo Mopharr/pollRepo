@@ -2,7 +2,7 @@ import HomeLayout from "@/layouts/Home/HomeLayout";
 import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
 import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
 import HeaderComponent from "@/components/Header/Header";
-import { UserAuth } from "@/context/AuthContext";
+import { AuthProvider, UserAuth } from "@/context/AuthContext";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -20,12 +20,14 @@ const HomePage: React.FC<HomeProps> = () => {
   }, [isAuthenticated, router]);
   return (
     <>
-      <AxiosPrivateProvider>
-        <HeaderComponent />
-        <DashboardLayout>
-          <HomeLayout />
-        </DashboardLayout>
-      </AxiosPrivateProvider>
+      <AuthProvider>
+        <AxiosPrivateProvider>
+          <HeaderComponent />
+          <DashboardLayout>
+            <HomeLayout />
+          </DashboardLayout>
+        </AxiosPrivateProvider>
+      </AuthProvider>
     </>
   );
 };

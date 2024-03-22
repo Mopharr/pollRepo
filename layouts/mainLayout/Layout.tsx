@@ -24,6 +24,8 @@ const Layout = () => {
     handleGoogleAuth,
   } = UserAuth();
 
+  console.log("checing if it true", showLoginModal)
+
   const router = useRouter();
 
   const { query } = router; // Access query parameters directly from the router

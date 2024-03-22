@@ -117,7 +117,7 @@ const AuthHeader: React.FC<{ onLoginClick: () => void }> = ({
 
             <Space className={styles.loginSpace}>
               {!isAuthenticated && (
-                <Button onClick={onLoginClick} className={styles.login}>
+                <Button onClick={handleShowLoginModal} className={styles.login}>
                   Login
                 </Button>
               )}

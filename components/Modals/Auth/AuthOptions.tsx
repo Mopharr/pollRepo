@@ -6,7 +6,7 @@ import Logo from "../../../asset/image/Prl02r.png";
 import styles from "./authoptions.module.css";
 import { UserAuth } from "../../../context/AuthContext";
 import { reachGoogle } from "../../../utils/reachGoogle";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import google from "../../../asset/image/google.png";
 import Image from "next/image";
 
@@ -62,19 +62,17 @@ const AuthOptions: FC<Props> = ({ onClose }: Props) => {
         </div>
 
         <p className={styles.signTC}>
-          By signing up, I’ve read and agreed to the{" "}
-          <Link to="/tos" className={styles.TC}>
-            {" "}
-            Terms of Service{" "}
-          </Link>{" "}
+          By signing up, I’ve read and agreed to the
+          <Link href="/tos" className={styles.TC}>
+            Terms of Service
+          </Link>
           and
-          <Link to="/privacy" className={styles.TC}>
-            {" "}
+          <Link href="/privacy" className={styles.TC}>
             Privacy Policy.
           </Link>
         </p>
         <p className={styles.AldAcc} onClick={handleGoToLogin}>
-          Already have an account?{" "}
+          Already have an account?
           <span className={`${styles.TC} ${styles.loginTC}`}> Login </span>
         </p>
       </div>
