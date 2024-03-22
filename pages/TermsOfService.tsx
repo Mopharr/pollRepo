@@ -18,7 +18,7 @@ const TermsOfService = () => {
           <h2>Summary of PollRepo Terms of Service</h2>
 
           <p>
-            These Terms of Service, as part of PollRepo's User Agreement, form a
+            These Terms of Service, as part of PollRepo&apos;s User Agreement, form a
             legally binding contract governing your use of our platform. While
             we encourage reading the full document, here are essential
             highlights tailored to our community-focused on polls:
@@ -27,7 +27,7 @@ const TermsOfService = () => {
           <ul>
             <li>
               <b>Advertisements: </b>To sustain the free availability of our
-              services, you'll notice advertisements from PollRepo and our
+              services, you&apos;ll notice advertisements from PollRepo and our
               partners, essential in supporting our community-driven platform.
             </li>
             <li>
@@ -39,7 +39,7 @@ const TermsOfService = () => {
             <li>
               <b>Accessing PollRepo: </b>We encourage accessing our services
               through the designated interfaces to ensure security and
-              functionality. Protecting the platform's integrity is paramount,
+              functionality. Protecting the platform&apos;s integrity is paramount,
               prohibiting unauthorized access methods.
             </li>
             <li>
@@ -83,12 +83,12 @@ const TermsOfService = () => {
               In keeping with the spirit of community collaboration, you
               acknowledge that collaborative polls are not subject to individual
               deletion rights. Once contributed, these polls exist for the
-              community's benefit, allowing for a dynamic and evolving
+              community&apos;s benefit, allowing for a dynamic and evolving
               exploration of collective opinions and insights.
             </li>
 
             <li>
-              <b>Nature of Content: </b>It's important to note that the content
+              <b>Nature of Content: </b>It&apos;s important to note that the content
               on PollRepo, including contributions to collaborative polls,
               represents a spectrum of user opinions and perspectives. This
               content is not intended to serve as professional advice or factual
@@ -110,7 +110,7 @@ const TermsOfService = () => {
               than authoritative advice.
             </li>
             <li>
-              <b>Our Mission: </b>PollRepo's core mission is to cultivate a
+              <b>Our Mission: </b>PollRepo&apos;s core mission is to cultivate a
               space where opinions can be shared, debated, and understood in a
               collective context. Our platform is built on the principle of
               community-driven exploration, allowing for a rich tapestry of
@@ -127,7 +127,7 @@ const TermsOfService = () => {
 
             <p>
               These Terms of Service ("Terms") regulate your access to and use
-              of PollRepo's offerings, including our websites, SMS, APIs, email
+              of PollRepo&apos;s offerings, including our websites, SMS, APIs, email
               notifications, applications, ads, and any other services linked to
               these Terms ("Services"), along with any content uploaded,
               downloaded, or appearing on the Services ("Content"). By engaging
@@ -146,11 +146,11 @@ const TermsOfService = () => {
             <div className={styles.numbers}>
               <h4>1. Eligibility for Use of the Services</h4>
               <p>
-                You're eligible to use the Services if you can form a binding
-                contract with PollRepo and aren't prohibited by applicable laws.
-                You must be at least 13 years old. If you're accepting these
+                You&apos;re eligible to use the Services if you can form a binding
+                contract with PollRepo and aren&apos;t prohibited by applicable laws.
+                You must be at least 13 years old. If you&apos;re accepting these
                 Terms on behalf of an organization or entity, you confirm that
-                you're authorized to do so.
+                you&apos;re authorized to do so.
               </p>
             </div>
 
@@ -170,7 +170,7 @@ const TermsOfService = () => {
               <p>
                 You bear responsibility for your use of the Services and the
                 Content you provide, ensuring compliance with laws and
-                regulations. Share only Content you're comfortable being public.
+                regulations. Share only Content you&apos;re comfortable being public.
               </p>
               <p>
                 Reliance on any Content accessed through the Services is at your
@@ -190,7 +190,7 @@ const TermsOfService = () => {
 
             <div className={styles.right}>
               <h2>
-                Your Rights and Shared Ownership in PollRepo's Community Content
+                Your Rights and Shared Ownership in PollRepo&apos;s Community Content
               </h2>
               <ul>
                 <li>
@@ -198,11 +198,11 @@ const TermsOfService = () => {
                     <b>Collaborative Polls: A Collective Endeavor</b>{" "}
                   </p>{" "}
                   <p>
-                    When you create content under PollRepo's collaborative
-                    polls, you're engaging in a unique form of collective
+                    When you create content under PollRepo&apos;s collaborative
+                    polls, you&apos;re engaging in a unique form of collective
                     knowledge building. This content, governed by a spirit of
                     shared discovery and insight, becomes an integral part of
-                    the community's knowledge base.
+                    the community&apos;s knowledge base.
                   </p>
                 </li>
 
@@ -211,7 +211,7 @@ const TermsOfService = () => {
                     <b>No Deletion Right:</b>{" "}
                   </p>{" "}
                   <p>
-                    It's important to note that once content is contributed to a
+                    It&apos;s important to note that once content is contributed to a
                     collaborative poll, it does not retain individual deletion
                     rights. This policy ensures that valuable community insights
                     remain accessible and preserved, contributing to a growing
@@ -274,10 +274,10 @@ const TermsOfService = () => {
                 </li>
 
                 <li>
-                  PollRepo's dual approach to content—distinguishing between
+                  PollRepo&apos;s dual approach to content—distinguishing between
                   collaborative and non-collaborative contributions—reflects our
                   commitment to fostering an open, community-driven platform
-                  while respecting individual content creators' rights. Whether
+                  while respecting individual content creators&apos; rights. Whether
                   contributing to a collective endeavor or sharing personal
                   insights, your participation enriches the PollRepo community,
                   contributing to a diverse and engaging knowledge exchange
@@ -344,7 +344,7 @@ const TermsOfService = () => {
                 Before diving into PollRepo, please familiarize yourself with
                 our Rules and Policies, integral to our User Agreement. These
                 guidelines outline prohibited conduct on our platform, ensuring
-                a respectful and safe environment. Your use of PollRepo's
+                a respectful and safe environment. Your use of PollRepo&apos;s
                 Services must align with these Terms and all applicable laws,
                 rules, and regulations. PollRepo actively enforces these
                 standards, particularly concerning sensitive media, and details
@@ -364,7 +364,7 @@ const TermsOfService = () => {
               <p>
                 In exchange for access to PollRepo, you agree that we and our
                 partners may display advertising in conjunction with PollRepo
-                Content. We're committed to protecting your rights and privacy,
+                Content. We&apos;re committed to protecting your rights and privacy,
                 as outlined in our Privacy Policy, and will disclose information
                 only as necessary to comply with laws, enforce our Terms,
                 address fraud, security, or technical issues, respond to support
@@ -383,16 +383,16 @@ const TermsOfService = () => {
               <h2>Your Account on PollRepo</h2>
 
               <p>
-                Creating an account is necessary to use many of PollRepo's
-                features. It's crucial to safeguard your account with a strong
-                password, unique to PollRepo. We're not liable for losses
+                Creating an account is necessary to use many of PollRepo&apos;s
+                features. It&apos;s crucial to safeguard your account with a strong
+                password, unique to PollRepo. We&apos;re not liable for losses
                 resulting from unauthorized account use.
               </p>
 
               <p>
-                Creating an account is necessary to use many of PollRepo's
-                features. It's crucial to safeguard your account with a strong
-                password, unique to PollRepo. We're not liable for losses
+                Creating an account is necessary to use many of PollRepo&apos;s
+                features. It&apos;s crucial to safeguard your account with a strong
+                password, unique to PollRepo. We&apos;re not liable for losses
                 resulting from unauthorized account use.
               </p>
             </div>
@@ -413,7 +413,7 @@ const TermsOfService = () => {
               <h2>Misuse of PollRepo Services</h2>
 
               <p>
-                It's important not to misuse PollRepo by interfering with the
+                It&apos;s important not to misuse PollRepo by interfering with the
                 Services or accessing them in unauthorized ways. Adhering to our
                 guidelines ensures a positive experience for all users.
               </p>
@@ -435,7 +435,7 @@ const TermsOfService = () => {
             <div className={`${styles.numbers} ${styles.numberThree}`}>
               <h4>5. Disclaimers and Limitations of Liability</h4>
               <p>
-                The Services Are Provided "As-Is" Accessing and using PollRepo's
+                The Services Are Provided "As-Is" Accessing and using PollRepo&apos;s
                 Services, including all content, tools, and features, is at your
                 sole risk. PollRepo and its affiliates ("PollRepo Entities")
                 offer these Services on an "AS IS" and "AS AVAILABLE" basis,
@@ -485,7 +485,7 @@ const TermsOfService = () => {
                 </li>
                 <li>
                   The total liability of PollRepo Entities will not exceed the
-                  greater of $100 USD or any fees you've paid to us in the past
+                  greater of $100 USD or any fees you&apos;ve paid to us in the past
                   six months.
                 </li>
               </ul>
@@ -500,7 +500,7 @@ const TermsOfService = () => {
                 </p>
                 <p>
                   PollRepo may update these Terms periodically. The most current
-                  version will always govern our relationship, and we'll try to
+                  version will always govern our relationship, and we&apos;ll try to
                   notify you of significant changes. By continuing to use the
                   Services after updates, you agree to the revised Terms.
                 </p>
@@ -523,7 +523,7 @@ const TermsOfService = () => {
                   If any provision of these Terms is deemed unenforceable, it
                   will be modified to the minimum extent necessary, with the
                   rest remaining in effect. Failure by PollRepo to enforce any
-                  right or provision doesn't constitute a waiver.
+                  right or provision doesn&apos;t constitute a waiver.
                 </p>
               </div>
               <div className={styles.inner}>

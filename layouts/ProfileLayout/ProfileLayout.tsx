@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import Profile from "../../pages/Profile";
+import Profile from "../../pages/profile/[username]";
 import { UserAuth } from "../../context/AuthContext";
 import styles from "../../styles/style.module.css";
 import { FilterProvider } from "../../context/FilterContext";

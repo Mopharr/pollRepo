@@ -1,23 +1,24 @@
 import { useEffect, useRef, useState } from "react";
-import { Container } from "../ui";
-import PlaceholderCover from "../asset/image/PlaceholderCover.jpg";
-import PlaceholderProfile from "../asset/image/PlaceholderProfile.jpg";
-import { useNavigate, useParams } from "react-router-dom";
+import { Container } from "@/ui";
+import PlaceholderCover from "@/asset/image/PlaceholderCover.jpg";
+import PlaceholderProfile from "@/asset/image/PlaceholderProfile.jpg";
+import { useRouter } from "next/router";
 import { abbreviateNumber } from "js-abbreviation-number";
 import { FaPencil } from "react-icons/fa6";
-import LevelIcon from "../components/LevelIcon/LevelIcon";
+import LevelIcon from "@/components/LevelIcon/LevelIcon";
 // import MainContent from "../components/MainConent/MainContent";
-import styles from "../styles/Profile.module.css";
-import useGetProfile, { Profile as ProfileData } from "../hooks/useGetProfile";
+import styles from "@/styles/Profile.module.css";
+import useGetProfile, { Profile as ProfileData } from "@/hooks/useGetProfile";
 // import { useFilter } from "../context/FilterContext";
-import { PollData } from "../types/fetchPolls.type";
+import { PollData } from "@/types/fetchPolls.type";
 // import ProfilePolls from "../components/ProfileComponents/ProfilePolls";
-import useGetPoll from "../hooks/useGetPoll";
-import PollsList from "../components/PollsList/PollsList";
-import { UserProfile } from "../types/auth";
-import { handlePrivateRequest } from "../utils/http";
-import { UserAuth } from "../context/AuthContext";
-import useNotify from "../hooks/useNotify";
+import useGetPoll from "@/hooks/useGetPoll";
+import PollsList from "@/components/PollsList/PollsList";
+import { UserProfile } from "@/types/auth";
+import { handlePrivateRequest } from "@/utils/http";
+import { UserAuth } from "@/context/AuthContext";
+import useNotify from "@/hooks/useNotify";
+import Image from "next/image";
 
 type TopicPoints = {
   title: string;
@@ -84,7 +85,7 @@ const VotesComponent: React.FC<PollsListProps> = ({
 const Profile = () => {
   // const { data, fetchMoreData, setData, isFetchingMore, hasMore } = useFilter();
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const notify = useNotify();
 
@@ -94,13 +95,19 @@ const Profile = () => {
 
   const { sessionId } = UserAuth();
 
-  const profile = useParams<{ username: string }>();
+  const { username } = router.query;
+  const usernameString =
+    typeof username === "string"
+      ? username
+      : Array.isArray(username)
+      ? username[0]
+      : undefined;
 
-  const loggedinUser = profile?.username === "me";
+  const loggedinUser = username === "me";
 
   const { profile: userProfile, setProfile } = useGetProfile(
     loggedinUser,
-    profile?.username!
+    usernameString!
   );
 
   const {
@@ -109,7 +116,7 @@ const Profile = () => {
     isFetchingMore: isFetchingMorePolls,
     hasMore: hasMorePolls,
     setData: setUserPolls,
-  } = useGetPoll(loggedinUser, profile?.username!, "polls");
+  } = useGetPoll(loggedinUser, usernameString!, "polls");
 
   const {
     data: userVotes,
@@ -117,7 +124,7 @@ const Profile = () => {
     isFetchingMore: isFetchingMoreVotes,
     hasMore: hasMoreVotes,
     setData: setUserVotes,
-  } = useGetPoll(loggedinUser, profile?.username!, "votes");
+  } = useGetPoll(loggedinUser, usernameString!, "votes");
 
   const renderActiveTabContent = () => {
     switch (activeTab) {
@@ -232,26 +239,24 @@ const Profile = () => {
       <section className={styles.photoSection}>
         <Container className={styles.containerTop}>
           <div className={styles.coverImage}>
-            <img
-              src={
-                userProfile?.cover_image_url
-                  ? userProfile?.cover_image_url
-                  : PlaceholderCover
-              }
+            <Image
+              src={userProfile?.cover_image_url || PlaceholderCover}
               alt="cover_image"
+              layout="fill"
+              // objectFit="cover"
             />
           </div>
 
           <div className={styles.profilePhoto}>
             <div>
-              <img
+              {/* <Image
                 src={
-                  userProfile?.profile_photo_url
+                  (userProfile?.profile_photo_url
                     ? userProfile?.profile_photo_url
-                    : PlaceholderProfile
+                    : PlaceholderProfile) as string
                 }
                 alt="profile_picture"
-              />
+              /> */}
             </div>
           </div>
         </Container>
@@ -408,7 +413,7 @@ const Profile = () => {
                 {loggedinUser && (
                   <button
                     className={styles.editProfile}
-                    onClick={() => navigate("/edit-profile")}
+                    onClick={() => router.push("/edit-profile")}
                   >
                     Edit Profile
                   </button>
@@ -417,7 +422,7 @@ const Profile = () => {
                 {loggedinUser && (
                   <button
                     className={styles.edit}
-                    onClick={() => navigate("/edit-profile")}
+                    onClick={() => router.push("/edit-profile")}
                   >
                     <FaPencil size={28} />
                   </button>

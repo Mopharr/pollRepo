@@ -27,6 +27,7 @@ import { UserAuth } from "../context/AuthContext";
 import useNotify from "../hooks/useNotify";
 import { userFormData } from "../constants/userFormData";
 import { formatDate } from "../utils/formatDate";
+import Image from "next/image";
 
 type DobField = "day" | "month" | "year";
 
@@ -384,11 +385,11 @@ const EditProfile = () => {
         <div className={styles.coverImage}>
           <img
             src={
-              imageURL.cover_image
+              (imageURL.cover_image
                 ? imageURL.cover_image
                 : userProfile?.cover_image_url
                 ? userProfile?.cover_image_url
-                : PlaceholderCover
+                : PlaceholderCover) as string
             }
             alt="cover_image"
           />
@@ -409,17 +410,18 @@ const EditProfile = () => {
 
         <div className={styles.profilePhoto}>
           <div>
-            <img
+            <Image
               src={
-                imageURL.profile_photo
+                (imageURL.profile_photo
                   ? imageURL.profile_photo
-                  : userProfile?.profile_photo_url?.length! > 0
-                  ? userProfile?.profile_photo_url
-                  : PlaceholderProfile
+                  : userProfile?.profile_photo_url === "/profile_default.png"
+                  ? PlaceholderProfile
+                  : userProfile?.profile_photo_url) as string
               }
               alt="profile_photo"
             />
-
+            userProfile?.profile_photo_url === "/profile_default.png" ?
+            PlaceholderProfile : userProfile?.profile_photo_url ?? ""
             {activeTab === "editProfile" && (
               <label htmlFor="profile_photo">
                 <input
