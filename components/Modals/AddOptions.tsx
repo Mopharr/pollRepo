@@ -120,7 +120,7 @@ const AddOptions = ({
                           </audio>
                         ) : (
                           <div>
-                            <img
+                            <Image
                               src={mediaUrl || ""}
                               alt="Media"
                             />
@@ -132,7 +132,7 @@ const AddOptions = ({
                       className={styles.optionsOutsidePic}
                       onClick={() => handleOpenMedia(option.choice_icon_url)}
                     >
-                      <img
+                      <Image
                         src={
                           option.choice_icon_url === "/default-icon.png"
                             ? dummy

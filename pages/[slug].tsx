@@ -31,6 +31,7 @@ import HeaderComponent from "@/components/Header/Header";
 import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
 import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
 
+
 type Props = {};
 
 const PollDetails = (props: Props) => {
@@ -412,7 +413,7 @@ const PollDetails = (props: Props) => {
             </div>
             {poll.map((poll) => {
               return (
-                <div>
+                <div key={poll.id}>
                   <div
                     style={{
                       borderBottom: "2px solid #CACACA",
@@ -423,8 +424,8 @@ const PollDetails = (props: Props) => {
                   >
                     <div className={styles.pollWrapH}>
                       <div className={styles.pollWrap}>
-                        <img
-                          src={poll.author_info.profile_picture}
+                        <Image
+                          src={poll.author_info.profile_picture  || ""}
                           className={styles.HeadImage}
                           alt=""
                         />
@@ -496,7 +497,7 @@ const PollDetails = (props: Props) => {
                         <div className={styles.optionsWrap}>
                           {poll.choices.map((choice, index) => {
                             return (
-                              <div className={styles.option}>
+                              <div className={styles.option} key={index}>
                                 <div className={styles.optionWithImage}>
                                   {activeMedia?.pollId === poll.id &&
                                     activeMedia?.optionIndex === index && (

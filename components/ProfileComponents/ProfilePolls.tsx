@@ -59,7 +59,7 @@ const ProfilePolls: React.FC<PollsListProps> = ({
           hasMore={hasMore}
         />
       ) : (
-        <p>You don't have polls yet</p>
+        <p>You don&apos;t have polls yet</p>
       )}
 
       {isModalOpen && (
