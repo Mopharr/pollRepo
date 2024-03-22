@@ -4,12 +4,11 @@ import userPP3 from "@/asset/image/user3.png";
 import optionImage1 from "@/asset/image/user3.png";
 import LeoMessi from "@/asset/image/leo messi.jpeg";
 import moment from "moment";
-import Image from "next/image";
-
+import Image, { StaticImageData } from "next/image";
 
 type OptionType = {
   name: string;
-  image: string;
+  image: StaticImageData;
   description: any;
   vote: any;
 };
@@ -25,11 +24,11 @@ type DataType = {
   voteNo: number;
   hoursLeft: number;
   id: number; //
-  image: string;
   options: OptionType[];
   trendName: string;
   createdAt: string;
   isLegacy?: boolean;
+  image: StaticImageData;
   isExpired?: boolean;
 };
 

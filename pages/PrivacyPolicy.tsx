@@ -45,19 +45,19 @@ const PrivacyPolicy = () => {
           <p className={styles.upperText}>
             Crafting a Privacy Policy that pleases everyone is a challenge. Most
             PollRepo users prefer something concise and straightforward.
-            Although we'd love to condense all you need to know into a single
+            Although we&quot;d love to condense all you need to know into a single
             post, our regulators require us to fulfill our legal duties by
             elaborating on them in great detail.
           </p>
           <p className={styles.upperText}>
-            With clarity and simplicity in mind, we've designed our Privacy
+            With clarity and simplicity in mind, we&quot;ve designed our Privacy
             Policy to empower you to make well-informed choices while using
             PollRepo. We ensure you understand and have control over the
             collection, usage, and sharing of your information.
           </p>
 
           <p className={styles.upperText}>
-            Even if you don't read every word of the Privacy Policy, it's
+            Even if you don&quot;t read every word of the Privacy Policy, it&quot;s
             essential to grasp the following:
           </p>
 
@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
         <Container>
           <div className={styles.infoBox}>
             <h4>How do you use my information?</h4>
-            <h5>To make PollRepo's service you know and love.</h5>
+            <h5>To make PollRepo&quot;s service you know and love.</h5>
           </div>
 
           <div className={styles.infoHeading}>
@@ -150,11 +150,11 @@ const PrivacyPolicy = () => {
               Understanding the application of collected information within
               PollRepo involves recognizing the complex interplay of data across
               our diverse services. Given that a single piece of data can serve
-              multiple functions to ultimately enhance your experience, we're
+              multiple functions to ultimately enhance your experience, we&quot;re
               outlining the principal ways we utilize information, alongside an
               additional focus on providing analytic views of opinion. Should
               you have any queries not addressed here, we encourage direct
-              contact with us. Here's an overview:
+              contact with us. Here&quot;s an overview:
             </p>
             <p>Expand dropdowns for more information:</p>
           </div>
@@ -362,7 +362,7 @@ const PrivacyPolicy = () => {
               </b>
             </p>
             <p>
-              PollRepo's services are not intended for children under 13 years
+              PollRepo&quot;s services are not intended for children under 13 years
               of age. Users must meet the age requirement for data processing
               consent in their respective countries, with provisions for
               parental or guardian consent where applicable.
@@ -397,7 +397,7 @@ const PrivacyPolicy = () => {
             <p>
               Our commitment to transparency and compliance necessitates
               occasional updates to this Privacy Policy. Should significant
-              changes occur, we'll notify you, allowing you to review the
+              changes occur, we&quot;ll notify you, allowing you to review the
               updates before continuing your use of PollRepo.
             </p>
           </div>
@@ -448,7 +448,7 @@ const PrivacyPolicy = () => {
             </p>
             <p>
               If you have any thoughts or questions about this Privacy Policy,
-              we're here to listen and assist. For inquiries related to privacy
+              we&quot;re here to listen and assist. For inquiries related to privacy
               concerns, please reach out to us through our Privacy Policy
               Inquiries page or by direct mail to the address provided below.
               Further details on how we handle requests under the California
@@ -483,7 +483,7 @@ const PrivacyPolicy = () => {
 
           <div className={styles.confidential}>
             <p>
-              You also have the option to confidentially contact PollRepo's Data
+              You also have the option to confidentially contact PollRepo&quot;s Data
               Protection Officer through our dedicated Data Protection Inquiry
               Form. Should you have concerns about our data processing
               practices, you are entitled to raise them with your local

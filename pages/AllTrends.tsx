@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import  Link  from "next/link";
 import Image from "next/image";
 import { useFilterTrendingPolls } from "../context/TrendingPollsContext";
-// import { ReactComponent as Threedot } from "../asset/svg/three_dot.svg";
 import Loading from "../asset/svg/LoadingIcon.svg";
 import Onedot from "../asset/svg/one_dot.svg";
 import { formatNumber } from "../helpers";

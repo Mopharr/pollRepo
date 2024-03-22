@@ -1,6 +1,6 @@
-import { ReactComponent as NotificationCheckmark } from "../../asset/svg/NotificationCheckmark.svg";
-import { ReactComponent as NotificationCoolEmote } from "../../asset/svg/NotificationCoolEmote.svg";
-import { ReactComponent as NotificationInfo } from "../../asset/svg/NotificationInfo.svg";
+import NotificationCheckmark  from "../../asset/svg/NotificationCheckmark.svg";
+import NotificationCoolEmote  from "../../asset/svg/NotificationCoolEmote.svg";
+import NotificationInfo from "../../asset/svg/NotificationInfo.svg";
 import styles from "./notification.module.css";
 
 type NotificationProp = {

@@ -311,7 +311,7 @@ const PollCreationModal: React.FC<PollCreationModalProps> = ({
           zIndex={10000}
           className={styles.modal}
           footer={[
-            <div className={styles.modalFooter}>
+            <div key="footer-buttons" className={styles.modalFooter}>
               <Button key="back" onClick={handleCancel}>
                 Cancel
               </Button>

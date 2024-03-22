@@ -560,8 +560,8 @@ const PollDetails = (props: Props) => {
                                       )
                                     }
                                   >
-                                    <img
-                                      src={choice.choice_icon_thumbnail}
+                                    <Image
+                                      src={choice.choice_icon_thumbnail || ""}
                                       className={styles.HeadImage}
                                       alt=""
                                     />

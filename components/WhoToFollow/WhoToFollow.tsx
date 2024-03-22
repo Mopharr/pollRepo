@@ -7,7 +7,6 @@ import TopicsToFollow from "../TopicsToFollow/TopicsToFollow";
 import { UserAuth } from "../../context/AuthContext";
 import Image from "next/image";
 
-
 type DataType = {
   userName: string;
   hours: number;
@@ -21,10 +20,6 @@ const WhoToFollow = () => {
   const [shuffledData, setShuffledData] = useState<DataType[]>([]);
   const [showAll, setShowAll] = useState(false);
   const { isAuthenticated, handleShowAuthModal } = UserAuth();
-
-  useEffect(() => {
-    setShuffledData(shuffleArray([...data]));
-  }, []);
 
   const displayedData = showAll ? shuffledData : shuffledData.slice(0, 5);
 
@@ -42,7 +37,7 @@ const WhoToFollow = () => {
   return (
     <div className={styles.wtfWrap}>
       <p className={styles.wtfHead}>Who to follow</p>
-      {displayedData.map((whotofollow) => (
+      {data.slice(0, 5).map((whotofollow) => (
         <div className={styles.wtf} key={whotofollow.id}>
           <div className={styles.wtfRight}>
             <Image src={whotofollow.image} alt="" />
@@ -59,7 +54,7 @@ const WhoToFollow = () => {
         </div>
       ))}
       <button onClick={toggleShowAll} className={styles.showMore}>
-        {showAll ? "Show less" : "Show more"}
+       show more
       </button>
 
       {isAuthenticated && <TopicsToFollow />}

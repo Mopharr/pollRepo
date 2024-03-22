@@ -64,7 +64,7 @@ const TermsOfService = () => {
               <b>Collaborative Polls - A Community Endeavor: </b>Collaborative
               polls on PollRepo embody our commitment to communal knowledge and
               collective insight. Unlike personal content, contributions to
-              collaborative polls are governed by a shared licensing model.{" "}
+              collaborative polls are governed by a shared licensing model.
               <b>This Means: </b>
             </li>
 
@@ -96,7 +96,7 @@ const TermsOfService = () => {
               experiences.
             </li>
             <li>
-              <b>Service Usage: </b>PollRepo operates "AS IS," offering a
+              <b>Service Usage: </b>PollRepo operates &quot;AS IS,&quot; offering a
               dynamic platform for community engagement. While we strive for
               accuracy and reliability, the open nature of content contribution
               means users may encounter various opinions and discussions.
@@ -126,18 +126,18 @@ const TermsOfService = () => {
             <h2>PollRepo Terms of Service</h2>
 
             <p>
-              These Terms of Service ("Terms") regulate your access to and use
+              These Terms of Service (&quot;Terms&quot;) regulate your access to and use
               of PollRepo&apos;s offerings, including our websites, SMS, APIs, email
               notifications, applications, ads, and any other services linked to
-              these Terms ("Services"), along with any content uploaded,
-              downloaded, or appearing on the Services ("Content"). By engaging
+              these Terms (&quot;Services&quot;), along with any content uploaded,
+              downloaded, or appearing on the Services (&quot;Content&quot;). By engaging
               with the Services, you consent to these Terms.
             </p>
 
             <p>
               This agreement is between you and PollRepo, the entity behind the
               Services, located at 103 Olaitan Street, Surulere, Lagos, Nigeria.
-              The terms "we," "us," and "our" refer to PollRepo.
+              The terms &quot;we,&quot; &quot;us,&quot; and &quot;our&quot; refer to PollRepo.
             </p>
           </div>
           <hr />
@@ -195,8 +195,8 @@ const TermsOfService = () => {
               <ul>
                 <li>
                   <p>
-                    <b>Collaborative Polls: A Collective Endeavor</b>{" "}
-                  </p>{" "}
+                    <b>Collaborative Polls: A Collective Endeavor</b>
+                  </p>
                   <p>
                     When you create content under PollRepo&apos;s collaborative
                     polls, you&apos;re engaging in a unique form of collective
@@ -208,8 +208,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>No Deletion Right:</b>{" "}
-                  </p>{" "}
+                    <b>No Deletion Right:</b>
+                  </p>
                   <p>
                     It&apos;s important to note that once content is contributed to a
                     collaborative poll, it does not retain individual deletion
@@ -222,8 +222,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Shared Licensing:</b>{" "}
-                  </p>{" "}
+                    <b>Shared Licensing:</b>
+                  </p>
                   <p>
                     By participating in collaborative polls, you agree to grant
                     a worldwide, non-exclusive, royalty-free license to the
@@ -237,8 +237,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Non-Collaborative Polls: Individual Contributions</b>{" "}
-                  </p>{" "}
+                    <b>Non-Collaborative Polls: Individual Contributions</b>
+                  </p>
                   <p>
                     For content submitted outside the framework of collaborative
                     polls, PollRepo recognizes a different set of rights and
@@ -248,8 +248,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Personal Content Licensing:</b>{" "}
-                  </p>{" "}
+                    <b>Personal Content Licensing:</b>
+                  </p>
                   <p>
                     When you post non-collaborative content on PollRepo, you
                     maintain ownership and the associated rights. You grant
@@ -263,8 +263,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Content Control:</b>{" "}
-                  </p>{" "}
+                    <b>Content Control:</b>
+                  </p>
                   <p>
                     For non-collaborative polls, you retain the right to delete
                     your content at any time. This control allows for personal
@@ -286,8 +286,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Participation in the PollRepo Ecosystem:</b>{" "}
-                  </p>{" "}
+                    <b>Participation in the PollRepo Ecosystem:</b>
+                  </p>
                   <p>
                     We encourage you to engage with the platform not just as
                     content creators but as active participants in the
@@ -300,8 +300,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Understanding Your Contributions:</b>{" "}
-                  </p>{" "}
+                    <b>Understanding Your Contributions:</b>
+                  </p>
                   <p>
                     By contributing to PollRepo, you acknowledge that your
                     contributions are made under a model that emphasizes
@@ -314,8 +314,8 @@ const TermsOfService = () => {
 
                 <li>
                   <p>
-                    <b>Special Consideration for Collaborative Polls:</b>{" "}
-                  </p>{" "}
+                    <b>Special Consideration for Collaborative Polls:</b>
+                  </p>
                   <p>
                     Content created within collaborative polls, designated under
                     a free license, is considered a collective asset of the
@@ -435,10 +435,10 @@ const TermsOfService = () => {
             <div className={`${styles.numbers} ${styles.numberThree}`}>
               <h4>5. Disclaimers and Limitations of Liability</h4>
               <p>
-                The Services Are Provided "As-Is" Accessing and using PollRepo&apos;s
+                The Services Are Provided &quot;As-Is&quot; Accessing and using PollRepo&apos;s
                 Services, including all content, tools, and features, is at your
-                sole risk. PollRepo and its affiliates ("PollRepo Entities")
-                offer these Services on an "AS IS" and "AS AVAILABLE" basis,
+                sole risk. PollRepo and its affiliates (&quot;PollRepo Entities&quot;)
+                offer these Services on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis,
                 without any warranties of merchantability, fitness for a
                 particular purpose, or non-infringement, to the fullest extent
                 permitted by law.

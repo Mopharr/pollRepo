@@ -76,17 +76,11 @@ const Layout = () => {
 
   return (
     <div>
-      {!isAuthenticated ||
-      localStorage.getItem("access") === undefined ||
-      localStorage.getItem("access") === null ? (
+     
         <>
           <UnRegisteredHome />
         </>
-      ) : (
-        <AxiosPrivateProvider>
-          {/* <HomePage /> */}
-        </AxiosPrivateProvider>
-      )}
+    
 
       <RegistrationModal show={showAuthModal} />
       <ConfirmModal show={showConfirmationModal} />

@@ -34,7 +34,7 @@ const MainContent = () => {
 
   return (
     <div className={styles.mainContent}>
-      {data.map((poll) => (
+      {/* {data.map((poll) => (
         <div key={poll.id}>
           <div className={styles.pollWrapH}>
             <div className={styles.pollWrap}>
@@ -101,7 +101,7 @@ const MainContent = () => {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
 
       {isModalOpen && (
         <div className={styles.modalBackdrop} onClick={closeModal}>

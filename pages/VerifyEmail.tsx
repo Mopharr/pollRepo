@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { handlePublicRequest } from "../utils/http";
-import { ReactComponent as RedCross } from "../asset/svg/RedCross.svg";
-import { ReactComponent as GreenCheck } from "../asset/svg/GreenCheck.svg";
+import RedCross from "../asset/svg/RedCross.svg";
+import GreenCheck from "../asset/svg/GreenCheck.svg";
 import styles from "../styles/verifyemail.module.css";
 
 const VerifyEmail = () => {

@@ -306,12 +306,7 @@ const AuthSideBar = () => {
               isActive: hoveredNavLink === "create",
             })}
           >
-            <Image
-              src={CiCirclePlus}
-              style={{ width: "25px", height: "25px" }}
-              alt=""
-            />
-
+            <CiCirclePlus style={{ width: "25px", height: "25px" }} />
             <span style={{ fontSize: "20px", fontWeight: "700" }}>
               Create Polls
             </span>

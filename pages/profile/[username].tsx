@@ -366,8 +366,8 @@ const Profile = () => {
                       <p className={styles.levelTitle}>{userProfile?.level}</p>
 
                       <div className={styles.toolTip}>
-                        {topicPoints.map((item) => (
-                          <div className={styles.otherLevels}>
+                        {topicPoints.map((item, index) => (
+                          <div className={styles.otherLevels} key={index}>
                             <p>{item.title}</p>
                             <div>
                               <LevelIcon level={item.level} />

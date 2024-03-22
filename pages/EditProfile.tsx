@@ -383,7 +383,7 @@ const EditProfile = () => {
 
       <section className={styles.photoSection}>
         <div className={styles.coverImage}>
-          <img
+          <Image
             src={
               (imageURL.cover_image
                 ? imageURL.cover_image
@@ -420,8 +420,7 @@ const EditProfile = () => {
               }
               alt="profile_photo"
             />
-            userProfile?.profile_photo_url === "/profile_default.png" ?
-            PlaceholderProfile : userProfile?.profile_photo_url ?? ""
+        
             {activeTab === "editProfile" && (
               <label htmlFor="profile_photo">
                 <input
