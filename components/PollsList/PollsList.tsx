@@ -314,22 +314,27 @@ const PollsList: React.FC<PollsListProps> = ({
     return options.reduce((total, option) => total + option.vote_count, 0);
   };
 
+  const [expandedOptions, setExpandedOptions] = useState<
+    Record<string, boolean>
+  >({});
   const handleOptionClick = (pollId: number, optionIndex: number) => {
     setActiveOption((prevActive) =>
       prevActive?.pollId === pollId && prevActive.optionIndex === optionIndex
         ? null
         : { pollId, optionIndex }
     );
+  
+    setExpandedOptions((prevExpandedOptions) => ({
+      ...prevExpandedOptions,
+      [`${pollId}`]: !prevExpandedOptions[`${pollId}`],
+    }));
   };
 
-  const [mediaOpen, setMediaOpen] = useState<Record<number, boolean>>({});
-  const [mediaVisible, setMediaVisible] = useState(false);
   const [activeMedia, setActiveMedia] = useState<{
     pollId: number;
     optionIndex: number;
   } | null>(null);
 
-  const [imageOpen, setImageOpen] = useState(false);
   const opts: YouTubeProps["opts"] = {
     height: "290",
     width: "300",
@@ -390,32 +395,10 @@ const PollsList: React.FC<PollsListProps> = ({
     // Render image or YouTube video
     setMediaUrl(urlToOpen);
     setActiveMedia({ pollId, optionIndex });
-    setImageOpen(true);
-    // const selectedChoice: any = [
-    //   data.find(
-    //     (poll: any) => poll.choices.map((id: any) => id.id) === choiceId
-    //   ),
-    // ].filter(Boolean);
-    // if (selectedChoice.length > 0) {
-    //   const selectedchoi: any = selectedChoice;
-    //   console.log("selected", selectedchoi)
-    // }
-    // setImageOpen(!imageOpen);
   };
   const handleCloseModal = () => {
     setActiveMedia(null);
   };
-
-  // share and option modal
-  // const [shareModal, setShareModal] = useState<number | null>(null);
-
-  // const handleShareToggle = (pollId: number) => {
-  //   setShareModal(pollId);
-  // };
-
-  // const closeShareToggle = () => {
-  //   setShareModal(null);
-  // };
 
   const getTimeLeft = (deadline: any) => {
     if (deadline) {
@@ -443,6 +426,10 @@ const PollsList: React.FC<PollsListProps> = ({
   const handlePollClick = (data: any) => {
     router.push(`/${data.slug}`);
   };
+
+  // describtion height
+  const [choiceDescHeight, setChoiceDescHeight] = useState<number>(0);
+
   const loadingCircle = () => {
     return (
       <div
@@ -555,8 +542,12 @@ const PollsList: React.FC<PollsListProps> = ({
                     </span>
                   )}
                 </div>
-
-                <div className={styles.optionsWrap}>
+                <div
+                  className={styles.optionsWrap}
+                  style={{
+                    height: expandedOptions[`${poll.id}`] ? "auto" : "155px",
+                  }}
+                >
                   {(poll.display_result || votedPolls.has(poll.id)
                     ? getSortedChoices(poll.choices)
                     : poll.choices
@@ -684,7 +675,10 @@ const PollsList: React.FC<PollsListProps> = ({
                             </Button>
                           </div>
 
-                          <div>
+                          <div
+                            className={styles.choiceDesc}
+                            id={`choiceDesc_${poll.id}_${index}`}
+                          >
                             {activeOption?.pollId === poll.id &&
                               activeOption?.optionIndex === index && (
                                 <div>

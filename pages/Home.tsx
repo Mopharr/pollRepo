@@ -20,14 +20,12 @@ const HomePage: React.FC<HomeProps> = () => {
   }, [isAuthenticated, router]);
   return (
     <>
-      <AuthProvider>
-        <AxiosPrivateProvider>
-          <HeaderComponent />
-          <DashboardLayout>
-            <HomeLayout />
-          </DashboardLayout>
-        </AxiosPrivateProvider>
-      </AuthProvider>
+      <AxiosPrivateProvider>
+        <HeaderComponent />
+        <DashboardLayout>
+          <HomeLayout />
+        </DashboardLayout>
+      </AxiosPrivateProvider>
     </>
   );
 };
