@@ -1,51 +1,33 @@
-import styles from "../components/MainConent/styles.module.css";
-import { useFilter } from "../context/FilterContext";
-import PollsList from "../components/PollsList/PollsList";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Helmet } from "react-helmet-async";
+import HomeLayout from "@/layouts/Home/HomeLayout";
+import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
+import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
+import HeaderComponent from "@/components/Header/Header";
+import { UserAuth } from "@/context/AuthContext";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 interface HomeProps {}
 
-const Home: React.FC<HomeProps> = () => {
-  const { data, fetchMoreData, isFetchingMore, hasMore, setData, isLoading } =
-    useFilter();
+const HomePage: React.FC<HomeProps> = () => {
+  const { isAuthenticated } = UserAuth();
+  const router = useRouter();
 
+  // Redirect to "/" if user is not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/");
+    }
+  }, [isAuthenticated, router]);
   return (
     <>
-      <div className={styles.mainContent}>
-        {isLoading ? (
-          <p
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <CircularProgress style={{ fontSize: "20px", color: "#ff4105" }} />
-          </p>
-        ) : data.length > 0 ? (
-          <PollsList
-            data={data}
-            setData={setData}
-            fetchMoreData={fetchMoreData}
-            isFetchingMore={isFetchingMore}
-            hasMore={hasMore}
-          />
-        ) : (
-          <p
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            NO Polls Available
-          </p>
-        )}
-      </div>
+      <AxiosPrivateProvider>
+        <HeaderComponent />
+        <DashboardLayout>
+          <HomeLayout />
+        </DashboardLayout>
+      </AxiosPrivateProvider>
     </>
   );
 };
 
-export default Home;
+export default HomePage;

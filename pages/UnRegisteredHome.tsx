@@ -1,10 +1,8 @@
-// import { Helmet } from "react-helmet";
-import { Helmet } from "react-helmet-async";
-import Home from "./Home";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { UserAuth } from "@/context/AuthContext";
 import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
+import HomeLayout from "@/layouts/Home/HomeLayout";
 
 const UnRegisteredHome = () => {
   const { handleShowAuthModal } = UserAuth();
@@ -20,9 +18,8 @@ const UnRegisteredHome = () => {
   }, [redirected, handleShowAuthModal, router]);
   return (
     <>
-   
       <DashboardLayout>
-        <Home />
+        <HomeLayout />
       </DashboardLayout>
     </>
   );

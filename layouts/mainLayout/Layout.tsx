@@ -10,6 +10,8 @@ import LoginModal from "@/components/Modals/Auth/LoginModal";
 import Loading from "@/components/Modals/Auth/Loading";
 import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
 import UnRegisteredHome from "@/pages/UnRegisteredHome";
+import HomePage from "@/pages/Home";
+import HeaderComponent from "@/components/Header/Header";
 
 const Layout = () => {
   const {
@@ -75,17 +77,17 @@ const Layout = () => {
       {!isAuthenticated ||
       localStorage.getItem("access") === undefined ||
       localStorage.getItem("access") === null ? (
-      <>
-        <UnRegisteredHome />
-      </>
-       ) : (
+        <>
+          <UnRegisteredHome />
+        </>
+      ) : (
         <AxiosPrivateProvider>
-          <RegisteredLayout />
+          <HomePage />
         </AxiosPrivateProvider>
-      )} 
-    
+      )}
+
       <RegistrationModal show={showAuthModal} />
-        <ConfirmModal show={showConfirmationModal} />
+      <ConfirmModal show={showConfirmationModal} />
       <LoginModal show={showLoginModal} />
       <Loading show={googleAuthIsLoading} />
     </div>
