@@ -10,7 +10,7 @@ import LoginModal from "@/components/Modals/Auth/LoginModal";
 import Loading from "@/components/Modals/Auth/Loading";
 import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
 import UnRegisteredHome from "@/pages/UnRegisteredHome";
-import HomePage from "@/pages/Home";
+// import HomePage from "@/pages/Home";
 import HeaderComponent from "@/components/Header/Header";
 
 const Layout = () => {
@@ -84,7 +84,7 @@ const Layout = () => {
         </>
       ) : (
         <AxiosPrivateProvider>
-          <HomePage />
+          {/* <HomePage /> */}
         </AxiosPrivateProvider>
       )}
 
