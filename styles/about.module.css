@@ -16,7 +16,7 @@
   min-height: 520px;
   display: grid;
   align-items: center;
-  background-image: url("../asset/image/AboutHero3.jpg");
+  background-image: url("../public/asset/image/AboutHero3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -82,7 +82,7 @@
   min-height: 550px;
   display: grid;
   align-items: center;
-  background-image: url("../asset/image/OrangePetals2.jpg");
+  background-image: url("../public/asset/image/OrangePetals2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

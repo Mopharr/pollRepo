@@ -21,7 +21,7 @@
   min-height: 650px;
   display: grid;
   align-items: center;
-  background-image: url("../asset/image/Policy2.jpg");
+  background-image: url("../public/asset/image/Policy2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet";
 import  Link  from "next/link";
 import Image from "next/image";
 import { useFilterTrendingPolls } from "../context/TrendingPollsContext";
-import Loading from "../asset/svg/LoadingIcon.svg";
-import Onedot from "../asset/svg/one_dot.svg";
+import Loading from "@/public/asset/svg/LoadingIcon.svg";
+import Onedot from "@/public/asset/svg/one_dot.svg";
 import { formatNumber } from "../helpers";
 import styles from "../components/Trends/Trends.module.css";
 

@@ -4,7 +4,7 @@ import {
   type ChangeEvent,
   type ComponentPropsWithoutRef,
 } from "react";
-import ChevronDown from "../../asset/svg/ChevronDown.svg";
+import ChevronDown from "@/public/asset/svg/ChevronDown.svg";
 import styles from "./profileinput.module.css";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { FaCheck } from "react-icons/fa";

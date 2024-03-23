@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./topicsToFollow.module.css";
-import Plus from "../../asset/svg/plus.svg";
+import Plus from "@/public/asset/svg/plus.svg";
 import { UserAuth } from "../../context/AuthContext";
 import { useFilter } from "../../context/FilterContext";
 import { handlePrivateRequest } from "../../utils/http";

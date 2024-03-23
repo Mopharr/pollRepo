@@ -1,7 +1,7 @@
 import { Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import styles from "../MainConent/styles.module.css";
-import dummy from "../../asset/image/dummy.webp";
+import dummy from "@/public/asset/image/dummy.webp";
 import Iframe from "react-iframe";
 import YouTube, { YouTubeProps } from "react-youtube";
 import Image from "next/image";

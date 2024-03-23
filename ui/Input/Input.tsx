@@ -4,7 +4,7 @@ import {
   type ComponentPropsWithoutRef,
   type FC,
 } from "react";
-import ChevronDown  from "../../asset/svg/ChevronDown.svg";
+import ChevronDown  from "@/public/asset/svg/ChevronDown.svg";
 import { FaCheck } from "react-icons/fa";
 import styles from "./input.module.css";
 import { type Interest } from "../../constants/Interest";

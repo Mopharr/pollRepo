@@ -13,11 +13,11 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { IoMdClose } from "react-icons/io";
 import { MdDragIndicator } from "react-icons/md";
 import tipsData from "@/data/rules.json";
-import TipLogo from "@/asset/svg/tips.svg";
-import LockLogo from "@/asset/svg/lock.svg";
-import Share from "@/asset/svg/ph_share.svg";
-import Plus from "@/asset/svg/circlePlus.svg";
-import Calender from "@/asset/svg/calender.svg";
+import TipLogo from "@/public/asset/svg/tips.svg";
+import LockLogo from "@/public/asset/svg/lock.svg";
+import Share from "@/public/asset/svg/ph_share.svg";
+import Plus from "@/public/asset/svg/circlePlus.svg";
+import Calender from "@/public/asset/svg/calender.svg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 

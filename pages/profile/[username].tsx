@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Container } from "@/ui";
-import PlaceholderCover from "@/asset/image/PlaceholderCover.jpg";
-import PlaceholderProfile from "@/asset/image/PlaceholderProfile.jpg";
+import PlaceholderCover from "@/public/asset/image/PlaceholderCover.jpg";
+import PlaceholderProfile from "@/public/asset/image/PlaceholderProfile.jpg";
 import { useRouter } from "next/router";
 import { abbreviateNumber } from "js-abbreviation-number";
 import { FaPencil } from "react-icons/fa6";

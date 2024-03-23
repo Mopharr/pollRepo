@@ -3,15 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "./Trends.module.css";
-import DownIcon from "../../asset/svg/down.svg";
-import Threedot from "../../asset/svg/three_dot.svg";
-import Loading from "../../asset/svg/LoadingIcon.svg";
-import Onedot from "../../asset/svg/one_dot.svg";
-import { formatNumber } from "../../helpers";
+import DownIcon from "@/public/asset/svg/down.svg";
+import Threedot from "@/public/asset/svg/three_dot.svg";
+import Loading from "@/public/asset/svg/LoadingIcon.svg";
+import Onedot from "@/public/asset/svg/one_dot.svg";
+import { formatNumber } from "@/helpers";
 import { CiSearch } from "react-icons/ci";
-import { useFilterTrendingPolls } from "../../context/TrendingPollsContext";
-import { countries } from "../../constants/countries";
-import useClickOutside from "../../hooks/useClickOutside";
+import { useFilterTrendingPolls } from "@/context/TrendingPollsContext";
+import { countries } from "@/constants/countries";
+import useClickOutside from "@/hooks/useClickOutside";
 
 const Trends = () => {
   const { data, setCountryCode } = useFilterTrendingPolls();

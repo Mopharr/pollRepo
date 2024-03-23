@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Layout, Button, Space } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "../../asset/polls_ranking.png";
-import Search from "@/asset/svg/search.svg";
+import Logo from "@/public/asset/polls_ranking.png";
+import Search from "@/public/asset/svg/search.svg";
 import styles from "./Header.module.css";
 
 const { Header } = Layout;

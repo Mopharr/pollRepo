@@ -4,12 +4,12 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { UserAuth } from "@/context/AuthContext";
 import { NavLink, useLocation } from "react-router-dom";
-import ProfileIcon from "@/asset/svg/profile.svg";
-import QuestionIcon from "@/asset/svg/question.svg";
-import TermsIcon from "@/asset/svg/terms.svg";
-import LogoutIcon from "@/asset/svg/logout.svg";
+import ProfileIcon from "@/public/asset/svg/profile.svg";
+import QuestionIcon from "@/public/asset/svg/question.svg";
+import TermsIcon from "@/public/asset/svg/terms.svg";
+import LogoutIcon from "@/public/asset/svg/logout.svg";
 import PollCreationModal from "../Modals/CreatePoll";
-import PlaceholderProfile from "@/asset/image/PlaceholderProfile.jpg";
+import PlaceholderProfile from "@/public/asset/image/PlaceholderProfile.jpg";
 import { CustomSwitch } from "@/ui";
 import useClickOutside from "@/hooks/useClickOutside";
 

@@ -1,19 +1,19 @@
 import { type FC, useState, type ChangeEvent, FormEvent } from "react";
-import { ModalWrapper } from "../../../ui";
-import { UserAuth } from "../../../context/AuthContext";
+import { ModalWrapper } from "@/ui";
+import { UserAuth } from "@/context/AuthContext";
 import styles from "./login.module.css";
-import Cancel from "../../../asset/svg/cancle.svg";
+import Cancel from "@/public/asset/svg/cancle.svg";
 import {
   validateEmail,
   validateGender as validateInput,
-} from "../../../utils/validateInput";
+} from "@/utils/validateInput";
 import { GoEye, GoEyeClosed } from "react-icons/go";
-import { reachGoogle } from "../../../utils/reachGoogle";
+import { reachGoogle } from "@/utils/reachGoogle";
 import Image from "next/image";
 import { FaApple } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import google from "../../../asset/image/google.png";
+import google from "@/public/asset/image/google.png";
 
 type Props = {
   show: boolean;
@@ -103,9 +103,10 @@ const LoginModal: FC<Props> = ({ show }) => {
   return (
     <ModalWrapper onClose={handleCloseLoginModal}>
       <div className={styles.loginForm}>
-      <Image
+        <Image
           src={Cancel}
-          onClick={handleCloseLoginModal} className={styles.cancel} 
+          onClick={handleCloseLoginModal}
+          className={styles.cancel}
           alt="Close"
         />
         <form onSubmit={handleSubmit}>

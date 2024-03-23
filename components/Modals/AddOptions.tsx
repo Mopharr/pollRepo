@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "@/styles/AddOption.module.css";
 import { Modal, Button } from "antd";
-import DescriptionIcon from "@/asset/svg/decscrip.svg";
+import DescriptionIcon from "@/public/asset/svg/decscrip.svg";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import dummy from "@/asset/image/dummy.webp";
+import dummy from "@/public/asset/image/dummy.webp";
 import Image from "next/image";
 
 const AddOptions = ({

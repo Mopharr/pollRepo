@@ -1,8 +1,8 @@
-import userPP1 from "@/asset/image/user1.png";
-import userPP2 from "@/asset/image/user2.png";
-import userPP3 from "@/asset/image/user3.png";
-import optionImage1 from "@/asset/image/user3.png";
-import LeoMessi from "@/asset/image/leo messi.jpeg";
+import userPP1 from "@/public/asset/image/user1.png";
+import userPP2 from "@/public/asset/image/user2.png";
+import userPP3 from "@/public/asset/image/user3.png";
+import optionImage1 from "@/public/asset/image/user3.png";
+import LeoMessi from "@/public/asset/image/leo messi.jpeg";
 import moment from "moment";
 import Image, { StaticImageData } from "next/image";
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { handlePublicRequest } from "../utils/http";
-import RedCross from "../asset/svg/RedCross.svg";
-import GreenCheck from "../asset/svg/GreenCheck.svg";
+import RedCross from "@/public/asset/svg/RedCross.svg";
+import GreenCheck from "@/public/asset/svg/GreenCheck.svg";
 import styles from "../styles/verifyemail.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";

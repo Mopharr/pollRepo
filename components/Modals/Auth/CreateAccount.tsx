@@ -1,9 +1,9 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import styles from "./createaccount.module.css";
-import Cancle from "../../../asset/svg/cancle.svg";
-import Input from "../../../ui/Input/Input";
-import { UserAuth } from "../../../context/AuthContext";
-import { interestOptions } from "../../../constants/Interest";
+import Cancle from "@/public/asset/svg/cancle.svg";
+import Input from "@/ui/Input/Input";
+import { UserAuth } from "@/context/AuthContext";
+import { interestOptions } from "@/constants/Interest";
 import Link from "next/link";
 import {
   validateEmail,
@@ -13,16 +13,16 @@ import {
   validateString,
   validateGender,
   validateDob,
-} from "../../../utils/validateInput";
+} from "@/utils/validateInput";
 import {
   CitySelect,
   CountrySelect,
   StateSelect,
 } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
-import { type FormData } from "../../../types/auth";
-import { extractValidFormData } from "../../../helpers";
-import { options } from "../../../constants/profileOptions";
+import { type FormData } from "@/types/auth";
+import { extractValidFormData } from "@/helpers";
+import { options } from "@/constants/profileOptions";
 import Image from "next/image";
 
 interface CreateAccountModalProps {

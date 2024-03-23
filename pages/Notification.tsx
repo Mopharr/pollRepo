@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import NotificationData from "@/data/notifications.json";
-import Imga from "@/asset/image/leo messi.jpeg";
-import LikeIcon from "@/asset/svg/like.svg";
-import CommentIcon from "@/asset/svg/FashionIcon.svg";
-import MessageIcon from "@/asset/svg/LegacyIcon.svg";
-import FollowIcon from "@/asset/svg/follow.svg";
+import Imga from "@/public/asset/image/leo messi.jpeg";
+import LikeIcon from "@/public/asset/svg/like.svg";
+import CommentIcon from "@/public/asset/svg/FashionIcon.svg";
+import MessageIcon from "@/public/asset/svg/LegacyIcon.svg";
+import FollowIcon from "@/public/asset/svg/follow.svg";
 import Image from "next/image";
 import styles from "@/styles/Notification.module.css";
 

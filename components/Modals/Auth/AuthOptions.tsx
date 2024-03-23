@@ -1,13 +1,13 @@
 import { type FC } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
-import Cancle from "../../../asset/svg/cancle.svg";
-import Logo from "../../../asset/image/Prl02r.png";
+import Cancle from "@/public/asset/svg/cancle.svg";
+import Logo from "@/public/asset/image/Prl02r.png";
 import styles from "./authoptions.module.css";
-import { UserAuth } from "../../../context/AuthContext";
-import { reachGoogle } from "../../../utils/reachGoogle";
+import { UserAuth } from "@/context/AuthContext";
+import { reachGoogle } from "@/utils/reachGoogle";
 import Link from "next/link";
-import google from "../../../asset/image/google.png";
+import google from "@/public/asset/image/google.png";
 import Image from "next/image";
 
 type Props = {

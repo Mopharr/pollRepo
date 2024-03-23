@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ModalWrapper } from "../../../ui";
-import check from "../../../asset/svg/check.svg";
+import check from "@/public/asset/svg/check.svg";
 import { UserAuth } from "../../../context/AuthContext";
 import styles from "./confirm.module.css";
 import Image from "next/image";

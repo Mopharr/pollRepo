@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "../styles/explore.module.css";
 import Trends from "../components/Trends/Trends";
-import Loading from "@/asset/svg/LoadingIcon.svg";
-import Search from "@/asset/svg/search.svg";
-import Onedot from "@/asset/svg/one_dot.svg";
+import Loading from "@/public/asset/svg/LoadingIcon.svg";
+import Search from "@/public/asset/svg/search.svg";
+import Onedot from "@/public/asset/svg/one_dot.svg";
 import TopicsToFollow from "@/components/TopicsToFollow/TopicsToFollow";
 import { useFilterTrendingPolls } from "@/context/TrendingPollsContext";
 import PollsList from "@/components/PollsList/PollsList";

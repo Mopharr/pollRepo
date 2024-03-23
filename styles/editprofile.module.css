@@ -191,7 +191,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url("../asset/svg/downSel.svg") no-repeat right 10px center;
+  background: url("../public/asset/svg/downSel.svg") no-repeat right 10px center;
   background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-position: right 10px center; /* Adjust the position of the arrow */

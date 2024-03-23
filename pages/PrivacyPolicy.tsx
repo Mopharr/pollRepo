@@ -3,10 +3,10 @@ import { Container } from "../ui";
 import styles from "../styles/privacy.module.css";
 import  Link  from "next/link";
 import { privacy } from "../constants/privacy";
-import Hero1 from "../asset/image/Hero1.jpg";
-import Television1 from "../asset/image/Television1.jpg";
-import ManTalking from "../asset/image/ManTalking.jpg";
-import ManWiring from "../asset/image/ManWiring.jpg";
+import Hero1 from "@/public/asset/image/Hero1.jpg";
+import Television1 from "@/public/asset/image/Television1.jpg";
+import ManTalking from "@/public/asset/image/ManTalking.jpg";
+import ManWiring from "@/public/asset/image/ManWiring.jpg";
 import {
   faqOne,
   faqTwo,

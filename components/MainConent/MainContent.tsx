@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import data from "@/data/data";
-import oneDot from "@/asset/svg/one_dot.svg";
-import ThreeDot from "@/asset/svg/three_dot.svg";
+import oneDot from "@/public/asset/svg/one_dot.svg";
+import ThreeDot from "@/public/asset/svg/three_dot.svg";
 import { Button } from "antd";
 import { CiHeart } from "react-icons/ci";
 import { FaRegComment } from "react-icons/fa6";
