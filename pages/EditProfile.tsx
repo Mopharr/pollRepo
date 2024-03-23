@@ -8,8 +8,8 @@ import PlaceholderCover from "../asset/image/PlaceholderCover.jpg";
 import PlaceholderProfile from "../asset/image/PlaceholderProfile.jpg";
 import { Switch } from "antd";
 import styles from "../styles/editprofile.module.css";
-import ProfileInput from "../ui/ProfileInput/ProfileInput";
-import { validateDob } from "../utils/validateInput";
+import ProfileInput from "@/ui/ProfileInput/ProfileInput";
+import { validateDob } from "@/utils/validateInput";
 import {
   CitySelect,
   CountrySelect,
@@ -366,7 +366,7 @@ const EditProfile = () => {
 
   return (
     <main className={styles.main}>
-      <section className={styles.navigation}>
+     <section className={styles.navigation}>
         <Container className={styles.containerTop}>
           <div className={styles.topBar}>
             <div>
@@ -443,12 +443,12 @@ const EditProfile = () => {
           </div>
         </div>
       </section>
-
-      {activeTab === "editProfile" && (
+  
+     {activeTab === "editProfile" && (
         <section className={styles.editProfileSection}>
           <Container className={styles.containerBox}>
             <form
-              className={styles.formOne}
+             className={styles.formOne}
               onSubmit={handleProfileSubmit}
               encType="multipart/form-data"
             >
@@ -765,7 +765,7 @@ const EditProfile = () => {
                     ))}
                 </div>
 
-                {/* ADDITIONAL FIELDS */}
+               
 
                 {activeOptionalField.includes("Favorite sport") && (
                   <ProfileInput
@@ -1082,7 +1082,7 @@ const EditProfile = () => {
             </form>
           </Container>
         </section>
-      )}
+      )} 
     </main>
   );
 };

@@ -4,10 +4,11 @@ import {
   type ChangeEvent,
   type ComponentPropsWithoutRef,
 } from "react";
-import ChevronDown  from "../../asset/svg/ChevronDown.svg";
+import ChevronDown from "../../asset/svg/ChevronDown.svg";
 import styles from "./profileinput.module.css";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { FaCheck } from "react-icons/fa";
+import Image from "next/image";
 
 type InputProps = {
   label: string;
@@ -51,8 +52,7 @@ const ProfileInput: FC<InputProps> = ({
               {...rest}
               readOnly
             />
-
-            <ChevronDown className={styles.chevronDown} />
+            <Image src={ChevronDown} className={styles.chevronDown} alt="" />
           </div>
 
           {serverError &&
@@ -77,6 +77,7 @@ const ProfileInput: FC<InputProps> = ({
               </li>
             ))}
           </ul>
+          <h1></h1>
         </>
       ) : type === "selectTwo" ? (
         <>
@@ -91,17 +92,14 @@ const ProfileInput: FC<InputProps> = ({
               onChange={(e) => onChange && onChange(e)}
               {...rest}
             />
-
-            <ChevronDown className={styles.chevronDown} />
+            <Image src={ChevronDown} className={styles.chevronDown} alt="" />
           </div>
-
           {serverError &&
             serverError?.map((error) => (
               <p key={error} className={styles.error}>
                 {error}
               </p>
             ))}
-
           <ul className="dropdown">
             {options?.map((option, index) => (
               <li
@@ -117,6 +115,7 @@ const ProfileInput: FC<InputProps> = ({
               </li>
             ))}
           </ul>
+          <h1></h1>{" "}
         </>
       ) : type === "password" ? (
         <>
@@ -150,6 +149,7 @@ const ProfileInput: FC<InputProps> = ({
                 {error}
               </p>
             ))}
+          <h1></h1>{" "}
         </>
       ) : (
         <>
@@ -171,6 +171,7 @@ const ProfileInput: FC<InputProps> = ({
                 {error}
               </p>
             ))}
+          <h1></h1>{" "}
         </>
       )}
     </div>
