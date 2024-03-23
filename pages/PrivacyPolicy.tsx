@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "../ui";
 import styles from "../styles/privacy.module.css";
-import { Link } from "react-router-dom";
+import  Link  from "next/link";
 import { privacy } from "../constants/privacy";
 import Hero1 from "../asset/image/Hero1.jpg";
 import Television1 from "../asset/image/Television1.jpg";
@@ -76,7 +76,7 @@ const PrivacyPolicy = () => {
                 <div key={item.id} className={styles.policy}>
                   <h5>{item.title}</h5>
 
-                  <Link to={item.url}>{item.description}</Link>
+                  <Link href={item.url}>{item.description}</Link>
                 </div>
               );
             })}

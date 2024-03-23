@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "../styles/explore.module.css";
 import Trends from "../components/Trends/Trends";
 import Loading from "@/asset/svg/LoadingIcon.svg";

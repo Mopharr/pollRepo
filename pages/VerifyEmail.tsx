@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { handlePublicRequest } from "../utils/http";
 import RedCross from "../asset/svg/RedCross.svg";
 import GreenCheck from "../asset/svg/GreenCheck.svg";
 import styles from "../styles/verifyemail.module.css";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 const VerifyEmail = () => {
-  const [urlSearchParams, setUrlSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [isNetworkError, setIsNetworkError] = useState<boolean>(false);
   const [tryAgain, setTryAgain] = useState<boolean>(false);
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const key = urlSearchParams.get("key");
+  const { query } = router;
+  const key = query.key;
 
   useEffect(() => {
     async function handleVerifyEmail() {
@@ -24,11 +26,13 @@ const VerifyEmail = () => {
       setIsLoading(true);
 
       try {
+        const keys = Array.isArray(key) ? key : [key];
+        const firstKey = keys.length > 0 ? keys[0] : undefined;
         const data = (await handlePublicRequest<{ key: string }>(
           "post",
           "/auth/registration/verify-email/",
           {
-            key: key!,
+            key: firstKey!,
           }
         )) as any;
 
@@ -36,7 +40,6 @@ const VerifyEmail = () => {
         setSuccessMessage("Verified email successfully");
         setErrorMessage("");
         setIsNetworkError(false);
-        setUrlSearchParams("");
       } catch (error: any) {
         console.log(error?.response?.data);
         if (!error?.response) {
@@ -55,7 +58,7 @@ const VerifyEmail = () => {
     if (key || tryAgain) {
       handleVerifyEmail();
     }
-  }, [key, setUrlSearchParams, tryAgain]);
+  }, [key, tryAgain]);
 
   return (
     <div
@@ -64,8 +67,8 @@ const VerifyEmail = () => {
       }`}
     >
       <div className={styles.svgBox}>
-        {successMessage && <GreenCheck />}
-        {errorMessage && <RedCross />}
+        {successMessage && <Image alt="" src={GreenCheck} />}
+        {errorMessage && <Image alt="" src={RedCross} />}
 
         {isLoading && (
           <div className={styles["lds-default"]}>
@@ -118,7 +121,7 @@ const VerifyEmail = () => {
               ? styles.errorBtn
               : ""
           }`}
-          onClick={() => navigate("/")}
+          onClick={() => router.push("/")}
         >
           Go home
         </button>

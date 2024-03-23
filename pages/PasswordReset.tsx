@@ -1,5 +1,4 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { useParams } from "react-router-dom";
 import {
   validatePassword,
   validateSecondPassword,
@@ -9,7 +8,7 @@ import styles from "../styles/passwordreset.module.css";
 import { type Data } from "./auth/forgotpassword";
 import { handlePublicRequest } from "../utils/http";
 import useNotify from "../hooks/useNotify";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { UserAuth } from "../context/AuthContext";
 import ToolTip from "../components/ToolTip/ToolTip";
 
@@ -41,9 +40,9 @@ const PasswordReset = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [serverError, setServerError] = useState<string[]>([]);
 
-  const { uid, token } = useParams();
+  const router = useRouter();
+  const { uid, token } = router.query;
 
-  const navigate = useNavigate();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -98,8 +97,8 @@ const PasswordReset = () => {
     try {
       const payLoad = {
         ...formData,
-        uid: uid && uid,
-        token: token && token,
+        uid: uid as string,
+        token: token as string,
       };
 
       const data = (await handlePublicRequest<Payload>(
@@ -118,7 +117,7 @@ const PasswordReset = () => {
       });
 
       handleShowLoginModal();
-      navigate("/", { replace: true });
+      router.push("/");
     } catch (error: any) {
       console.log(error?.response?.data);
       if (!error?.response) {
