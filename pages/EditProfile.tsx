@@ -182,31 +182,36 @@ const EditProfile = () => {
     }
   }, [dob]);
 
-  const reader = new FileReader();
-
   const handleFileSelect = (name: string, value: FileList | null) => {
-    if (name === "cover_image" && value !== null) {
-      setFormData((prev) => ({ ...prev, [name]: value[0] }));
+    if (typeof window !== 'undefined') {
+        if (name === "cover_image" && value !== null) {
+            setFormData((prev) => ({ ...prev, [name]: value[0] }));
 
-      reader.onload = function (event: any) {
-        const imagePath = event.target.result; // Get the data URL
-        setImageURL((prev) => ({ ...prev, cover_image: imagePath }));
-      };
+            const reader = new FileReader();
+            reader.onload = function (event: any) {
+                const imagePath = event.target.result; // Get the data URL
+                setImageURL((prev) => ({ ...prev, cover_image: imagePath }));
+            };
 
-      reader.readAsDataURL(value[0]);
-    } else if (name === "profile_photo" && value !== null) {
-      setFormData((prev) => ({ ...prev, [name]: value[0] }));
+            reader.readAsDataURL(value[0]);
+        } else if (name === "profile_photo" && value !== null) {
+            setFormData((prev) => ({ ...prev, [name]: value[0] }));
 
-      reader.onload = function (event: any) {
-        const imagePath = event.target.result; // Get the data URL
-        setImageURL((prev) => ({ ...prev, profile_photo: imagePath }));
-      };
+            const reader = new FileReader();
+            reader.onload = function (event: any) {
+                const imagePath = event.target.result; // Get the data URL
+                setImageURL((prev) => ({ ...prev, profile_photo: imagePath }));
+            };
 
-      reader.readAsDataURL(value[0]);
+            reader.readAsDataURL(value[0]);
+        }
+    } else {
+        console.error("Window is not defined, cannot execute FileReader.");
     }
-  };
+};
 
-  const handleInputChange = (name: string, value: string) => {
+
+const handleInputChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 

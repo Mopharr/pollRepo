@@ -7,22 +7,11 @@ import Search from "@/asset/svg/search.svg";
 import Onedot from "@/asset/svg/one_dot.svg";
 import TopicsToFollow from "@/components/TopicsToFollow/TopicsToFollow";
 import { useFilterTrendingPolls } from "@/context/TrendingPollsContext";
-import { formatNumber } from "@/helpers";
 import PollsList from "@/components/PollsList/PollsList";
 import Image from "next/image";
 
 const Explore = () => {
-  const { data, setCountryCode } = useFilterTrendingPolls();
-  const navigate = useNavigate();
-
-  type SvgIconProps = React.SVGProps<SVGSVGElement> & {
-    as: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  };
-
-  const SvgIcon: React.FC<SvgIconProps> = ({ as: SvgComponent, ...props }) => {
-    return <SvgComponent {...props} width={20} height={20} />;
-  };
-
+  const { data } = useFilterTrendingPolls();
   return (
     <div className={styles.explarePages}>
       <div className={styles.inputWrapper}>
