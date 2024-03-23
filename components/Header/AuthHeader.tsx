@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Layout, Space, Button } from "antd";
@@ -60,7 +61,7 @@ const AuthHeader: React.FC<{ onLoginClick: () => void }> = ({
 
   const BrandIcon: React.FC = () => (
     <Link href="/">
-      <Image className={styles.brandIcon} src={Logo} alt="polls_ranking" />
+      <Image className={styles.brandIcon} src={Logo.src} alt="polls_ranking" />
     </Link>
   );
 
