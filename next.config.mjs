@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["res.cloudinary.com", "img.youtube.com", "www.rollingstone.com"],
+    unoptimized: true
   },
 };
 
