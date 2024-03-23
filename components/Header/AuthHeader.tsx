@@ -61,7 +61,7 @@ const AuthHeader: React.FC<{ onLoginClick: () => void }> = ({
 
   const BrandIcon: React.FC = () => (
     <Link href="/">
-      <Image className={styles.brandIcon} src={Logo.src} alt="polls_ranking" />
+      <img className={styles.brandIcon} src={Logo.src} alt="polls_ranking" />
     </Link>
   );
 
