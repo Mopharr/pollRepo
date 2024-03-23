@@ -183,35 +183,34 @@ const EditProfile = () => {
   }, [dob]);
 
   const handleFileSelect = (name: string, value: FileList | null) => {
-    if (typeof window !== 'undefined') {
-        if (name === "cover_image" && value !== null) {
-            setFormData((prev) => ({ ...prev, [name]: value[0] }));
+    if (typeof window !== "undefined") {
+      if (name === "cover_image" && value !== null) {
+        setFormData((prev) => ({ ...prev, [name]: value[0] }));
 
-            const reader = new FileReader();
-            reader.onload = function (event: any) {
-                const imagePath = event.target.result; // Get the data URL
-                setImageURL((prev) => ({ ...prev, cover_image: imagePath }));
-            };
+        const reader = new FileReader();
+        reader.onload = function (event: any) {
+          const imagePath = event.target.result; // Get the data URL
+          setImageURL((prev) => ({ ...prev, cover_image: imagePath }));
+        };
 
-            reader.readAsDataURL(value[0]);
-        } else if (name === "profile_photo" && value !== null) {
-            setFormData((prev) => ({ ...prev, [name]: value[0] }));
+        reader.readAsDataURL(value[0]);
+      } else if (name === "profile_photo" && value !== null) {
+        setFormData((prev) => ({ ...prev, [name]: value[0] }));
 
-            const reader = new FileReader();
-            reader.onload = function (event: any) {
-                const imagePath = event.target.result; // Get the data URL
-                setImageURL((prev) => ({ ...prev, profile_photo: imagePath }));
-            };
+        const reader = new FileReader();
+        reader.onload = function (event: any) {
+          const imagePath = event.target.result; // Get the data URL
+          setImageURL((prev) => ({ ...prev, profile_photo: imagePath }));
+        };
 
-            reader.readAsDataURL(value[0]);
-        }
+        reader.readAsDataURL(value[0]);
+      }
     } else {
-        console.error("Window is not defined, cannot execute FileReader.");
+      console.error("Window is not defined, cannot execute FileReader.");
     }
-};
+  };
 
-
-const handleInputChange = (name: string, value: string) => {
+  const handleInputChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -255,10 +254,12 @@ const handleInputChange = (name: string, value: string) => {
         return;
       }
     }
+    const monthIndex = months.indexOf(dob.month);
+    const monthNumber = monthIndex !== -1 ? monthIndex + 1 : 1;
 
     const data: ProfileData = {
       ...formData,
-      birth_date: `${dob.year}-${months.indexOf(dob.month) + 1}-${dob.day}`,
+      birth_date: `${dob.year}-${monthNumber}-${dob.day}`,
     };
     const newFormData = extractValidProfileData(data);
 
@@ -425,7 +426,7 @@ const handleInputChange = (name: string, value: string) => {
               }
               alt="profile_photo"
             />
-        
+
             {activeTab === "editProfile" && (
               <label htmlFor="profile_photo">
                 <input
