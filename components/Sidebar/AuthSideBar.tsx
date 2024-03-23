@@ -114,7 +114,7 @@ const AuthSideBar = () => {
         <Link
           href={isAuthenticated ? "home" : ""}
           className={`${getNavLinkClass} ${styles.mobileNav} ${
-            router.pathname === "/home" ? styles.activeLink : ""
+            router.pathname === "/" ? styles.activeLink : ""
           }`}
           onMouseEnter={() => handleMouseEnter("home")}
           onMouseLeave={handleMouseLeave}

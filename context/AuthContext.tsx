@@ -197,7 +197,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      router.push("/home");
+      router.push("/");
       handleCloseCreateAccount();
       handleCloseAuthModal();
       handleShowConfirmModal();
@@ -239,7 +239,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      router.push("/home");
+      router.push("/");
       handleCloseCreateAccount();
       handleCloseAuthModal();
     } catch (error: any) {
@@ -285,7 +285,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUserData(data.user);
-      router.push("/home");
+      router.push("/");
       handleCloseCreateAccount();
       handleCloseAuthModal();
       resetData({
