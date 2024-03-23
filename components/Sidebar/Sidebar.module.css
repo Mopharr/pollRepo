@@ -235,6 +235,7 @@
   cursor: pointer;
   font-weight: 500;
   transition: color 0.5 ease-in-out;
+  color: #000;
 }
 
 .additionalClass:hover {
