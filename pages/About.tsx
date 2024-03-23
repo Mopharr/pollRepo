@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
-import { Container } from "../ui";
-import Mission from "../asset/image/Mission.jpg";
-import Why from "../asset/image/why.jpg";
-import Gathering from "../asset/image/Gathering.jpg";
-import OurStory from "../asset/image/OurStory.jpg";
-import World from "../asset/image/world.jpg";
-import JoinUs from "../asset/image/JoinUs.jpg";
-import styles from "../styles/about.module.css";
+import { Container } from "@/ui";
+import Mission from "@/asset/image/Mission.jpg";
+import Why from "@/asset/image/why.jpg";
+import Gathering from "@/asset/image/Gathering.jpg";
+import OurStory from "@/asset/image/OurStory.jpg";
+import World from "@/asset/image/world.jpg";
+import JoinUs from "@/asset/image/JoinUs.jpg";
+import styles from "@/styles/about.module.css";
 import Image from "next/image";
 const About = () => {
   return (
