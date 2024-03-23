@@ -6,11 +6,7 @@ import CommentIcon from "@/asset/svg/FashionIcon.svg";
 import MessageIcon from "@/asset/svg/LegacyIcon.svg";
 import FollowIcon from "@/asset/svg/follow.svg";
 import Image from "next/image";
-// import CommentIcon from "@/asset/svg/comment.png";
-import { FaRegComment } from "react-icons/fa";
-import { TiMessages } from "react-icons/ti";
 import styles from "@/styles/Notification.module.css";
-import { notifications } from "@/data/notifications.react";
 
 // Define interfaces to match the new JSON structure
 interface User {
@@ -87,13 +83,13 @@ const Notification = () => {
   const renderIcon = (notification: INotification) => {
     switch (notification.type) {
       case "follow":
-        return <FollowIcon />;
+        return <Image alt="" src={FollowIcon} />;
       case "like":
-        return <LikeIcon />;
+        return <Image alt="" src={LikeIcon} />;
       case "comment":
-        return <CommentIcon />;
+        return <Image alt="" src={CommentIcon} />;
       case "message":
-        return <MessageIcon />;
+        return <Image alt="" src={MessageIcon} />;
       // case "event_invitation":
       //   return <Icon name="event" />;
       // case "group_join_request":
@@ -177,7 +173,6 @@ const Notification = () => {
               <div>{renderIcon(notification)}</div>
               <div>
                 <Image
-                  // src={notification.user.profile_picture}
                   src={Imga}
                   alt={notification.user.name}
                   style={{ width: 40, height: 40, borderRadius: "50%" }}
