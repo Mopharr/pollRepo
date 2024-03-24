@@ -16,7 +16,7 @@ const TrendsAndFollow = () => {
         {pathname !== "/trends" && isNotWatchList && <Trends />}
       </div>
       <div className={styles.trendWhoToFollow}>
-        <WhoToFollow />
+        {/* <WhoToFollow /> */}
       </div>
       <div className={styles.trendWhoToFollow}>
         <Policy />

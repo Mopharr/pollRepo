@@ -6,12 +6,12 @@ import React, {
   useCallback,
   ReactNode,
 } from "react";
-import { useRouter } from "next/router";
 import { axiosPublic, axiosPrivate } from "../library/axios";
 import { PollData } from "../types/fetchPolls.type";
 import { handlePrivateRequest } from "../utils/http";
 import { UserAuth } from "./AuthContext";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { useRouter } from "next/router";
 
 export type FilterState = {
   legacyPollsOnly: boolean;
@@ -29,15 +29,11 @@ interface FilterContextType {
   filters: FilterState;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   data: PollData[];
-  // userData: PollData[];
-  // setUserData: React.Dispatch<React.SetStateAction<PollData[]>>;
   setData: React.Dispatch<React.SetStateAction<PollData[]>>;
   fetchMoreData: () => Promise<void>;
-  // fetchMoreUserData: () => Promise<void>;
   url: string;
   setUrl: React.Dispatch<React.SetStateAction<string>>;
-  // userUrl: string;
-  // setUserUrl: React.Dispatch<React.SetStateAction<string>>;
+
   suggestedInterests: SuggestedInterest[];
   setSuggestedInterests: React.Dispatch<
     React.SetStateAction<SuggestedInterest[]>
@@ -94,18 +90,17 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     router.push({ pathname: router.pathname, query: updatedParams }); // Update URL with new parameters
   };
   const fetchData = useCallback(async () => {
+    console.log("main touch")
     localStorage.removeItem("votedPolls");
-    localStorage.removeItem("votedChoices");
     setIsLoading(true);
     try {
       const response = isAuthenticated
         ? await axiosPrivate.get<any>(`polls/polls${url}${topicsQuery}`)
         : await axiosPublic.get<any>(`polls/polls${url}${topicsQuery}`);
       const { results, next } = response.data.Poll;
-      setOriginalData(results);
       setData(results);
+      // setOriginalData(results);
       setHasMore(next !== null);
-      setIsLoading(false);
     } catch (error) {
       console.error("Failed to fetch data:", error);
     } finally {
@@ -114,6 +109,8 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
   }, [topicsQuery, url, isAuthenticated]);
 
   const fetchMoreData = async () => {
+    console.log("more touch")
+
     if (!url || isFetchingMore || !hasMore) return;
     setIsFetchingMore(true);
     try {
@@ -122,7 +119,6 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
         : await axiosPublic.get<any>(`polls/polls${url}${topicsQuery}`);
       const { results, next } = response.data.Poll;
       setData((prevData) => [...prevData, ...results]);
-      setOriginalData((prevData) => [...prevData, ...results]);
       const newNextVal = next.split("polls/polls")[1];
       setUrl(newNextVal);
       setHasMore(next !== null);
@@ -148,16 +144,21 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
   }, [filters, originalData]);
 
   useEffect(() => {
-    // This runs anytime a topic is selected
+    // console.log("checing data", data);
+  }, []);
+
+  useEffect(() => {
     if (searchValue) {
+      console.log("search touch");
       fetchData();
     }
     // This runs when the Home component mounts the dom
-    else if (!searchValue) {
+    // Remove the condition and directly call fetchData()
+    else {
+      console.log("not search touch");
       fetchData();
-      // fetchUserData();
     }
-  }, [searchValue, fetchData]);
+  }, [searchValue]);
 
   const fetchSuggestedInterests = async () => {
     setIsLoadingInterest(true);

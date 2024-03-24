@@ -73,87 +73,87 @@ const PollsList: React.FC<PollsListProps> = ({
     e.currentTarget.blur();
   };
 
-  const handleBookmark = async (id: number, slug: string) => {
-    if (!isAuthenticated) {
-      handleShowAuthModal();
-      return;
-    }
+  // const handleBookmark = async (id: number, slug: string) => {
+  //   if (!isAuthenticated) {
+  //     handleShowAuthModal();
+  //     return;
+  //   }
 
-    const existingPollData: PollData[] = [...data];
-    const index = existingPollData.findIndex((poll) => poll.id === id);
+  //   const existingPollData: PollData[] = [...data];
+  //   const index = existingPollData.findIndex((poll) => poll.id === id);
 
-    if (existingPollData[index].is_monitored === false) {
-      existingPollData[index].monitors_count++;
-    } else {
-      existingPollData[index].monitors_count--;
-    }
+  //   if (existingPollData[index].is_monitored === false) {
+  //     existingPollData[index].monitors_count++;
+  //   } else {
+  //     existingPollData[index].monitors_count--;
+  //   }
 
-    existingPollData[index].is_monitored = existingPollData[index].is_monitored
-      ? false
-      : true;
-    setData && setData(existingPollData);
-    try {
-      await handlePrivateRequest("post", `/monitors/toggle_monitor/${slug}/`);
-    } catch (error: any) {
-      // console.log(error?.response?.data);
-      const existingPollData: PollData[] = [...data];
-      const index = existingPollData.findIndex((poll) => poll.id === id);
+  //   existingPollData[index].is_monitored = existingPollData[index].is_monitored
+  //     ? false
+  //     : true;
+  //   setData && setData(existingPollData);
+  //   try {
+  //     await handlePrivateRequest("post", `/monitors/toggle_monitor/${slug}/`);
+  //   } catch (error: any) {
+  //     // console.log(error?.response?.data);
+  //     const existingPollData: PollData[] = [...data];
+  //     const index = existingPollData.findIndex((poll) => poll.id === id);
 
-      if (existingPollData[index].is_monitored === false) {
-        existingPollData[index].monitors_count++;
-      } else {
-        existingPollData[index].monitors_count--;
-      }
+  //     if (existingPollData[index].is_monitored === false) {
+  //       existingPollData[index].monitors_count++;
+  //     } else {
+  //       existingPollData[index].monitors_count--;
+  //     }
 
-      existingPollData[index].is_monitored = existingPollData[index]
-        .is_monitored
-        ? false
-        : true;
-      setData && setData(existingPollData);
-      if (!error?.response) {
-        notify("Check your internet connection", "error", {
-          toastId: sessionId,
-        });
-      }
-      if (error?.response) {
-        notify(error?.response?.data[0], "error", {
-          toastId: sessionId,
-        });
-      }
-    }
-  };
+  //     existingPollData[index].is_monitored = existingPollData[index]
+  //       .is_monitored
+  //       ? false
+  //       : true;
+  //     setData && setData(existingPollData);
+  //     if (!error?.response) {
+  //       notify("Check your internet connection", "error", {
+  //         toastId: sessionId,
+  //       });
+  //     }
+  //     if (error?.response) {
+  //       notify(error?.response?.data[0], "error", {
+  //         toastId: sessionId,
+  //       });
+  //     }
+  //   }
+  // };
 
-  const handleFollow = async (authorId: string) => {
-    if (!isAuthenticated) {
-      handleShowAuthModal();
-      return;
-    }
-    try {
-      await handlePrivateRequest("post", `/profiles/${authorId}/follow/`);
+  // const handleFollow = async (authorId: string) => {
+  //   if (!isAuthenticated) {
+  //     handleShowAuthModal();
+  //     return;
+  //   }
+  //   try {
+  //     await handlePrivateRequest("post", `/profiles/${authorId}/follow/`);
 
-      const existingPollData: PollData[] = [...data];
+  //     const existingPollData: PollData[] = [...data];
 
-      const newData = existingPollData.map((poll) => {
-        if (poll.author_info.id === authorId) {
-          poll.author_info.is_following = true;
-        }
-        return poll;
-      });
-      setData && setData(newData);
-    } catch (error: any) {
-      console.log(error?.response?.data);
-      if (!error?.response) {
-        notify("Check your internet connection", "error", {
-          toastId: sessionId,
-        });
-      }
-      if (error?.response) {
-        notify(error?.response?.data?.message, "error", {
-          toastId: sessionId,
-        });
-      }
-    }
-  };
+  //     const newData = existingPollData.map((poll) => {
+  //       if (poll.author_info.id === authorId) {
+  //         poll.author_info.is_following = true;
+  //       }
+  //       return poll;
+  //     });
+  //     setData && setData(newData);
+  //   } catch (error: any) {
+  //     console.log(error?.response?.data);
+  //     if (!error?.response) {
+  //       notify("Check your internet connection", "error", {
+  //         toastId: sessionId,
+  //       });
+  //     }
+  //     if (error?.response) {
+  //       notify(error?.response?.data?.message, "error", {
+  //         toastId: sessionId,
+  //       });
+  //     }
+  //   }
+  // };
 
   const toggleShowAllOptions = (pollId: number) => {
     setShowAllOptions((prevShowAllOptions) => ({
@@ -491,7 +491,7 @@ const PollsList: React.FC<PollsListProps> = ({
                       <>
                         <span className={styles.ddott}>.</span>
                         <button
-                          onClick={() => handleFollow(poll.author_info.id)}
+                          // onClick={() => handleFollow(poll.author_info.id)}
                         >
                           Follow
                         </button>
@@ -764,7 +764,7 @@ const PollsList: React.FC<PollsListProps> = ({
                 </Link> */}
                 <button
                   title="Monitor"
-                  onClick={() => handleBookmark(poll.id, poll.slug)}
+                  // onClick={() => handleBookmark(poll.id, poll.slug)}
                 >
                   <TiBookmark
                     size={18}

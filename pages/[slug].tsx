@@ -6,7 +6,6 @@ import Link from "next/link";
 import ThreeDot from "@/public/asset/svg/three_dot.svg";
 import DescriptionIcon from "@/public/asset/svg/decscrip.svg";
 import { Button, Modal } from "antd";
-import dummy from "@/public/asset/image/dummy.webp";
 import { GoDotFill } from "react-icons/go";
 import { axiosPublic, axiosPrivate } from "../library/axios";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
@@ -16,21 +15,18 @@ import ShareModal from "../components/Modals/ShareModal";
 import ProgressBar from "../components/ProgressBar/ProgressBar";
 import moment from "moment";
 import { UserAuth } from "../context/AuthContext";
-import Iframe from "react-iframe";
 import { TiBookmark } from "react-icons/ti";
 import { LiaStreetViewSolid } from "react-icons/lia";
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import { abbreviateNumber } from "js-abbreviation-number";
 import { handlePrivateRequest } from "../utils/http";
 import useNotify from "../hooks/useNotify";
-import { Helmet } from "react-helmet-async";
 import YouTube, { YouTubeProps } from "react-youtube";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import HeaderComponent from "@/components/Header/Header";
 import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
 import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
-
 
 type Props = {};
 
@@ -406,7 +402,7 @@ const PollDetails = (props: Props) => {
         <DashboardLayout>
           <div>
             <div className={styles.title}>
-              <Link href="/home">
+              <Link href="/">
                 <HiArrowLeft className={styles.titleIcon} />
               </Link>
               <h2>Polls</h2>
@@ -425,8 +421,10 @@ const PollDetails = (props: Props) => {
                     <div className={styles.pollWrapH}>
                       <div className={styles.pollWrap}>
                         <Image
-                          src={poll.author_info.profile_picture  || ""}
+                          src={poll.author_info.profile_picture || ""}
                           className={styles.HeadImage}
+                          width={30}
+                          height={30}
                           alt=""
                         />
                         <div className={styles.nameDes}>
@@ -445,7 +443,7 @@ const PollDetails = (props: Props) => {
                       </div>
                       <div style={{ position: "relative" }}>
                         <Image
-                          src={ThreeDot}
+                          src={ThreeDot || ""}
                           alt=""
                           className={styles.userName3}
                           onClick={() => handleShareToggle(poll.id)}
@@ -563,6 +561,8 @@ const PollDetails = (props: Props) => {
                                     <Image
                                       src={choice.choice_icon_thumbnail || ""}
                                       className={styles.HeadImage}
+                                      width={30}
+                                      height={30}
                                       alt=""
                                     />
                                   </Button>
