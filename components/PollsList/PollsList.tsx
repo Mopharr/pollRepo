@@ -491,7 +491,7 @@ const PollsList: React.FC<PollsListProps> = ({
                       <>
                         <span className={styles.ddott}>.</span>
                         <button
-                          // onClick={() => handleFollow(poll.author_info.id)}
+                          onClick={() => handleFollow(poll.author_info.id)}
                         >
                           Follow
                         </button>
@@ -764,7 +764,7 @@ const PollsList: React.FC<PollsListProps> = ({
                 </Link> */}
                 <button
                   title="Monitor"
-                  // onClick={() => handleBookmark(poll.id, poll.slug)}
+                  onClick={() => handleBookmark(poll.id, poll.slug)}
                 >
                   <TiBookmark
                     size={18}

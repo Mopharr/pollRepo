@@ -13,7 +13,7 @@ import FooterLayout from "../FooterLayout/FooterLayout";
 import About from "@/pages/About";
 import PollDetailsLayout from "@/layouts/PollDetailsLayout/PollsDetailLayout";
 import ProfileLayout from "@/layouts/ProfileLayout/ProfileLayout";
-import EditProfile from "@/pages/EditProfile";
+import EditProfile from "@/pages/profile/editprofile";
 // import NotificationLayout from "../Notification/NotificationLayout";
 import WatchList from "@/pages/WatchList";
 import RequireAuth from "@/layouts/RequireAuth/RequireAuth";

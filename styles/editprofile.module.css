@@ -33,7 +33,20 @@
   font-size: clamp(0.875rem, 0.5833rem + 0.9333vw, 1.4rem);
   font-weight: 600;
   cursor: pointer;
+  color: #000;
   border-bottom: 3px solid transparent;
+}
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+.titleIcon {
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
 }
 
 .topBar div > button.active {

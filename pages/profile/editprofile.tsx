@@ -1,13 +1,13 @@
 import { useState, useEffect, FormEvent } from "react";
-import { UserProfile, type ProfileData } from "../types/auth";
-import { Container } from "../ui";
+import { UserProfile, type ProfileData } from "../../types/auth";
+import { Container } from "../../ui";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { PiCamera } from "react-icons/pi";
 import { FaCheck } from "react-icons/fa";
 import PlaceholderCover from "@/public/asset/image/PlaceholderCover.jpg";
 import PlaceholderProfile from "@/public/asset/image/PlaceholderProfile.jpg";
 import { Switch } from "antd";
-import styles from "../styles/editprofile.module.css";
+import styles from "@/styles/editprofile.module.css";
 import ProfileInput from "@/ui/ProfileInput/ProfileInput";
 import { validateDob } from "@/utils/validateInput";
 import {
@@ -20,14 +20,16 @@ import {
   options,
   optionalFields,
   demographicsKey,
-} from "../constants/profileOptions";
-import { Data, extractValidProfileData } from "../helpers";
-import { handlePrivateRequest } from "../utils/http";
-import { UserAuth } from "../context/AuthContext";
-import useNotify from "../hooks/useNotify";
-import { userFormData } from "../constants/userFormData";
-import { formatDate } from "../utils/formatDate";
+} from "../../constants/profileOptions";
+import { Data, extractValidProfileData } from "../../helpers";
+import { handlePrivateRequest } from "../../utils/http";
+import { UserAuth } from "../../context/AuthContext";
+import useNotify from "../../hooks/useNotify";
+import { userFormData } from "../../constants/userFormData";
+import { formatDate } from "../../utils/formatDate";
 import Image from "next/image";
+import { HiArrowLeft } from "react-icons/hi2";
+import { useRouter } from "next/router";
 
 type DobField = "day" | "month" | "year";
 
@@ -46,6 +48,10 @@ type FormError = {
 };
 
 const EditProfile = () => {
+  const router = useRouter();
+  const handleGoBack = () => {
+    router.back();
+  };
   const [dob, setDob] = useState<{
     day: string;
     month: string;
@@ -59,6 +65,7 @@ const EditProfile = () => {
   const bioMaxLength: number = 250;
 
   const { sessionId, userProfile, setUserProfile } = UserAuth();
+  console.log("checing user pro", userProfile);
 
   const notify = useNotify();
 
@@ -366,9 +373,11 @@ const EditProfile = () => {
 
   return (
     <main className={styles.main}>
-     <section className={styles.navigation}>
+      <section className={styles.navigation}>
         <Container className={styles.containerTop}>
           <div className={styles.topBar}>
+            <HiArrowLeft onClick={handleGoBack} className={styles.titleIcon} />
+
             <div>
               <button
                 className={activeTab === "editProfile" ? styles.active : ""}
@@ -397,6 +406,8 @@ const EditProfile = () => {
                 ? userProfile?.cover_image_url
                 : PlaceholderCover) as string
             }
+            width={100}
+            height={100}
             alt="cover_image"
           />
           {activeTab === "editProfile" && (
@@ -418,12 +429,14 @@ const EditProfile = () => {
           <div>
             <Image
               src={
-                (imageURL.profile_photo
-                  ? imageURL.profile_photo
-                  : userProfile?.profile_photo_url === "/profile_default.png"
+                (userProfile?.profile_photo_url === "/profile_default.png"
                   ? PlaceholderProfile
+                  : imageURL.profile_photo
+                  ? imageURL.profile_photo
                   : userProfile?.profile_photo_url) as string
               }
+              width={100}
+              height={100}
               alt="profile_photo"
             />
 
@@ -443,12 +456,12 @@ const EditProfile = () => {
           </div>
         </div>
       </section>
-  
-     {activeTab === "editProfile" && (
+
+      {activeTab === "editProfile" && (
         <section className={styles.editProfileSection}>
           <Container className={styles.containerBox}>
             <form
-             className={styles.formOne}
+              className={styles.formOne}
               onSubmit={handleProfileSubmit}
               encType="multipart/form-data"
             >
@@ -577,7 +590,7 @@ const EditProfile = () => {
               </div>
 
               <div className={styles.inputGrid}>
-                <ProfileInput
+                {/* <ProfileInput
                   type="selectOne"
                   id="income"
                   name="income"
@@ -603,7 +616,7 @@ const EditProfile = () => {
                     handleSelectOption("education", option)
                   }
                   serverError={editProfileError?.education}
-                />
+                /> */}
 
                 <ProfileInput
                   type="selectTwo"
@@ -639,7 +652,7 @@ const EditProfile = () => {
                   }
                   serverError={editProfileError?.marital_status}
                 />
-                <ProfileInput
+                {/* <ProfileInput
                   type="selectOne"
                   id="employment_status"
                   name="employment_status"
@@ -651,7 +664,7 @@ const EditProfile = () => {
                     handleSelectOption("employment_status", option)
                   }
                   serverError={editProfileError?.employment_status}
-                />
+                /> */}
 
                 <ProfileInput
                   type="selectTwo"
@@ -764,8 +777,6 @@ const EditProfile = () => {
                       </p>
                     ))}
                 </div>
-
-               
 
                 {activeOptionalField.includes("Favorite sport") && (
                   <ProfileInput
@@ -1082,7 +1093,7 @@ const EditProfile = () => {
             </form>
           </Container>
         </section>
-      )} 
+      )}
     </main>
   );
 };

@@ -19,6 +19,8 @@ import { handlePrivateRequest } from "@/utils/http";
 import { UserAuth } from "@/context/AuthContext";
 import useNotify from "@/hooks/useNotify";
 import Image from "next/image";
+import Link from "next/link";
+import { HiArrowLeft } from "react-icons/hi2";
 
 type TopicPoints = {
   title: string;
@@ -89,6 +91,10 @@ const Profile = () => {
 
   const notify = useNotify();
 
+  const handleGoBack = () => {
+    router.back();
+  };
+
   const [activeTab, setActiveTab] = useState("polls");
   const [isExpanded, setIsExpanded] = useState(false);
   const [showReadMoreBtn, setShowReadMoreBtn] = useState(false);
@@ -96,6 +102,7 @@ const Profile = () => {
   const { sessionId } = UserAuth();
 
   const { username } = router.query;
+  console.log("checking username", username);
   const usernameString =
     typeof username === "string"
       ? username
@@ -238,25 +245,29 @@ const Profile = () => {
     <main className={styles.main}>
       <section className={styles.photoSection}>
         <Container className={styles.containerTop}>
-          <div className={styles.coverImage}>
-            <Image
-              src={userProfile?.cover_image_url || PlaceholderCover}
-              alt="cover_image"
-              layout="fill"
-              // objectFit="cover"
-            />
+          <div className={styles.profileTop}>
+            <HiArrowLeft onClick={handleGoBack} className={styles.titleIcon} />
+            <div className={styles.coverImage}>
+              <Image
+                src={userProfile?.cover_image_url || PlaceholderCover}
+                alt="cover_image"
+                layout="fill"
+              />
+            </div>
           </div>
 
           <div className={styles.profilePhoto}>
             <div>
-              {/* <Image
+              <Image
                 src={
-                  (userProfile?.profile_photo_url
-                    ? userProfile?.profile_photo_url
-                    : PlaceholderProfile) as string
+                  userProfile?.profile_photo_url === "/profile_default.png"
+                    ? PlaceholderProfile
+                    : userProfile?.profile_photo_url ?? ""
                 }
+                width={100}
+                height={100}
                 alt="profile_picture"
-              /> */}
+              />
             </div>
           </div>
         </Container>
@@ -413,7 +424,7 @@ const Profile = () => {
                 {loggedinUser && (
                   <button
                     className={styles.editProfile}
-                    onClick={() => router.push("/edit-profile")}
+                    onClick={() => router.push("/profile/editprofile")}
                   >
                     Edit Profile
                   </button>
@@ -422,7 +433,7 @@ const Profile = () => {
                 {loggedinUser && (
                   <button
                     className={styles.edit}
-                    onClick={() => router.push("/edit-profile")}
+                    onClick={() => router.push("/profile/editprofile")}
                   >
                     <FaPencil size={28} />
                   </button>

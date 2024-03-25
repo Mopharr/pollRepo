@@ -32,6 +32,9 @@ type Props = {};
 
 const PollDetails = (props: Props) => {
   const router = useRouter();
+  const handleGoBack = () => {
+    router.back();
+  };
   const { sessionId, isAuthenticated, handleShowAuthModal } = UserAuth();
   const { slug } = router.query;
   console.log("testing slug", router.query);
@@ -402,9 +405,11 @@ const PollDetails = (props: Props) => {
         <DashboardLayout>
           <div>
             <div className={styles.title}>
-              <Link href="/">
-                <HiArrowLeft className={styles.titleIcon} />
-              </Link>
+              <HiArrowLeft
+                onClick={handleGoBack}
+                className={styles.titleIcon}
+              />
+
               <h2>Polls</h2>
             </div>
             {poll.map((poll) => {

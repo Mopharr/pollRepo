@@ -4,7 +4,7 @@ import HomeLayout from "../Home/HomeLayout";
 import ProfileLayout from "../ProfileLayout/ProfileLayout";
 import LegecyPollLayout from "../LegacyPollLayout/LegecyPollLayout";
 import NotFoundPage from "@/pages/PageNotFound";
-import EditProfile from "@/pages/EditProfile";
+import EditProfile from "@/pages/profile/editprofile";
 import DashboardLayout from "../DashboardLayout/DashboardLayout";
 import PollDetailsLayout from "../PollDetailsLayout/PollsDetailLayout";
 import PrivacyPolicyLayout from "../PrivacyLayout/PrivacyPolicyLayout";
