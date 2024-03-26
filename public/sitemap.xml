@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home Page -->
+    <url>
+        <loc>https://pollrepo.com/</loc>
+        <loc>http://localhost:3000/home</loc>
+    </url>
+
+    <!-- Essential Site-Wide Pages -->
+    <url>
+        <loc>https://pollrepo.com/about-us</loc>
+        <loc>http://localhost:3000/about-us</loc>
+
+    </url>
+    <url>
+        <loc>https://pollrepo.com/contact-us</loc> 
+        <loc>http://localhost:3000/contact-us</loc> 
+    </url>
+    <url>
+        <loc>https://pollrepo.com/privacy-policy</loc>
+        <loc>http://localhost:3000/privacy-policy</loc>
+        
+    </url>
+
+    <!-- Category Pages -->
+    <url>
+        <loc>https://pollrepo.com/home?interests=Football%20(Soccer)</loc>
+    </url>
+    <url>
+        <loc>https://pollrepo.com/home?interests=Basketball</loc>
+    </url>
+    <url>
+        <loc>https://pollrepo.com/home?interests=Cricket</loc>
+    </url>
+    <!-- Continue adding other categories -->
+
+    <!-- Example Individual Pages for Categories -->
+    <!-- Football (Soccer) -->
+    <url>
+        <loc>https://pollrepo.com/football/best-goal-2024</loc>
+    </url>
+    <url>
+        <loc>https://pollrepo.com/football/most-valuable-player-2024</loc>
+    </url>
+    <!-- Continue with individual pages for other sports -->
+
+    <!-- Template for New Categories and Their Pages -->
+    <!--
+    <url>
+        <loc>https://pollrepo.com/home?interests=YourNewCategory</loc>
+    </url>
+    <url>
+        <loc>https://pollrepo.com/yournewcategory/your-specific-page</loc>
+    </url>
+    -->
+</urlset>

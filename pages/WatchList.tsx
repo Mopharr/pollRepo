@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet";
 import PollsList from "../components/PollsList/PollsList";
 import { CircularProgress } from "@mui/material";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import HeaderComponent from "@/components/Header/Header";
+import AxiosPrivateProvider from "@/context/AxiosPrivateProvider";
+import DashboardLayout from "@/layouts/DashboardLayout/DashboardLayout";
 
 const WatchList = () => {
   useAxiosPrivate();
@@ -71,11 +74,9 @@ const WatchList = () => {
   }, [fetchWatchList]);
   return (
     <>
-      <Helmet>
-        <title>Poll Details</title>
-        <meta name="description" content="Polls Details" />
-      </Helmet>
-
+    <AxiosPrivateProvider>
+        <HeaderComponent />
+        <DashboardLayout>
       <main>
         {isLoading ? (
           <p
@@ -123,6 +124,9 @@ const WatchList = () => {
           </p>
         )}
       </main>
+
+        </DashboardLayout>
+</AxiosPrivateProvider>
     </>
   );
 };

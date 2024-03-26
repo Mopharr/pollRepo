@@ -153,11 +153,33 @@
   display: flex;
   flex-direction: column;
   margin: 0.5em 0 0;
-  padding-top: 5em;
   /* height: 155px; */
   justify-content: center;
   overflow-y: scroll;
 }
+
+.optionsWrap::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+.optionsWrap::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Handle */
+.optionsWrap::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 0;
+}
+
+/* Handle on hover */
+.optionsWrap::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+
 .DescriptionIcon {
   width: 30px !important;
   height: 30px !important;

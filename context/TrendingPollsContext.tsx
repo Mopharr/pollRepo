@@ -31,7 +31,6 @@ export const TrendingPollsProvider = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [countryCode, setCountryCode] = useState<string>("");
 
-  const [url, setUrl] = useState("");
   const [isFetchingMore, setIsFetchingMore] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
@@ -40,6 +39,7 @@ export const TrendingPollsProvider = ({
     : "";
 
   const fetchData = useCallback(async () => {
+    console.log("testing if explore got here", )
     setIsLoading(true);
 
     try {
@@ -54,7 +54,7 @@ export const TrendingPollsProvider = ({
     } finally {
       setIsLoading(false);
     }
-  }, [trendQuery, url]);
+  }, [trendQuery]);
 
   useEffect(() => {
     // Access localStorage only in the client-side code
@@ -70,7 +70,8 @@ export const TrendingPollsProvider = ({
 
   useEffect(() => {
     fetchData();
-  }, [countryCode, fetchData]);
+  }, [countryCode]);
+  console.log("tesing treind data ",data)
 
   return (
     <TrendingPollsContext.Provider value={{ data, setCountryCode }}>

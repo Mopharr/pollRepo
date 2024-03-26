@@ -15,6 +15,7 @@ import useClickOutside from "@/hooks/useClickOutside";
 
 const Trends = () => {
   const { data, setCountryCode } = useFilterTrendingPolls();
+  console.log("testing data on page",data)
 
   const modalRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -136,7 +137,7 @@ const Trends = () => {
       </div>
 
       <button
-        onClick={() => router.push("/trends")}
+        onClick={() => router.push("/explore")}
         className={styles.showMore}
       >
         Show more

@@ -323,7 +323,7 @@ const PollsList: React.FC<PollsListProps> = ({
         ? null
         : { pollId, optionIndex }
     );
-  
+
     setExpandedOptions((prevExpandedOptions) => ({
       ...prevExpandedOptions,
       [`${pollId}`]: !prevExpandedOptions[`${pollId}`],
@@ -473,7 +473,7 @@ const PollsList: React.FC<PollsListProps> = ({
                     className={styles.HeadImage}
                     width={30}
                     height={30}
-                    alt=""
+                    alt="User Profile picture"
                   />
                 </Link>
                 <div className={styles.nameDes}>
@@ -509,7 +509,7 @@ const PollsList: React.FC<PollsListProps> = ({
                     dangerouslySetInnerHTML={{ __html: poll.question }}
                     onClick={() => handlePollClick(poll)}
                   ></div>
-                  {poll.is_legacy ? <Image src={Crown} alt="" /> : null}
+                  {poll.is_legacy ? <Image src={Crown} alt="A legacy poll icon" /> : null}
                 </div>
 
                 <div className={styles.textContentWithButton}>
@@ -542,157 +542,172 @@ const PollsList: React.FC<PollsListProps> = ({
                     </span>
                   )}
                 </div>
+
                 <div
                   className={styles.optionsWrap}
                   style={{
-                    height: expandedOptions[`${poll.id}`] ? "auto" : "155px",
+                    height: expandedOptions[`${poll.id}`] ? "auto" : "100%",
+                    // paddingTop: expandedOptions[`${poll.id}`] ? "0" : "8em",
                   }}
                 >
-                  {(poll.display_result || votedPolls.has(poll.id)
-                    ? getSortedChoices(poll.choices)
-                    : poll.choices
-                  )
-                    // .slice(0, 4)
-                    .map((choice, index) => {
-                      return (
-                        <div key={choice.id} className={styles.option}>
-                          <div className={styles.optionWithImage}>
-                            <Button
-                              className={styles.optionsOutsidePic}
-                              onClick={() =>
-                                handleOpenMedia(
-                                  choice.choice_icon_url,
-                                  choice.id,
-                                  poll.id,
-                                  index
-                                )
-                              }
-                            >
-                              <Image
-                                src={
-                                  choice?.choice_icon_thumbnail ||
-                                  "http://res.cloudinary.com/dfduoxw3q/image/upload/v1709907853/upkqv7dw43pdtabyd3ga.webp"
+                  <div  style={{
+                    height: expandedOptions[`${poll.id}`] ? "auto" : "190px",
+                    // paddingTop: expandedOptions[`${poll.id}`] ? "0" : "8em",
+                  }}>
+                    {(poll.display_result || votedPolls.has(poll.id)
+                      ? getSortedChoices(poll.choices)
+                      : poll.choices
+                    )
+                      // .slice(0, 4)
+                      .map((choice, index) => {
+                        return (
+                          <div key={choice.id} className={styles.option}>
+                            <div className={styles.optionWithImage}>
+                              <Button
+                                className={styles.optionsOutsidePic}
+                                onClick={() =>
+                                  handleOpenMedia(
+                                    choice.choice_icon_url,
+                                    choice.id,
+                                    poll.id,
+                                    index
+                                  )
                                 }
-                                className={styles.HeadImage}
-                                width={30}
-                                height={30}
-                                alt=""
-                              />
-                            </Button>
-                            {activeMedia?.pollId === poll.id &&
-                              activeMedia?.optionIndex === index && (
-                                <Modal
-                                  open={
-                                    activeMedia?.pollId === poll.id &&
-                                    activeMedia?.optionIndex === index
+                              >
+                                <Image
+                                  src={
+                                    choice?.choice_icon_thumbnail ||
+                                    "http://res.cloudinary.com/dfduoxw3q/image/upload/v1709907853/upkqv7dw43pdtabyd3ga.webp"
                                   }
-                                  onOk={handleCloseModal}
-                                  onCancel={handleCloseModal}
-                                >
-                                  <div
-                                    className={styles.dataOptionImage}
-                                    onClick={() => handleCloseModal()}
-                                  >
-                                    {mediaUrl.startsWith(
-                                      "https://www.youtube.com"
-                                    ) && videoUrlId ? (
-                                      <YouTube
-                                        videoId={videoUrlId}
-                                        opts={opts}
-                                      />
-                                    ) : mediaUrl.endsWith(".mp4") ||
-                                      mediaUrl.endsWith(".mkv") ? (
-                                      // Video player
-                                      <video controls>
-                                        <source src={mediaUrl} />
-                                        Your browser does not support the video
-                                        tag.
-                                      </video>
-                                    ) : mediaUrl.endsWith(".mp3") ? (
-                                      // Audio player
-                                      <audio controls>
-                                        <source
-                                          src={mediaUrl}
-                                          type="audio/mp3"
-                                        />
-                                        Your browser does not support the audio
-                                        tag.
-                                      </audio>
-                                    ) : (
-                                      <Image
-                                        src={mediaUrl || ""}
-                                        width={40}
-                                        height={40}
-                                        alt="Media"
-                                      />
-                                    )}
-                                  </div>
-                                </Modal>
-                              )}
-                            {poll.display_result || votedPolls.has(poll.id) ? (
-                              <Button className={`${styles.options} `}>
-                                <ProgressBar
-                                  percentage={
-                                    (choice.vote_count /
-                                      getTotalVotes(poll.choices)) *
-                                    100
-                                  }
-                                  optionName={choice.choice_text}
-                                  voteCount={choice.vote_count}
-                                  selectedVote={choice.selected_choice}
-                                  votedChoice={votedChoices}
-                                  pollId={choice.id}
+                                  className={styles.HeadImage}
+                                  width={30}
+                                  height={30}
+                                  alt="options icon thumbnail"
                                 />
                               </Button>
-                            ) : (
-                              <Button
-                                className={`${
-                                  poll.can_vote[0]
-                                    ? styles.options
-                                    : styles.optionsCan_Vote
-                                }`}
-                                onClick={() => handleVoteClick(poll.id, index)}
-                                disabled={!poll.can_vote[0]}
-                                title={poll.can_vote[1]}
-                              >
-                                {choice.choice_text.length > 30
-                                  ? `${choice.choice_text.substring(0, 30)}...`
-                                  : choice.choice_text}
-                              </Button>
-                            )}
-
-                            <Button
-                              className={styles.optionsOutside}
-                              onClick={() => handleOptionClick(poll.id, index)}
-                            >
-                              <Image
-                                src={DescriptionIcon}
-                                className={styles.DescriptionIcon}
-                                width={30}
-                                height={30}
-                                alt=""
-                              />
-                            </Button>
-                          </div>
-
-                          <div
-                            className={styles.choiceDesc}
-                            id={`choiceDesc_${poll.id}_${index}`}
-                          >
-                            {activeOption?.pollId === poll.id &&
-                              activeOption?.optionIndex === index && (
-                                <div>
-                                  <p
-                                    dangerouslySetInnerHTML={{
-                                      __html: choice?.content,
-                                    }}
+                              {activeMedia?.pollId === poll.id &&
+                                activeMedia?.optionIndex === index && (
+                                  <Modal
+                                    open={
+                                      activeMedia?.pollId === poll.id &&
+                                      activeMedia?.optionIndex === index
+                                    }
+                                    onOk={handleCloseModal}
+                                    onCancel={handleCloseModal}
+                                  >
+                                    <div
+                                      className={styles.dataOptionImage}
+                                      onClick={() => handleCloseModal()}
+                                    >
+                                      {mediaUrl.startsWith(
+                                        "https://www.youtube.com"
+                                      ) && videoUrlId ? (
+                                        <YouTube
+                                          videoId={videoUrlId}
+                                          opts={opts}
+                                        />
+                                      ) : mediaUrl.endsWith(".mp4") ||
+                                        mediaUrl.endsWith(".mkv") ? (
+                                        // Video player
+                                        <video controls>
+                                          <source src={mediaUrl} />
+                                          Your browser does not support the
+                                          video tag.
+                                        </video>
+                                      ) : mediaUrl.endsWith(".mp3") ? (
+                                        // Audio player
+                                        <audio controls>
+                                          <source
+                                            src={mediaUrl}
+                                            type="audio/mp3"
+                                          />
+                                          Your browser does not support the
+                                          audio tag.
+                                        </audio>
+                                      ) : (
+                                        <Image
+                                          src={mediaUrl || ""}
+                                          width={40}
+                                          height={40}
+                                          alt="option image"
+                                        />
+                                      )}
+                                    </div>
+                                  </Modal>
+                                )}
+                              {poll.display_result ||
+                              votedPolls.has(poll.id) ? (
+                                <Button className={`${styles.options} `}>
+                                  <ProgressBar
+                                    percentage={
+                                      (choice.vote_count /
+                                        getTotalVotes(poll.choices)) *
+                                      100
+                                    }
+                                    optionName={choice.choice_text}
+                                    voteCount={choice.vote_count}
+                                    selectedVote={choice.selected_choice}
+                                    votedChoice={votedChoices}
+                                    pollId={choice.id}
                                   />
-                                </div>
+                                </Button>
+                              ) : (
+                                <Button
+                                  className={`${
+                                    poll.can_vote[0]
+                                      ? styles.options
+                                      : styles.optionsCan_Vote
+                                  }`}
+                                  onClick={() =>
+                                    handleVoteClick(poll.id, index)
+                                  }
+                                  disabled={!poll.can_vote[0]}
+                                  title={poll.can_vote[1]}
+                                >
+                                  {choice.choice_text.length > 30
+                                    ? `${choice.choice_text.substring(
+                                        0,
+                                        30
+                                      )}...`
+                                    : choice.choice_text}
+                                </Button>
                               )}
+
+                              <Button
+                                className={styles.optionsOutside}
+                                onClick={() =>
+                                  handleOptionClick(poll.id, index)
+                                }
+                              >
+                                <Image
+                                  src={DescriptionIcon}
+                                  className={styles.DescriptionIcon}
+                                  width={30}
+                                  height={30}
+                                  alt="Description icons"
+                                />
+                              </Button>
+                            </div>
+
+                            <div
+                              className={styles.choiceDesc}
+                              id={`choiceDesc_${poll.id}_${index}`}
+                            >
+                              {activeOption?.pollId === poll.id &&
+                                activeOption?.optionIndex === index && (
+                                  <div>
+                                    <p
+                                      dangerouslySetInnerHTML={{
+                                        __html: choice?.content,
+                                      }}
+                                    />
+                                  </div>
+                                )}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                  </div>
                 </div>
               </div>
               <div className={styles.viewMore}>

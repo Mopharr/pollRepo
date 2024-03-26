@@ -94,6 +94,30 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.infinite-scroll-component  {
+}
+.infinite-scroll-component::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+.infinite-scroll-component::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Handle */
+.infinite-scroll-component::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 0;
+}
+
+/* Handle on hover */
+.infinite-scroll-component::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   html {

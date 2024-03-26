@@ -90,7 +90,6 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     router.push({ pathname: router.pathname, query: updatedParams }); // Update URL with new parameters
   };
   const fetchData = useCallback(async () => {
-    console.log("main touch")
     localStorage.removeItem("votedPolls");
     setIsLoading(true);
     try {
@@ -99,7 +98,7 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
         : await axiosPublic.get<any>(`polls/polls${url}${topicsQuery}`);
       const { results, next } = response.data.Poll;
       setData(results);
-      // setOriginalData(results);
+      setOriginalData(results);
       setHasMore(next !== null);
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -109,8 +108,6 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
   }, [topicsQuery, url, isAuthenticated]);
 
   const fetchMoreData = async () => {
-    console.log("more touch")
-
     if (!url || isFetchingMore || !hasMore) return;
     setIsFetchingMore(true);
     try {
@@ -143,19 +140,14 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     setData(filteredData);
   }, [filters, originalData]);
 
-  useEffect(() => {
-    // console.log("checing data", data);
-  }, []);
 
   useEffect(() => {
     if (searchValue) {
-      console.log("search touch");
       fetchData();
     }
     // This runs when the Home component mounts the dom
     // Remove the condition and directly call fetchData()
     else {
-      console.log("not search touch");
       fetchData();
     }
   }, [searchValue]);

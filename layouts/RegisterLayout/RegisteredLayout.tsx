@@ -13,8 +13,8 @@ import VerifyEmail from "@/pages/VerifyEmail";
 import AllTrends from "@/pages/AllTrends";
 import About from "@/pages/About";
 import FooterLayout from "../FooterLayout/FooterLayout";
-import WatchList from "@/pages/WatchList";
-import Explore from "@/pages/Explore";
+import WatchList from "@/pages/watchlist";
+import Explore from "@/pages/explore";
 
 const RegisteredLayout = () => {
   return (

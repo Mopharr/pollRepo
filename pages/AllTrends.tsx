@@ -7,9 +7,6 @@ import Onedot from "@/public/asset/svg/one_dot.svg";
 import { formatNumber } from "../helpers";
 import styles from "../components/Trends/Trends.module.css";
 
-type SvgIconProps = React.SVGProps<SVGSVGElement> & {
-  as: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-};
 const AllTrends = () => {
   const { data } = useFilterTrendingPolls();
   return (

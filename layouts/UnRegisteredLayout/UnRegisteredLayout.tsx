@@ -15,7 +15,7 @@ import PollDetailsLayout from "@/layouts/PollDetailsLayout/PollsDetailLayout";
 import ProfileLayout from "@/layouts/ProfileLayout/ProfileLayout";
 import EditProfile from "@/pages/profile/editprofile";
 // import NotificationLayout from "../Notification/NotificationLayout";
-import WatchList from "@/pages/WatchList";
+import WatchList from "@/pages/watchlist";
 import RequireAuth from "@/layouts/RequireAuth/RequireAuth";
 
 const UnRegisteredLayout = () => {
